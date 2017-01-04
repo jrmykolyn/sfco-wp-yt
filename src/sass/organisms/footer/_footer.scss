@@ -1,7 +1,7 @@
 // --------------------------------------------------
 // VARIABLES 
 // --------------------------------------------------
-$header: '.header';
+$footer: '.footer';
 
 
 // --------------------------------------------------
@@ -16,19 +16,18 @@ $header: '.header';
 /**
  * ...
  */
-#{$header} {
-    @include size( 100% rem( 50 ) );
+#{$footer} {
+    @include size( 100% auto );
 
-    display: block;
-    background-color: #FFF;
-    box-shadow: 0px 3px 20px -5px rgba(0,0,0,0.15);
+    min-height: rem( 200 );
+    background-color: #222;
 }
 
 
 /**
  * ...
  */
-#{$header}__inner {
+#{$footer}__inner {
     @include size( 100% auto );
 
     max-width: rem( 960 );
