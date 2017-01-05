@@ -1,8 +1,14 @@
+// Import modules/vendor libs.
 @import 'normalize';
 @import 'bourbon';
 @import 'susy';
 
+// Import project 'config.'
 @import 'config/manifest';
+
+@import 'sfco-sass-utils';
+
+// Import project styles
 @import 'base/manifest';
 @import 'atoms/manifest';
 @import 'organisms/manifest';
