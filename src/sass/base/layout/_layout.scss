@@ -1,7 +1,7 @@
 // --------------------------------------------------
 // VARIABLES 
 // --------------------------------------------------
-$main: '.main';
+$layout-section: '.layout-section';
 
 
 // --------------------------------------------------
@@ -13,8 +13,14 @@ $main: '.main';
 // --------------------------------------------------
 // SELECTORS 
 // --------------------------------------------------
-#{$main} {
+#{$layout-section} {
+    @include clearfix;
     @include size( 100% auto );
+}
 
+#{$layout-section}__inner {
+    @include container;
+
+    max-width: rem( 600 );
     margin: 0 auto;
 }

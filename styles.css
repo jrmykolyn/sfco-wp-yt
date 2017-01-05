@@ -456,6 +456,37 @@ body {
   font-weight: 400;
 }
 
+.layout-section {
+  height: auto;
+  width: 100%;
+}
+
+.layout-section::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.layout-section__inner {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: -webkit-linear-gradient( left , rgba(0, 0, 255, 0.2), rgba(77, 77, 255, 0.2) 66.66667%, transparent 66.66667%);
+  background-image: linear-gradient(to right, rgba(0, 0, 255, 0.2), rgba(77, 77, 255, 0.2) 66.66667%, transparent 66.66667%);
+  background-size: 8.57143%;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-position: left top;
+  max-width: 37.5rem;
+  margin: 0 auto;
+}
+
+.layout-section__inner:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
 p {
   font-size: 1.125rem;
   line-height: 1.75;
@@ -494,8 +525,7 @@ h6 {
 
 .main {
   height: auto;
-  width: 94%;
-  max-width: 41.25rem;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -528,4 +558,11 @@ h6 {
   position: relative;
   background-color: #DADADA;
   padding-top: 56.25%;
+}
+
+@media (min-width: 960px) {
+  .hero-wrap {
+    height: 540px;
+    padding-top: 0px;
+  }
 }
