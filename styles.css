@@ -457,6 +457,18 @@ template {
  * color: getColor( black );
  * background-color: getColor( base, placeholder );
  */
+/**
+ * For each valid 'state' (eg. pseduo-selector) received via the `$states` argument,
+ * mixin wraps the provided `@content` declarations in a new CSS rule.
+ *
+ * Note that the mixin validates each 'state' against an internally defined whitelist.
+ *
+ * @param {String} `$states` - The list of 'states' for which to apply the provided styles
+ *
+ * Usage:
+ * @include on( hover ) { background: red; }
+ * @include on( focus active ) { margin-right: 10px; }
+ */
 html,
 body {
   margin: 0;
@@ -517,7 +529,12 @@ a:before, a::before {
   background-color: rgba(33, 94, 243, 0.5);
 }
 
-a:hover:before, a:hover::before, a:focus:before, a:focus::before {
+a:hover:before, a:hover::before {
+  height: 0.375rem;
+  background-color: rgba(33, 94, 243, 0.3);
+}
+
+a:focus:before, a:focus::before {
   height: 0.375rem;
   background-color: rgba(33, 94, 243, 0.3);
 }

@@ -35,8 +35,7 @@ a {
         background-color: rgba( getColor( accent ), 0.5 );
     }
 
-    &:hover,
-    &:focus {
+    @include on( hover focus ) {
         &:before,
         &::before {
             height: rem( 6 );
