@@ -450,7 +450,25 @@ html,
 body {
   margin: 0;
   padding: 0;
+  color: #333;
   background-color: #FAFAFA;
+  font-family: 'Catamaran', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  font-weight: 700;
 }
 
 /**
@@ -477,7 +495,7 @@ body {
 .main {
   height: auto;
   width: 94%;
-  max-width: 60rem;
+  max-width: 41.25rem;
   margin: 0 auto;
 }
 
@@ -499,4 +517,15 @@ body {
   width: 100%;
   max-width: 60rem;
   margin: 0 auto;
+}
+
+/**
+ * ...
+ */
+.hero-wrap {
+  height: auto;
+  width: 100%;
+  position: relative;
+  background-color: #DADADA;
+  padding-top: 56.25%;
 }

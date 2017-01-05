@@ -1,7 +1,8 @@
 // --------------------------------------------------
 // VARIABLES 
 // --------------------------------------------------
-// Add any SASS variables that are specific to this file here.
+$hero: '.hero';
+$hero-wrap: #{$hero}-wrap;
 
 
 // --------------------------------------------------
@@ -13,13 +14,13 @@
 // --------------------------------------------------
 // SELECTORS 
 // --------------------------------------------------
-html,
-body {
-    margin: 0;
-    padding: 0;
-    color: #333;
-    background-color: #FAFAFA;
+/**
+ * ...
+ */
+#{$hero-wrap} {
+    @include size( 100% auto );
+    @include position( relative );
 
-    font-family: 'Catamaran', Arial, Helvetica, sans-serif;
-    font-weight: 400;
+    background-color: #DADADA;
+    padding-top: 56.25%;
 }

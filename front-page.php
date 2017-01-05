@@ -1,7 +1,9 @@
 <?php
 get_header();
 ?>
+<section class="hero-wrap">
 
+</section><!-- /.hero-wrap -->
 <main class="main">
     <h1>Front Page</h1>
     <h2>Test Subtitle</h2>
