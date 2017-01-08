@@ -469,6 +469,18 @@ template {
  * @include on( hover ) { background: red; }
  * @include on( focus active ) { margin-right: 10px; }
  */
+/**
+ * Mixin creates 1x declaration for each item in a list of properties (`$props`).
+ * The value of each declaration is set to `$value`.
+ *
+ * @param {String} `$props`
+ * @param {String|Number} `$value`
+ *
+ * Useage:
+ * @include set( margin padding, 0 );
+ * @include set( margin-top margin-bottom padding-right padding-left, 2rem );
+ * @include set( min-height max-height, 100% );
+ */
 html,
 body {
   margin: 0;
@@ -494,6 +506,12 @@ body {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+  background-image: -webkit-linear-gradient( left , rgba(0, 0, 255, 0.2), rgba(77, 77, 255, 0.2) 66.66667%, transparent 66.66667%);
+  background-image: linear-gradient(to right, rgba(0, 0, 255, 0.2), rgba(77, 77, 255, 0.2) 66.66667%, transparent 66.66667%);
+  background-size: 8.57143%;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-position: left top;
   max-width: 37.5rem;
   margin: 0 auto;
 }
@@ -547,6 +565,45 @@ h5,
 h6 {
   font-family: 'Montserrat', Helvetica, Arial, sans-serif;
   font-weight: 700;
+}
+
+.preheader {
+  height: auto;
+  width: 100%;
+  background-color: #222;
+}
+
+.preheader::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.preheader__inner {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: -webkit-linear-gradient( left , rgba(0, 0, 255, 0.2), rgba(77, 77, 255, 0.2) 66.66667%, transparent 66.66667%);
+  background-image: linear-gradient(to right, rgba(0, 0, 255, 0.2), rgba(77, 77, 255, 0.2) 66.66667%, transparent 66.66667%);
+  background-size: 8.57143%;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-position: left top;
+  max-width: 60rem;
+  color: #FFF;
+  margin: 0 auto;
+}
+
+.preheader__inner:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.preheader__inner > * {
+  margin: 0;
+  padding: 0;
+  font-size: 0.875rem;
 }
 
 /**

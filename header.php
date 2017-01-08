@@ -13,5 +13,6 @@
     </head>
     <body>
     <?php
+    get_template_part( 'includes/preheader/_preheader' );
     get_template_part( 'includes/header/_header' );
     ?>
