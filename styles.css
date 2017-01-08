@@ -481,6 +481,22 @@ template {
  * @include set( margin-top margin-bottom padding-right padding-left, 2rem );
  * @include set( min-height max-height, 100% );
  */
+/**
+ * For each valid pseudo element received via the `$elements` argument,
+ * mixin wraps the provided `@content` declarations in a new CSS rule.
+ *
+ * Note that the mixin validates each 'element' against an internally defined whitelist.
+ *
+ * @param {String} `$elements`
+ *
+ * Usage:
+ * @include pseudo( before ) {
+ *    content: 'This is my before element content';
+ *    display: block;
+ *    color: white;
+ *    background-color: black;
+ * }
+ */
 * {
   box-sizing: border-box;
 }
@@ -623,7 +639,7 @@ h6 {
   border-radius: 50%;
 }
 
-.preheader__cta:before, .preheader__cta::before, .preheader__cta:after, .preheader__cta::after {
+.preheader__cta::before {
   height: 0.125rem;
   width: 50%;
   position: absolute;
@@ -639,7 +655,23 @@ h6 {
   background-color: #FFF;
 }
 
-.preheader__cta:after, .preheader__cta::after {
+.preheader__cta::after {
+  height: 0.125rem;
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  -moz-transform: translate(-50%, -50%) rotate(45deg);
+  -ms-transform: translate(-50%, -50%) rotate(45deg);
+  -o-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+  content: '';
+  display: block;
+  background-color: #FFF;
+}
+
+.preheader__cta::after {
   -webkit-transform: translate(-50%, -50%) rotate(-45deg);
   -moz-transform: translate(-50%, -50%) rotate(-45deg);
   -ms-transform: translate(-50%, -50%) rotate(-45deg);
