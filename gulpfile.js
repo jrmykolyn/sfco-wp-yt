@@ -46,7 +46,7 @@ gulp.task( 'sass', function() {
     return gulp.src( PATHS.styles.src + 'styles.scss' )
         .pipe( sass(
             {
-                outputStyle: 'expanded',
+                outputStyle: 'compressed',
                 includePaths: [
                     'node_modules/normalize.css',
                     'node_modules/bourbon/app/assets/stylesheets',
