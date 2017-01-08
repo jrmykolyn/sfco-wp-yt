@@ -1,7 +1,7 @@
 // --------------------------------------------------
 // VARIABLES 
 // --------------------------------------------------
-// Add any SASS variables that are specific to this file here.
+$post-copy: '.post-copy';
 
 
 // --------------------------------------------------
@@ -52,4 +52,10 @@ h5,
 h6 {
     font-family: 'Montserrat', Helvetica, Arial, sans-serif;
     font-weight: 700;
+}
+
+#{$post-copy}--leading {
+    color: getColor( accent );
+    font-size: rem( 22 );
+    line-height: 1.4;
 }

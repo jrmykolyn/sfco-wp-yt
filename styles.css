@@ -581,6 +581,12 @@ h6 {
   font-weight: 700;
 }
 
+.post-copy--leading {
+  color: #215ef3;
+  font-size: 1.375rem;
+  line-height: 1.4;
+}
+
 .preheader {
   height: auto;
   width: 100%;

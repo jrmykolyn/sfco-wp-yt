@@ -8,6 +8,9 @@ get_header();
     <section class="layout-section">
         <div class="layout-section__inner">
             <h1>Front Page</h1>
+            <p class="post-copy--leading">
+                Et nisi incididunt nulla aliquip consectetur nulla Lorem dolor id nulla occaecat laboris officia officia. Dolor qui ea minim aliquip aliquip duis ullamco quis quis occaecat commodo adipisicing duis consectetur minim dolore consequat.
+            </p>
             <h2>Test Subtitle</h2>
             <p>Ullamco deserunt ea nulla reprehenderit elit nostrud consequat. Veniam consectetur ea sint laboris irure qui velit ipsum anim proident commodo. Excepteur nostrud occaecat ullamco elit cupidatat quis nisi amet magna deserunt deserunt.</p>
             <h3>Test Sub-Subtitle</h3>
