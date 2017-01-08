@@ -16,20 +16,55 @@ $preheader: '.preheader';
 #{$preheader} {
     @include clearfix;
     @include size( 100% auto );
+    @include position( relative );
 
     background-color: getColor( black );
+    padding: rem( 8 ) 12.5%;
 }
 
 #{$preheader}__inner {
     @include container;
+    @include size( 100% auto );
 
     max-width: rem( 960 );
     color: getColor( white );
     margin: 0 auto;
+    text-align: center;
 
     & > * {
         @include set( margin padding, 0 );
 
         font-size: rem( 14 );
+        line-height: 1.5;
+    }
+}
+
+#{$preheader}__cta {
+    @include size( rem( 20 ) );
+    @include position( absolute, 50% 5% null null );
+    @include transform( translate( 0, -50% ) );
+    @include set( margin padding, 0 );
+
+    display: block;
+    background-color: transparent;
+    border: rem( 2 ) solid getColor( white );
+    border-radius: 50%;
+
+    &:before,
+    &::before,
+    &:after,
+    &::after {
+        @include size( 50% rem( 2 ) );
+        @include position( absolute, 50% null null 50% );
+        @include transform( translate( -50%, -50% ) rotate( 45deg ) );
+
+        content: '';
+        display: block;
+        background-color: getColor( white );
+    }
+
+    &:after,
+    &::after {
+        @include transform( translate( -50%, -50% ) rotate( -45deg ) );
     }
 }
