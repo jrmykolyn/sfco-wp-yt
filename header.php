@@ -7,7 +7,7 @@
         <!-- FONTS -->
         <link href="https://fonts.googleapis.com/css?family=Catamaran:400,500,600,700|Montserrat:400,700" rel="stylesheet">
         <!-- PROJECT STYLES -->
-        <link rel="stylesheet" href="<?= get_stylesheet_directory_uri(); ?>/styles.css">
+        <link rel="stylesheet" href="<?= get_stylesheet_directory_uri(); ?>/css/styles.css">
         <!-- PROJECT SCRIPTS -->
         <script type="text/javascript" src="<?= get_stylesheet_directory_uri(); ?>/js/main.min.js"></script>
     </head>

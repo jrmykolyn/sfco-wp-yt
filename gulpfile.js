@@ -10,7 +10,7 @@ var concat = require('gulp-concat');
 var PATHS = {
     styles: {
         src: 'src/sass/',
-        dest: './',
+        dest: './css/',
     },
     js: {
         src: 'src/js/**/*.js',
