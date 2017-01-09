@@ -44,7 +44,7 @@ $post-footer: #{$post}-footer;
 #{$post-body} {
     margin-bottom: rem( 30 );
 
-    & > *:last-child {
+    @include descendant( last ) {
         margin-bottom: 0;
     }
 }
