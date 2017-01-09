@@ -1,0 +1,38 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+$post-tag: '.post-tag';
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+#{$post-tag} {
+    @include display( inline-block );
+    @include set( margin-right margin-bottom, rem( 20 ) );
+    @include pseudo( before ) {
+        display: none;
+    }
+
+    font-size: rem( 14 );
+    font-weight: 700;
+    letter-spacing: rem( 1 );
+}
+
+
+#{$post-tag}--leading {
+    @extend #{$post-tag};
+
+    color: getColor( white );
+    background: linear-gradient( 45deg, getColor( accent ), darken( getColor( accent ), 20% ) );
+    padding: rem( 8 );
+
+    font-size: rem( 12 );
+    text-transform: uppercase;
+}
