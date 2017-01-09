@@ -1,8 +1,8 @@
 <?php
 get_header();
 ?>
-<section class="hero-wrap">
-
+<section class="hero-wrap--has-overlay">
+    <img src="http://lorempixel.com/1600/900/" alt="#" />
 </section><!-- /.hero-wrap -->
 <main class="main post"><!-- /// TEMP - Move `post` class to new element; rebuild template. -->
     <section class="layout-section">

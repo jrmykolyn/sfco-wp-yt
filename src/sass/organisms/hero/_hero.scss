@@ -24,11 +24,34 @@ $hero-wrap: #{$hero}-wrap;
     background-color: #DADADA;
     padding-top: 56.25%;
 
+    img {
+        @include size( 100% );
+        @include position( absolute, 0 null null 0 );
+
+        object-fit: cover; /// TEMP
+    }
+
+    // Media Queries
     @media ( min-width: 960px ) {
 
         & {
             height: #{960*0.5625}#{'px'};
             padding-top: 0px;
         }
+    }
+}
+
+
+#{$hero-wrap}--has-overlay {
+    @extend #{$hero-wrap};
+
+    @include pseudo( after ) {
+        @include size( 100% );
+        @include position( absolute, 0 0 0 0 );
+
+        content: '';
+        display: block;
+        background: linear-gradient( transparent, getColor( accent ) );
+        opacity: 0.5;
     }
 }
