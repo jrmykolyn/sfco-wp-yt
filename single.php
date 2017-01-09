@@ -1,23 +1,21 @@
 <?php
 get_header();
+while ( have_posts() ): the_post();
+    get_template_part( 'includes/post/_post-hero' );
 ?>
-<section class="hero-wrap--has-overlay">
-    <img src="http://lorempixel.com/1600/900/" alt="#" />
-</section><!-- /.hero-wrap -->
 <main class="main post"><!-- /// TEMP - Move `post` class to new element; rebuild template. -->
     <section class="layout-section">
         <div class="layout-section__inner--narrow">
         <?php
-        while ( have_posts() ): the_post();
-            get_template_part( 'includes/post/_post-header' );
-            get_template_part( 'includes/post/_post-body' );
-            get_template_part( 'includes/post/_post-footer' );
-        endwhile;
+        get_template_part( 'includes/post/_post-header' );
+        get_template_part( 'includes/post/_post-body' );
+        get_template_part( 'includes/post/_post-footer' );
         ?>
         </div><!-- /.layout-section__inner--narrow -->
     </section><!-- /.layout-section -->
 </main>
 
 <?php
+endwhile;
 get_footer();
 ?>
