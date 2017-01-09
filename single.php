@@ -6,7 +6,7 @@ get_header();
 </section><!-- /.hero-wrap -->
 <main class="main post"><!-- /// TEMP - Move `post` class to new element; rebuild template. -->
     <section class="layout-section">
-        <div class="layout-section__inner">
+        <div class="layout-section__inner--narrow">
         <?php
         while ( have_posts() ): the_post();
             get_template_part( 'includes/post/_post-header' );
@@ -14,7 +14,7 @@ get_header();
             get_template_part( 'includes/post/_post-footer' );
         endwhile;
         ?>
-        </div><!-- /.layout-section__inner -->
+        </div><!-- /.layout-section__inner--narrow -->
     </section><!-- /.layout-section -->
 </main>
 

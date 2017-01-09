@@ -17,8 +17,9 @@ $header: '.header';
  * ...
  */
 #{$header} {
-    @include size( 100% rem( 50 ) );
+    @extend #{$layout-section};
 
+    height: rem( 50 );
     display: block;
     background-color: #FFF;
     box-shadow: 0px 3px 20px -5px rgba(0,0,0,0.15);
@@ -29,8 +30,7 @@ $header: '.header';
  * ...
  */
 #{$header}__inner {
-    @include size( 100% auto );
+    @extend #{$layout-section}__inner;
 
-    max-width: rem( 960 );
     margin: 0 auto;
 }

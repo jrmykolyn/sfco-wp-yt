@@ -21,3 +21,14 @@ $susy: (
         color: rgba( 0,0,255,0.2 )
     )
 );
+
+$gridMap: (
+    default: (
+        width: 100%,
+        max-width: rem( 1024 )
+    ),
+    narrow: (
+        width: 100%,
+        max-width: rem( 700 )
+    )
+);

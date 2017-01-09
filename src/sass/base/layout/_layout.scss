@@ -18,9 +18,18 @@ $layout-section: '.layout-section';
     @include size( 100% auto );
 }
 
+
 #{$layout-section}__inner {
     @include container;
 
-    max-width: rem( 600 );
+    padding: 0 4%;
+    max-width: map-get( map-get( $gridMap, default ), max-width ); /// TEMP - Replace nest `map-get` @left.
     margin: 0 auto;
+}
+
+
+#{$layout-section}__inner--narrow {
+    @extend #{$layout-section}__inner;
+
+    max-width: map-get( map-get( $gridMap, narrow ), max-width ); /// TEMP - Replace nest `map-get` @left.
 }

@@ -17,7 +17,7 @@ $footer: '.footer';
  * ...
  */
 #{$footer} {
-    @include size( 100% auto );
+    @extend #{$layout-section};
 
     min-height: rem( 200 );
     background-color: #222;
@@ -28,8 +28,7 @@ $footer: '.footer';
  * ...
  */
 #{$footer}__inner {
-    @include size( 100% auto );
+    @extend #{$layout-section}__inner;
 
-    max-width: rem( 960 );
     margin: 0 auto;
 }
