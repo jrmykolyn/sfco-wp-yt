@@ -1,0 +1,41 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+$post: '.post';
+$post-header: #{$post}-header;
+$post-body: #{$post}-body;
+$post-footer: #{$post}-footer;
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+#{$post} {
+    
+}
+
+
+#{$post-header} {
+    padding-top: rem( 20 );
+}
+
+
+#{$post-body} {
+    margin-bottom: rem( 30 );
+
+    & > *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+#{$post-footer} {
+    border-top: rem( 2 ) solid getColor( black );
+    padding-top: rem( 30 );
+}
