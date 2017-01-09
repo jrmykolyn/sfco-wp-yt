@@ -5,6 +5,7 @@ $post: '.post';
 $post-header: #{$post}-header;
 $post-body: #{$post}-body;
 $post-footer: #{$post}-footer;
+$post-byline: #{$post}-byline;
 
 
 // --------------------------------------------------
@@ -37,7 +38,9 @@ $post-footer: #{$post}-footer;
 
 
 #{$post-header} {
-    @include set( margin-top padding-bottom, rem( 20 ) );
+    @include set( padding-top padding-bottom margin-bottom, rem( 40 ) );
+
+    border-bottom: rem( 1 ) solid getColor( grey--light );
 }
 
 
@@ -54,4 +57,43 @@ $post-footer: #{$post}-footer;
     border-top: rem( 2 ) solid getColor( black );
     margin-bottom: rem( 40 );
     padding-top: rem( 30 );
+}
+
+
+#{$post-byline} {
+    @include clearfix;
+    @include size( 100% auto );
+    @include position( relative );
+
+    min-height: rem( 40 );
+    padding-top: rem( 12 );
+    padding-bottom: rem( 10 );
+
+    img {
+        @include size( rem( 40 ) );
+        @include display( block );
+        @include position( absolute, 50% null null 0 );
+        @include transform( translateY( -50% ) );
+
+        border-radius: 50%;
+    }
+
+    p {
+        display: block;
+        margin: 0;
+        padding-left: rem( 60 );
+        font-size: rem( 15 );
+        line-height: 1.2;
+
+        @include descendant( first ) {
+            display: inline-block;
+            margin-right: rem( 8 );
+            padding-right: rem( 10 );
+            border-right: rem( 1 ) solid getColor( grey--light );
+        }
+
+        @include descendant( last ) {
+            display: inline;
+        }
+    }
 }

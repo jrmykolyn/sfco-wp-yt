@@ -56,6 +56,8 @@ h6 {
 
 #{$post-copy}--leading {
     color: getColor( accent );
+    margin-bottom: rem( 10 );
+
     font-size: rem( 22 );
     line-height: 1.4;
 }
