@@ -4,7 +4,7 @@ get_header();
 <section class="hero-wrap">
 
 </section><!-- /.hero-wrap -->
-<main class="main">
+<main class="main post"><!-- /// TEMP - Move `post` class to new element; rebuild template. -->
     <section class="layout-section">
         <div class="layout-section__inner">
         <?php

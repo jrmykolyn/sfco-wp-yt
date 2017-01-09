@@ -17,12 +17,27 @@ $post-footer: #{$post}-footer;
 // SELECTORS 
 // --------------------------------------------------
 #{$post} {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @extend %__post-heading;
+    }
     
+    h1 {
+        @extend %__post-title;
+    }
+
+    p {
+        @extend %__post-copy;
+    }
 }
 
 
 #{$post-header} {
-    padding-top: rem( 20 );
+    @include set( margin-top padding-bottom, rem( 20 ) );
 }
 
 
@@ -37,5 +52,6 @@ $post-footer: #{$post}-footer;
 
 #{$post-footer} {
     border-top: rem( 2 ) solid getColor( black );
+    margin-bottom: rem( 40 );
     padding-top: rem( 30 );
 }

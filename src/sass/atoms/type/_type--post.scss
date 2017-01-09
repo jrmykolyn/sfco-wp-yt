@@ -1,0 +1,33 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+// Add any SASS variables that are specific to this file here.
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+%__post-type--base {
+    margin-top: 0;
+}
+
+%__post-heading {
+    @extend %__post-type--base;
+}
+
+%__post-copy {
+    @extend %__post-type--base;
+}
+
+%__post-title {
+    @extend %__post-heading;
+
+    margin-bottom: rem( 10 );
+}
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+// Rules, logic, and anything else that can be compiled to "vanilla" CSS goes here.
+
