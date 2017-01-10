@@ -25,10 +25,14 @@ $susy: (
 $gridMap: (
     default: (
         width: 100%,
-        max-width: rem( 1024 )
+        max-width: rem( 960 )
     ),
     narrow: (
         width: 100%,
         max-width: rem( 700 )
+    ),
+    wide: (
+        width: 100%,
+        max-width: rem( 1024 )
     )
 );

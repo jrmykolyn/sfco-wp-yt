@@ -1,0 +1,53 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+$post-preview: '.post-preview';
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+#{$post-preview} {
+    @include set( margin-bottom padding-top padding-bottom, rem( 20 ) );
+
+    background-color: getColor( white );
+    box-shadow: 0 rem( 5 ) rem( 20 ) rem( -5 ) rgba( getColor( black ), 0.15 );
+
+    h2 {
+        @extend %__post-preview-title;
+    }
+    
+    p {
+        @extend %__post-preview-copy;
+    }
+}
+
+#{$post-preview}__header,
+#{$post-preview}__body,
+#{$post-preview}__footer {
+    @include set( padding-right padding-left, rem( 20 ) );
+    @include descendant( last ) {
+        margin-bottom: 0;
+    }
+}
+
+
+#{$post-preview}__header {}
+
+
+#{$post-preview}__body {
+    @include set( padding-top padding-bottom, rem( 20 ) );
+}
+
+
+#{$post-preview}__footer {
+    border-top: rem( 1 ) solid getColor( grey--xlight );
+    padding-top: rem( 20 );
+}
+

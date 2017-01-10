@@ -1,0 +1,32 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+// Add any SASS variables that are specific to this file here.
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+%__post-preview-type--base {
+    margin-top: 0;
+}
+
+%__post-preview-copy {
+    @extend %__post-preview-type--base;
+
+    line-height: 1.4;
+}
+
+
+%__post-preview-title {
+    @extend %__post-preview-type--base;
+
+    margin-bottom: rem( 10 );
+}
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+// Rules, logic, and anything else that can be compiled to "vanilla" CSS goes here.
+

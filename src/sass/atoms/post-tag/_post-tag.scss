@@ -36,3 +36,10 @@ $post-tag: '.post-tag';
     font-size: rem( 12 );
     text-transform: uppercase;
 }
+
+
+#{$post-tag}--preview {
+    @extend #{$post-tag};
+
+    @include set( margin-right margin-bottom, rem( 10 ) );
+}
