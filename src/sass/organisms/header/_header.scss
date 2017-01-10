@@ -46,6 +46,9 @@ $logo: '.logo';
  */
  #{$logo}-wrap {
     @include size( auto 100% );
+    @include pseudo( before ) {
+        display: none;
+    }
 
     max-height: rem( 40 );
     display: block;
