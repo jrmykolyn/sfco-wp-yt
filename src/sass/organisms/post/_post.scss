@@ -40,7 +40,7 @@ $post-byline: #{$post}-byline;
 #{$post-header} {
     @include set( padding-top padding-bottom margin-bottom, rem( 40 ) );
 
-    border-bottom: rem( 1 ) solid getColor( grey--light );
+    border-bottom: rem( 1 ) solid getColor( grey--xlight );
 }
 
 
@@ -60,7 +60,7 @@ $post-byline: #{$post}-byline;
 }
 
 
-#{$post-byline} {
+#{$post-byline}-wrap {
     @include clearfix;
     @include size( 100% auto );
     @include position( relative );
@@ -68,6 +68,7 @@ $post-byline: #{$post}-byline;
     min-height: rem( 40 );
     padding-top: rem( 12 );
     padding-bottom: rem( 10 );
+    padding-left: rem( 60 );
 
     img {
         @include size( rem( 40 ) );
@@ -77,23 +78,23 @@ $post-byline: #{$post}-byline;
 
         border-radius: 50%;
     }
+}
 
-    p {
-        display: block;
-        margin: 0;
-        padding-left: rem( 60 );
-        font-size: rem( 15 );
-        line-height: 1.2;
 
-        @include descendant( first ) {
-            display: inline-block;
-            margin-right: rem( 8 );
-            padding-right: rem( 10 );
-            border-right: rem( 1 ) solid getColor( grey--light );
-        }
+#{$post-byline} {
+    display: block;
+    margin: 0;
+    font-size: rem( 15 );
+    line-height: 1.2;
 
-        @include descendant( last ) {
-            display: inline;
-        }
+    @include descendant( first ) {
+        display: inline-block;
+        margin-right: rem( 8 );
+        padding-right: rem( 10 );
+        border-right: rem( 1 ) solid getColor( grey--xlight );
+    }
+
+    @include descendant( last ) {
+        display: inline;
     }
 }
