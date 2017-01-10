@@ -1,0 +1,24 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+$wp-admin-bar: '#wpadminbar';
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+#{$wp-admin-bar} {
+    a {
+        // NOTE:
+        // Declaration below required in order to prevent conflict between theme and WordPress default styles.
+        @include pseudo( before ) {
+            display: none;
+        }
+    }
+}
