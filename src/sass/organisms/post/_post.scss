@@ -54,7 +54,7 @@ $post-byline: #{$post}-byline;
 
 
 #{$post-footer} {
-    border-top: rem( 2 ) solid getColor( black );
+    border-top: rem( 1 ) solid getColor( grey--xlight );
     margin-bottom: rem( 40 );
     padding-top: rem( 30 );
 }
