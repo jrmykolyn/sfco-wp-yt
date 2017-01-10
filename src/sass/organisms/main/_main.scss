@@ -15,6 +15,10 @@ $main: '.main';
 // --------------------------------------------------
 #{$main} {
     @include size( 100% auto );
+    @include descendant( last ) {
+        margin-bottom: 0;
+    }
 
     margin: 0 auto;
+    padding: rem( 40 ) 0;
 }

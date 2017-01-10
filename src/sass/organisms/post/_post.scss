@@ -38,7 +38,7 @@ $post-byline: #{$post}-byline;
 
 
 #{$post-header} {
-    @include set( padding-top padding-bottom margin-bottom, rem( 40 ) );
+    @include set( padding-bottom margin-bottom, rem( 40 ) );
 
     border-bottom: rem( 1 ) solid getColor( grey--xlight );
 }
