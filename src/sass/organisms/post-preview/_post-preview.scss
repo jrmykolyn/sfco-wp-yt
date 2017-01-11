@@ -13,15 +13,7 @@ $post-preview: '.post-preview';
 // --------------------------------------------------
 // SELECTORS 
 // --------------------------------------------------
-#{$post-preview} {
-    h2 {
-        @extend %__post-preview-title;
-    }
-    
-    p {
-        @extend %__post-preview-copy;
-    }
-}
+#{$post-preview} {}
 
 
 #{$post-preview}__inner {
@@ -68,3 +60,12 @@ $post-preview: '.post-preview';
     padding-top: rem( 20 );
 }
 
+
+#{$post-preview}-title {
+    @extend %__post-preview-title;
+}
+
+
+#{$post-preview}-dek {
+    @extend %__post-preview-copy;
+}

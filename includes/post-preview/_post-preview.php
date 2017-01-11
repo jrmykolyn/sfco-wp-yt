@@ -4,8 +4,8 @@
             <span class="post-tag--preview">Test Tag 123</span>
         </div>
         <div class="post-preview-body">
-            <h2><?= the_title(); ?></h2>
-            <p>
+            <h2 class="post-preview-title"><?= the_title(); ?></h2>
+            <p class="post-preview-dek">
             <?php
             if ( get_field( 'dek' ) ):
                 echo get_field( 'dek' );

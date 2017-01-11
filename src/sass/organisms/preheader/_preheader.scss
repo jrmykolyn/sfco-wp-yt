@@ -27,16 +27,8 @@ $preheader: '.preheader';
     @include size( 100% auto );
 
     max-width: rem( 960 );
-    color: getColor( white );
     margin: 0 auto;
     text-align: center;
-
-    & > * {
-        @include set( margin padding, 0 );
-
-        font-size: rem( 14 );
-        line-height: 1.5;
-    }
 }
 
 #{$preheader}__cta {
@@ -63,4 +55,14 @@ $preheader: '.preheader';
     background-color: transparent;
     border: rem( 2 ) solid getColor( white );
     border-radius: 50%;
+}
+
+
+#{$preheader}-copy {
+    @include set( margin padding, 0 );
+
+    color: getColor( white );
+
+    font-size: rem( 14 );
+    line-height: 1.5;
 }
