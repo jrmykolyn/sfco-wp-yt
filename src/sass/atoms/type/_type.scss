@@ -7,6 +7,14 @@ $post-copy: '.post-copy';
 // --------------------------------------------------
 // PLACEHOLDERS 
 // --------------------------------------------------
+%__copy {
+    color: getColor( black );
+
+    font-size: rem( 18 );
+    line-height: 1.75;
+}
+
+
 %__caption {
     color: getColor( grey--med );
 
@@ -21,8 +29,7 @@ $post-copy: '.post-copy';
 // SELECTORS 
 // --------------------------------------------------
 p {
-    font-size: rem( 18 );
-    line-height: 1.75;
+    @extend %__copy;
 }
 
 a {

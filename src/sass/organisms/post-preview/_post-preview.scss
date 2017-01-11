@@ -14,11 +14,6 @@ $post-preview: '.post-preview';
 // SELECTORS 
 // --------------------------------------------------
 #{$post-preview} {
-    @include set( margin-bottom padding-top padding-bottom, rem( 20 ) );
-
-    background-color: getColor( white );
-    box-shadow: 0 rem( 5 ) rem( 20 ) rem( -5 ) rgba( getColor( black ), 0.15 );
-
     h2 {
         @extend %__post-preview-title;
     }
@@ -28,9 +23,31 @@ $post-preview: '.post-preview';
     }
 }
 
-#{$post-preview}__header,
-#{$post-preview}__body,
-#{$post-preview}__footer {
+
+#{$post-preview}__inner {
+    @include clearfix;
+    @include display( block );
+    @include set( margin-bottom padding-top padding-bottom, rem( 20 ) );
+    @include transition( all, 0.25s );
+    @include transform( translateY( 0 ) );
+
+    @include pseudo( before ) {
+        display: none;
+    }
+
+    @include on( hover focus ) {
+        @include transform( translateY( -1% ) );
+        box-shadow: 0 rem( 10 ) rem( 20 ) rem( -5 ) rgba( getColor( black ), 0.1 );
+    }
+
+    background-color: getColor( white );
+    box-shadow: 0 rem( 5 ) rem( 20 ) rem( -5 ) rgba( getColor( black ), 0.15 );
+}
+
+
+#{$post-preview}-header,
+#{$post-preview}-body,
+#{$post-preview}-footer {
     @include set( padding-right padding-left, rem( 20 ) );
     @include descendant( last ) {
         margin-bottom: 0;
@@ -38,15 +55,15 @@ $post-preview: '.post-preview';
 }
 
 
-#{$post-preview}__header {}
+#{$post-preview}-header {}
 
 
-#{$post-preview}__body {
+#{$post-preview}-body {
     @include set( padding-top padding-bottom, rem( 20 ) );
 }
 
 
-#{$post-preview}__footer {
+#{$post-preview}-footer {
     border-top: rem( 1 ) solid getColor( grey--xlight );
     padding-top: rem( 20 );
 }
