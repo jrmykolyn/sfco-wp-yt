@@ -1,0 +1,84 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+$menu-container: '.menu-main-container';
+$menu-item: '.menu-item';
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+/**
+ * ...
+ */
+nav {
+    @include size( auto 100% );
+    @include display( flex );
+    @include flex-grow( 1 );
+}
+
+
+/**
+ * ...
+ *
+ * TODO:
+ * - Pulled nested declarations out into dedicated rules;
+ */
+#{$menu-container} {
+    @include size( 100% );
+
+    ul {
+        @include size( auto 100% );
+        @include display( flex );
+        @include justify-content( flex-end );
+        @include align-items( center );
+
+        margin: 0;
+    }
+}
+
+
+/**
+ * ...
+ *
+ * TODO:
+ * - Pulled nested declarations out into dedicated rules;
+ */
+ #{$menu-item} {
+    @include size( auto 100% );
+    @include display( block );
+
+    a {
+        @include size( auto 100% );
+        @include display( flex );
+        @include align-items( center );
+        @include transition( all, 0.25s );
+
+        @include on( hover focus ) {
+            color: getColor( white );
+            background-color: getColor( accent );
+        }
+
+        @include pseudo( before ) {
+            display: none;
+        }
+
+        color: getColor( grey--dark );
+        padding: 0 rem( 15 );
+
+        font-size: rem( 13 );
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+        span {
+            @include display( block );
+        }
+    }
+}

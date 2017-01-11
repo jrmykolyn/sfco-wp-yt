@@ -34,7 +34,6 @@ $logo: '.logo';
     @extend #{$layout-section}__inner;
 
     @include size( 100% );
-    @include set( padding-top padding-bottom, rem( 5 ) );
     @include display( flex );
 
     margin: 0 auto;
@@ -46,12 +45,8 @@ $logo: '.logo';
  */
  #{$logo}-wrap {
     @include size( auto 100% );
-    @include pseudo( before ) {
-        display: none;
-    }
-
-    max-height: rem( 40 );
-    display: block;
+    @include display( block );
+    @include set( padding-top padding-bottom, rem( 5 ) );
 
     img {
         @include size( auto );
@@ -62,41 +57,13 @@ $logo: '.logo';
  }
 
 
-/**
+ /**
  * ...
  */
-nav {
-    @include size( auto 100% );
-    @include display( flex );
-    @include flex-grow( 1 );
-}
-
-
-/**
- * ...
- *
- * TODO:
- * - Pulled nested declarations out into dedicated rules;
- * - replace class name with var. ref
- */
-.menu-main-container {
-    @include size( 100% );
-
-    ul {
-        @include size( auto 100% );
-        @include display( flex );
-        @include justify-content( flex-end );
-        @include align-items( center );
-        @include descendant( last ) {
-            margin-right: 0;
-        }
-
-        margin: 0;
-    }
-
-    li {
-        @include display( inline-block );
-
-        margin-right: rem( 20 );
-    }
-}
+ #{$logo}-wrap__link {
+     @include size( auto 100% );
+     @include display( block );
+     @include pseudo( before ) {
+         display: none;
+     }
+ }
