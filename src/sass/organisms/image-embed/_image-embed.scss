@@ -1,0 +1,46 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+$image-embed-wrap: '.wp-caption';
+$image-embed-text: '.wp-caption-text';
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+#{$image-embed-wrap} {
+    @include set( margin-top margin-bottom, rem( 30 ) );
+
+    width: 100% !important;
+    height: auto;
+
+    img {
+        @include display( block );
+
+        width: 100vw;
+        height: auto;
+        margin-left: calc( (50vw - 50%)*-1 );
+
+        /// TODO:
+        // - replace media query with call to SASS @mixin.
+        @media ( min-width: 768px ) {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+}
+
+
+#{$image-embed-text} {
+    @extend %__caption;
+
+    border-bottom: rem( 1 ) solid getColor( grey--xlight );
+    padding-top: rem( 15 );
+    padding-bottom: rem( 12 );
+}

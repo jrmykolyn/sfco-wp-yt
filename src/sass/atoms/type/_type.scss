@@ -7,7 +7,14 @@ $post-copy: '.post-copy';
 // --------------------------------------------------
 // PLACEHOLDERS 
 // --------------------------------------------------
-// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+%__caption {
+    color: getColor( grey--med );
+
+    font-size: rem( 11 );
+    text-transform: uppercase;
+    line-height: rem( 8 );
+    letter-spacing: 0.5px;
+}
 
 
 // --------------------------------------------------
