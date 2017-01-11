@@ -27,3 +27,15 @@ body {
     font-family: 'Catamaran', Arial, Helvetica, sans-serif;
     font-weight: 400;
 }
+
+
+/**
+ * ...
+ *
+ * TODO:
+ * - move rule below into 'atoms/' dir.
+ */
+button {
+    border: none;
+    background-color: transparent;
+}

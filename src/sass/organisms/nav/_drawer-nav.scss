@@ -1,0 +1,60 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+$drawer-nav: '.drawer-nav';
+$drawer-nav-header: #{$drawer-nav}-header;
+$drawer-nav-body: #{$drawer-nav}-body;
+$drawer-nav-footer: #{$drawer-nav}-footer;
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+#{$drawer-nav} {
+    @include size( rem( 300 ) 100% );
+    @include display( block );
+    @include position( fixed, 0 0 null null );
+    @include transition( all, 0.25s );
+    @include transform( translateX( 100% ) );
+
+    background: linear-gradient( 45deg, getColor( accent ), darken( getColor( accent ), 20% ) );
+    z-index: 1000;
+
+    .drawer-nav-active & {
+        @include transform( translateX( 0 ) );
+    }
+}
+
+
+#{$drawer-nav}__inner {
+    @include position( absolute, 0 0 0 0 );
+}
+
+#{$drawer-nav-header} {
+    @include size( 100% rem( 50 ) );
+    @include position( absolute, 0 null null 0 );
+
+    padding: 0 rem( 20 );
+}
+
+
+#{$drawer-nav-body} {
+    @include position( absolute, rem( 50 ) null null 0 );
+
+    width: 100%;
+    height: calc( 100% - #{rem(200)} );
+    padding: 0 rem( 20 );
+}
+
+
+#{$drawer-nav-footer} {
+    @include size( 100% rem( 150 ) );
+    @include position( absolute, null null 0 0 );
+
+    padding: 0 rem( 20 );
+}

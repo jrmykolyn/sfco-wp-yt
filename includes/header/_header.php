@@ -14,5 +14,7 @@
             )
         ); ?>
         </nav><!-- /.nav -->
+        <button type="button" name="drawer-nav-toggle" class="drawer-nav-toggle js--drawer-nav-toggle"></button>
+        <? get_template_part( 'includes/drawer-nav/_drawer-nav' ); ?>
     </div><!-- /.header__inner -->
 </header><!-- /.header -->

@@ -82,3 +82,21 @@ nav {
         }
     }
 }
+
+
+.drawer-nav-toggle {
+    @include size( auto 100% );
+    @include position( relative );
+    @include pseudo( after ) {
+        @include size( rem( 30 ) );
+        @include position( absolute, 50% null null 50% );
+        @include transform( translate( -50%, -50% ) );
+
+        content: '';
+        display: block;
+        background-color: getColor( accent );
+        opacity: 0.5;
+    }
+
+    width: rem( 50 );
+}
