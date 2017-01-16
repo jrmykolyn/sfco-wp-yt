@@ -1,7 +1,17 @@
+<?php
+$thumb = get_the_post_thumbnail();
+?>
+
 <article class="post-preview--large">
     <a href="<?= get_permalink(); ?>"class="post-preview--large__inner">
         <div class="post-preview-supporting-content--large">
-            <?= get_the_post_thumbnail(); ?>
+            <?php
+            if ( $thumb ):
+                echo $thumb;
+            else:
+                echo '<img src="https://placeholdit.imgix.net/~text?txtsize=48&txt=PLACEHOLDER&w=800&h=450" alt="Placeholder Image" />';
+            endif;
+            ?>
         </div><!-- /.post-preview-supporting-content--large -->
         <div class="post-preview-main-content--large">
             <div class="post-preview-header--large">
