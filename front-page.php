@@ -1,4 +1,7 @@
 <?php
+// DECLARE VARS.
+$MAX_FEATURED_POSTS = 3;
+
 get_header();
 ?>
 
@@ -7,10 +10,16 @@ get_header();
         <div class="layout-section__inner">
             <?php
             if ( have_posts() ):
+                $index = 0;
+
                 while ( have_posts() ): the_post();
+                    if ( $index < $MAX_FEATURED_POSTS ):
+                        get_template_part( 'includes/post-preview/_post-preview--large' );
+                    else:
+                        get_template_part( 'includes/post-preview/_post-preview' );
+                    endif;
 
-                    get_template_part( 'includes/post-preview/_post-preview' );
-
+                    $index++;
                 endwhile;
             else:
             ?>

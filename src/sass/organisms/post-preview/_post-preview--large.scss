@@ -1,0 +1,82 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+#{$post-preview}--large {
+    @extend #{$post-preview};
+
+    @include container;
+}
+
+
+#{$post-preview}--large__inner {
+    @extend #{$post-preview}__inner;
+}
+
+
+#{$post-preview}-main-content--large {
+    @extend #{$post}-preview-main-content;
+
+    @include span( 6 of 12 );
+    @include last;
+
+    padding-right: rem( 20 );
+
+    // Media queries
+    @media ( max-width: 599px ) {
+        @include span( 12 of 12 );
+
+        padding-left: rem( 20 );
+    }
+}
+
+
+#{$post-preview}-supporting-content--large {
+    @include span( 6 of 12 );
+    @include position( relative );
+
+    padding-top: 30%; /// TEMP
+
+    @media ( max-width: 599px ) {
+        @include span( 12 of 12 );
+        padding-top: 56.25%; /// TEMP
+    }
+
+    img {
+        @include size( 100% );
+        @include display( block );
+        @include position( absolute, 0 null null 0 );
+
+        object-fit: cover; /// TEMP
+    }
+}
+
+#{$post-preview}-header--large {
+    @extend #{$post-preview}-header;
+
+    @include set( padding-left padding-right, 0 );
+}
+
+
+#{$post-preview}-body--large {
+    @extend #{$post-preview}-body;
+
+    @include set( padding-left padding-right, 0 );
+}
+
+
+#{$post-preview}-footer--large {
+    @extend #{$post-preview}-footer;
+
+    @include set( padding-left padding-right, 0 );
+}

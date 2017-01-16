@@ -13,13 +13,14 @@ $post-preview: '.post-preview';
 // --------------------------------------------------
 // SELECTORS 
 // --------------------------------------------------
-#{$post-preview} {}
+#{$post-preview} {
+    display: block; /// TEMP - Force rule to compile.
+}
 
 
 #{$post-preview}__inner {
     @include clearfix;
     @include display( block );
-    @include set( margin-bottom padding-top padding-bottom, rem( 20 ) );
     @include transition( all, 0.25s );
     @include transform( translateY( 0 ) );
 
@@ -34,6 +35,14 @@ $post-preview: '.post-preview';
 
     background-color: getColor( white );
     box-shadow: 0 rem( 5 ) rem( 20 ) rem( -5 ) rgba( getColor( black ), 0.15 );
+    margin-bottom: rem( 20 );
+}
+
+#{$post-preview}-main-content {
+    @include set( padding-top padding-bottom, rem( 20 ) );
+
+    @include span( 12 of 12 );
+    @include last;
 }
 
 
