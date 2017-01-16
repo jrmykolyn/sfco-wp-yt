@@ -18,6 +18,7 @@ $post-copy: '.post-copy';
 %__caption {
     color: getColor( grey--med );
 
+    font-family: 'Catamaran', Arial, Helvetica, sans-serif;
     font-size: rem( 11 );
     text-transform: uppercase;
     line-height: rem( 8 );
@@ -74,4 +75,29 @@ h6 {
 
     font-size: rem( 22 );
     line-height: 1.4;
+}
+
+blockquote {
+    @include size( 100% auto );
+
+    margin: rem( 50 ) 0;
+
+    p {
+        color: getColor( accent );
+        margin: 0;
+
+        font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+        font-size: rem( 24 );
+        line-height: 1.5;
+    }
+
+    cite {
+        @extend %__caption;
+
+        display: block;
+        color: getColor( grey--light );
+        border-top: rem( 1 ) solid getColor( grey--xlight );
+        margin-top: rem( 15 );
+        padding-top: rem( 15 );
+    }
 }
