@@ -1,9 +1,11 @@
 // --------------------------------------------------
 // VARIABLES 
 // --------------------------------------------------
-$menu-container: '.menu-main-container';
 $menu-item: '.menu-item';
 
+$locals: (
+    border-thickness: rem( 1 )
+);
 
 // --------------------------------------------------
 // PLACEHOLDERS 
@@ -21,25 +23,20 @@ nav {
     @include size( auto 100% );
     @include display( flex );
     @include flex-grow( 1 );
-}
 
+    z-index: 999;
 
-/**
- * ...
- *
- * TODO:
- * - Pulled nested declarations out into dedicated rules;
- */
-#{$menu-container} {
-    @include size( 100% );
+    & > *[class^="menu"] {
+        @include size( 100% );
 
-    ul {
-        @include size( auto 100% );
-        @include display( flex );
-        @include justify-content( flex-end );
-        @include align-items( center );
+        & > ul {
+            @include size( auto 100% );
+            @include display( flex );
+            @include justify-content( flex-end );
+            @include align-items( center );
 
-        margin: 0;
+            margin: 0;
+        }
     }
 }
 
@@ -53,8 +50,9 @@ nav {
  #{$menu-item} {
     @include size( auto 100% );
     @include display( block );
+    @include position( relative );
 
-    a {
+    & > a {
         @include size( auto 100% );
         @include display( flex );
         @include align-items( center );
@@ -76,9 +74,68 @@ nav {
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 1px;
+        text-align: center;
 
         span {
             @include display( block );
+        }
+    }
+}
+
+
+/**
+ * ...
+ *
+ * TODO:
+ * - Pulled nested declarations out into dedicated rules;
+ */
+#{$menu-item}-has-children {
+    // Styles for '2nd level' nav. menu:
+    & > ul {
+        @include size( 200% auto );
+        @include position( absolute, 100% null null 50% );
+        @include transform( translateX( -50% ) );
+        @include set( margin padding, 0 );
+
+        display: none;
+        background-color: getColor( white );
+        box-shadow: 0 rem( 3 ) rem( 20 ) rem( -5 ) rgba( 0,0,0,0.2 );
+
+        li {
+            @include size( 100% auto );
+            @include display( block );
+
+            position: relative;
+            border-top: map-get( $locals, border-thickness ) solid getColor( grey--xlight );
+
+            a {
+                @include on( hover focus ) {
+                    color: getColor( grey--dark );
+                    background-color: #F9F9F9;
+                }
+
+                padding: rem( 15 ) rem( 10 ) rem( 12 );
+                font-size: rem( 12 );
+                font-weight: 400;
+            }
+
+            // Styles for '3nd level' nav. menu:
+            // TODO:
+            // - Pull styles out into dedicated rule.
+            ul {
+                width: 100%;
+                top: map-get( $locals, border-thickness)*-1;
+                right: 100%;
+                left: auto; // Clear `left` property, inherited from '2nd level' menu styles.
+                transform: translateZ( 0 ); // Clear `transform` property, inherited from '2nd level' menu styles.
+            }
+        }
+    }
+
+    // Show <ul> direct descendant on hover.
+    &:hover {
+        & > ul {
+            display: block;
         }
     }
 }
