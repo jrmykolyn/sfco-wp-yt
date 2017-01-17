@@ -1,0 +1,53 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+// Add any SASS variables that are specific to this file here.
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+/**
+ * Theme-wide styles for <address> tag.
+ */
+address {
+    @include set( margin-top margin-bottom, rem( 20 ) );
+
+    color: getColor( grey );
+}
+
+/**
+ * Theme-wide styles for 'abbreviated' (<abbr>) text.
+ */
+abbr {
+    font-weight: 600;
+    font-style: italic;
+    text-decoration: none !important;
+
+    @include pseudo( after ) {
+        content: '.';
+    }
+}
+
+/**
+ * Theme-wide styles for 'acronym' text.
+ */
+acronym {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/**
+ * Theme-wide styles for 'big' text.
+ *
+ * NOTE: Rule below forces <big> text to display at same size as surrounding characters.
+ */
+big {
+    font-size: inherit; // NOTE: `initial` value prevents type from appearing larger than surrounding text.
+}
