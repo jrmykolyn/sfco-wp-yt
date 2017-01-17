@@ -51,3 +51,71 @@ acronym {
 big {
     font-size: inherit; // NOTE: `initial` value prevents type from appearing larger than surrounding text.
 }
+
+
+/**
+ * Theme wide styles for the following type/text styles:
+ * - 'code' (<code>);
+ * -'keyboard' (<kbd>);
+ * - 'teletype' (<tt>);
+ * - 'variable' (<var>).
+ */
+code,
+kbd,
+tt,
+var {
+    display: inline-block;
+    color: getColor( accent );
+    background-color: #F6F6F6;
+    border: rem( 1 ) solid getColor( grey--xlight );
+    border-radius: rem( 3 );
+
+    padding-left: rem( 5 );
+    padding-right: rem( 5 );
+
+    font-size: smaller;
+    font-style: normal;
+}
+
+
+/**
+ * Theme-wide styles for 'deleted' (<delete>) and 'strike through' (<strike>) text.
+ */
+del,
+strike {
+    @include pseudo( after ) {
+        @include size( 100% rem( 3 ) );
+        @include position( absolute, 50% null null 0 );
+        @include transform( translateY( -50% ) );
+
+        content: '';
+        display: block;
+        background-color: getColor( accent );
+    }
+
+    display: inline-block;
+    color: getColor( grey--light );
+    position: relative;
+    text-decoration: none !important;
+}
+
+
+/**
+ * Theme-wide styles for 'inserted' (<ins>) text.
+ */
+ins {
+    @include pseudo( before after ) {
+        color: getColor( accent );
+        font-weight: 700;
+    }
+
+    @include pseudo( before ) {
+        content: '>> ';
+    }
+
+    @include pseudo( after ) {
+        content: ' <<';
+    }
+
+    text-decoration: none !important;
+}
