@@ -1,0 +1,41 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+// Add any SASS variables that are specific to this file here.
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+table {
+    @include size( 100% auto );
+
+    background-color: #F9F9F9;
+    border: rem( 1 ) solid getColor( grey--light );
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: rem( 50 ) 0;
+
+    thead {
+        border-bottom: rem( 1 ) solid getColor( grey--light );
+    }
+    
+    tbody {
+        tr {
+            &:nth-child( odd ) {
+                background: rgba( getColor( black ), 0.05 );
+            }
+        }
+    }
+
+    th,
+    td {
+        padding: rem( 15 ) rem( 15 ) rem( 12 );
+    }
+}
