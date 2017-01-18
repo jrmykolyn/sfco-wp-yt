@@ -3,7 +3,7 @@
     <head>
         <?php wp_head(); ?>
         <meta charset="utf-8">
-        <title>YT Theme</title>
+        <title><?php the_title_attribute(); ?></title>
         <!-- FONTS -->
         <link href="https://fonts.googleapis.com/css?family=Catamaran:400,500,600,700|Montserrat:400,700" rel="stylesheet">
         <!-- PROJECT STYLES -->
