@@ -4,34 +4,64 @@
 $image-embed-wrap: '.wp-caption';
 $image-embed-text: '.wp-caption-text';
 
+$wp-class--align-left: '.alignleft';
+$wp-class--align-right: '.alignright';
+$wp-class--align-center: '.aligncenter';
+
 
 // --------------------------------------------------
 // PLACEHOLDERS 
 // --------------------------------------------------
-// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+%__image-embed--base {
+    margin: rem( 30 ) auto;
+}
+
+
+%__image-embed--align-left {
+    float: left;
+    margin-right: rem( 30 );
+}
+
+
+%__image-embed--align-right {
+    float: right;
+    margin-left: rem( 30 );
+}
 
 
 // --------------------------------------------------
 // SELECTORS 
 // --------------------------------------------------
 #{$image-embed-wrap} {
-    @include set( margin-top margin-bottom, rem( 30 ) );
+    @extend %__image-embed--base;
 
-    width: 100% !important;
+    width: auto;
+    max-width: 100%;
     height: auto;
 
-    img {
-        @include display( block );
+    &#{$wp-class--align-left}, {
+        @extend %__image-embed--align-left;
+    }
 
-        width: 100vw;
-        height: auto;
-        margin-left: calc( (50vw - 50%)*-1 );
+    &#{$wp-class--align-right}, {
+        @extend %__image-embed--align-left;
+    }
 
-        /// TODO:
-        // - replace media query with call to SASS @mixin.
-        @media ( min-width: 768px ) {
-            width: 100%;
-            margin-left: 0;
+    &#{$wp-class--align-center} {
+        img {
+            @include display( block );
+
+            width: 100vw;
+            max-width: 100vw;
+            height: auto;
+            margin-left: calc( (50vw - 50%)*-1 );
+
+            /// TODO:
+            // - replace media query with call to SASS @mixin.
+            @media ( min-width: 768px ) {
+                width: 100%;
+                margin-left: 0;
+            }
         }
     }
 }
@@ -41,6 +71,26 @@ $image-embed-text: '.wp-caption-text';
     @extend %__caption;
 
     border-bottom: rem( 1 ) solid getColor( grey--xlight );
+    margin-bottom: 0;
     padding-top: rem( 15 );
     padding-bottom: rem( 12 );
+}
+
+
+/**
+ * Styles for <img> elems. with supplementary, WordPress-specific classes.
+ */
+img {
+    &#{$wp-class--align-left},
+    &#{$wp-class--align-right} {
+        @extend %__image-embed--base;
+    }
+
+    &#{$wp-class--align-left} {
+        @extend %__image-embed--align-left;
+    }
+
+    &#{$wp-class--align-right} {
+        @extend %__image-embed--align-right;
+    }
 }
