@@ -38,7 +38,8 @@ gulp.task( 'default', [ 'connect', 'sass', 'scripts', 'watch' ], function() {
 
 
 /**
- * ...
+ * Task starts `gulp-connect` server.
+ * eg. allows for other tasks to hook into live-reload functionality.
  */
 gulp.task( 'connect', function() {
     connect.server( {
@@ -50,7 +51,10 @@ gulp.task( 'connect', function() {
 /**
  * Task converts contents of `styles.scss` file (plus any
  * `*.scss` linked via `@import)` to vanilla CSS.
+ *
  * Resulting CSS file is saved to specified 'dest' directory
+ *
+ * Output of task is also piped to `connect`, triggering live-reload
  */
 gulp.task( 'sass', function() {
     console.log( 'INSIDE TASK: `sass`' );
