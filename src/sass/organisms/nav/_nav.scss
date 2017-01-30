@@ -51,6 +51,7 @@ nav {
     @include size( auto 100% );
     @include display( block );
     @include position( relative );
+    @include set( margin padding, 0);
 
     & > a {
         @include size( auto 100% );

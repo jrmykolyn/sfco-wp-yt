@@ -47,6 +47,7 @@ $logo: '.logo';
     @include size( auto 100% );
     @include display( block );
     @include set( padding-top padding-bottom, rem( 5 ) );
+    @include flex-shrink( 0 );
 
     img {
         @include size( auto );
