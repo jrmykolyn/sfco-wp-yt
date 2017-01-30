@@ -4,6 +4,7 @@ var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
+var connect = require('gulp-connect');
 
 
 /* DECLARE VARS */
@@ -26,12 +27,23 @@ var PATHS = {
  *
  * The following tasks are executed *before* the contents of
  * the `default` task.
+ * - `connect`
  * - `sass`
  * - `scripts`
  * - `watch`
  */
-gulp.task( 'default', [ 'sass', 'scripts', 'watch' ], function() {
+gulp.task( 'default', [ 'connect', 'sass', 'scripts', 'watch' ], function() {
     console.log( 'INSIDE TASK: `default`' );
+} );
+
+
+/**
+ * ...
+ */
+gulp.task( 'connect', function() {
+    connect.server( {
+        livereload: true
+    } );
 } );
 
 
@@ -55,7 +67,8 @@ gulp.task( 'sass', function() {
                 ]
             }).on( 'error', sass.logError )
         )
-        .pipe( gulp.dest( PATHS.styles.dest ) );
+        .pipe( gulp.dest( PATHS.styles.dest ) )
+        .pipe( connect.reload() );
 } );
 
 
