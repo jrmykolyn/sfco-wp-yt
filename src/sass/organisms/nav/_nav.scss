@@ -156,10 +156,12 @@ nav {
     @include pseudo( before after ) {
         @include size( 100% );
         @include position( absolute, 0 null null 0 );
+        @include transition( transform 0.1s );
 
         content: '';
         display: block;
         background-color: inherit;
+        transform-origin: center;
     }
 
     @include pseudo( before ) {
@@ -168,5 +170,24 @@ nav {
 
     @include pseudo( after ) {
         @include transform( translateY( 250% ) );
+    }
+
+    /// TODO:
+    // - Move 'active' class into SASS var.
+    // - Pull declarations below into new rule.
+    .drawer-nav-active & {
+        background-color: transparent;
+
+        @include pseudo( before after ) {
+            background-color: getColor( accent );
+        }
+
+        @include pseudo( before ) {
+            @include transform( translateY( 0 ) rotate( 45deg ) );
+        }
+
+        @include pseudo( after ) {
+            @include transform( translateY( 0 ) rotate( -45deg ) );
+        }
     }
 }
