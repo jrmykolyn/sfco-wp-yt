@@ -1,0 +1,109 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+$pagination: '.pagination';
+$nav-links: '.nav-links';
+$dots: '.dots';
+$prev: '.prev';
+$next: '.next';
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+#{$pagination} {
+    #{$nav-links} {
+        display: block;
+        margin: 0 auto;
+    }
+
+    a,
+    span {
+        @include pseudo( before ) {
+            display: none;
+        }
+
+        @include display( inline-block );
+
+        padding: 0 rem( 10 );
+        font-size: rem( 16 );
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: rem( 1 );
+    }
+
+    a {
+        @include on( hover ) {
+            border-bottom: rem( 3 ) solid getColor( grey--xlight );
+        }
+    }
+
+    span {
+        &:not(#{$dots}) {
+            color: getColor( black );
+            border-bottom: rem( 3 ) solid getColor( black );
+        }
+    }
+
+    #{$dots} {
+        color: getColor( accent );
+    }
+
+    #{$prev},
+    #{$next} {
+        @include display( block );
+        @include set( padding-left padding-right, 0 );
+        @include position( relative );
+        // @include pseudo( after ) {
+        //     content: '';
+        //     width: rem( 20 );
+        //     height: rem( 2 );
+        //     display: block;
+        //     background-color: getColor( grey--xlight );
+        //     
+        //     @include position( absolute, 50% null null null );
+        // }
+
+        text-align: center;
+
+        @media ( min-width: rem( 600 ) ) {
+            display: inline-block;
+        }
+    }
+
+    #{$prev} {
+        margin-bottom: rem( 20 );
+
+        @media ( min-width: rem( 600 ) ) {
+            margin-right: rem( 40 );
+            margin-bottom: 0;
+
+            @include pseudo( after ) {
+                @include transform( translate( 80%, -50% ) )
+
+                right: rem( -20 );
+            }
+        }
+    }
+
+    #{$next} {
+        margin-top: rem( 20 );
+
+        @media ( min-width: rem( 600 ) ) {
+            margin-top: 0;
+            margin-left: rem( 40 );
+
+            @include pseudo( after ) {
+                @include transform( translate( -80%, -50% ) )
+
+                left: rem( -20 );
+            }
+        }
+    }
+}
