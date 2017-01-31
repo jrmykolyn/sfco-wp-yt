@@ -143,18 +143,30 @@ nav {
 
 
 .drawer-nav-toggle {
-    @include size( auto 100% );
+    @include size( rem( 35 ) auto );
     @include position( relative );
-    @include pseudo( after ) {
-        @include size( rem( 30 ) );
-        @include position( absolute, 50% null null 50% );
-        @include transform( translate( -50%, -50% ) );
+}
+
+.drawer-nav-toggle__elem {
+    @include size( 100% rem( 3 ) );
+    @include position( absolute, 50% null null 0 );
+
+    background-color: getColor( accent );
+
+    @include pseudo( before after ) {
+        @include size( 100% );
+        @include position( absolute, 0 null null 0 );
 
         content: '';
         display: block;
-        background-color: getColor( accent );
-        opacity: 0.5;
+        background-color: inherit;
     }
 
-    width: rem( 50 );
+    @include pseudo( before ) {
+        @include transform( translateY( -250% ) );
+    }
+
+    @include pseudo( after ) {
+        @include transform( translateY( 250% ) );
+    }
 }
