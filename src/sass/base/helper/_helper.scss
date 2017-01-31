@@ -1,0 +1,24 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+// Add any SASS variables that are specific to this file here.
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+.fade-in {
+    @include transition( opacity 0.4s 0.2s );
+
+    opacity: 0;
+
+    &.faded-in {
+        opacity: 1;
+    }
+}
