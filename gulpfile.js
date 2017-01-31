@@ -88,7 +88,8 @@ gulp.task( 'scripts', function() {
             path.basename += '.min';
             path.extname = '.js';
         } ) )
-        .pipe( gulp.dest( PATHS.js.dest ) );
+        .pipe( gulp.dest( PATHS.js.dest ) )
+        .pipe( connect.reload() );
 } );
 
 
@@ -101,4 +102,5 @@ gulp.task( 'watch', function() {
 
     gulp.watch( PATHS.styles.src + '**/*.scss', [ 'sass' ] );
     gulp.watch( 'src/**/*.html', [ 'html' ] );
+    gulp.watch( 'src/**/*.js', [ 'scripts' ] );
 } );
