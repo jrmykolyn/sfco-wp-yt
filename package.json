@@ -4,7 +4,8 @@
   "description": "YT is WordPress blog theme that is well suited for displaying technology or development/coding-related content.",
   "main": "index.php",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "zip": "gulp build && cp -r dist ${PWD##*/} && zip -r ${PWD##*/}.zip ${PWD##*/} && rm -rf ${PWD##*/}"
   },
   "repository": {
     "type": "git",
