@@ -9,6 +9,10 @@ var connect = require('gulp-connect');
 
 /* DECLARE VARS */
 var PATHS = {
+    templates: {
+        src: 'src/templates/',
+        dest: './dist/'
+    },
     styles: {
         src: 'src/sass/',
         dest: './css/',
@@ -28,12 +32,35 @@ var PATHS = {
  * The following tasks are executed *before* the contents of
  * the `default` task.
  * - `connect`
+ * - `meta`
+ * - `templates`
  * - `sass`
  * - `scripts`
  * - `watch`
  */
-gulp.task( 'default', [ 'connect', 'sass', 'scripts', 'watch' ], function() {
+gulp.task( 'default', [ 'connect', 'meta', 'templates', 'sass', 'scripts', 'watch' ], function() {
     console.log( 'INSIDE TASK: `default`' );
+} );
+
+
+/**
+ * ...
+ */
+gulp.task( 'meta', function() {
+    console.log( 'INSIDE TASK: `meta`' );
+
+    gulp.src( './src/style.css' )
+        .pipe( gulp.dest( './dist/' ) );
+} );
+
+/**
+ * ...
+ */
+gulp.task( 'templates', function() {
+    console.log( 'INSIDE TASK: `templates`' );
+
+    gulp.src( PATHS.templates.src + '**/*.php' )
+        .pipe( gulp.dest( PATHS.templates.dest ) );
 } );
 
 
@@ -77,7 +104,7 @@ gulp.task( 'sass', function() {
 
 
 /**
- * Task concanenates, minifies and renames all `*.js` files in
+ * Task concatenates, minifies and renames all `*.js` files in
  * `src/`directory. Resulting files are saved to specified 'dest'.
  */
 gulp.task( 'scripts', function() {
@@ -100,7 +127,7 @@ gulp.task( 'scripts', function() {
 gulp.task( 'watch', function() {
     console.log( 'INSIDE TASK: `watch`' );
 
+    gulp.watch( PATHS.templates.src + '**/*.php', [ 'templates' ] );
     gulp.watch( PATHS.styles.src + '**/*.scss', [ 'sass' ] );
-    gulp.watch( 'src/**/*.html', [ 'html' ] );
-    gulp.watch( 'src/**/*.js', [ 'scripts' ] );
+    gulp.watch( PATHS.js.src, [ 'scripts' ] );
 } );
