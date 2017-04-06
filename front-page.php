@@ -23,7 +23,7 @@ get_header();
                 endwhile;
             else:
             ?>
-            <h2>Whoops! Loos like you don't have any posts.</h2>
+            <h2>Whoops! Looks like you don't have any posts.</h2>
             <?php
             endif;
             ?>
