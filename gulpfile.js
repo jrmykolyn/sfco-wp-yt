@@ -46,6 +46,14 @@ gulp.task( 'default', [ 'connect', 'meta', 'templates', 'sass', 'scripts', 'watc
 /**
  * ...
  */
+gulp.task( 'build', [ 'meta', 'templates', 'sass', 'scripts' ], function() {
+    console.log( 'INSIDE TASK: `build`' );
+} );
+
+
+/**
+ * ...
+ */
 gulp.task( 'meta', function() {
     console.log( 'INSIDE TASK: `meta`' );
 
