@@ -15,11 +15,11 @@ var PATHS = {
     },
     styles: {
         src: 'src/sass/',
-        dest: './css/',
+        dest: './dist/css/',
     },
     js: {
         src: 'src/js/**/*.js',
-        dest: './js/'
+        dest: './dist/js/'
     }
 };
 
