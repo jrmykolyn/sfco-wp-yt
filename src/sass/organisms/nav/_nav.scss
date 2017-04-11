@@ -1,5 +1,5 @@
 // --------------------------------------------------
-// VARIABLES 
+// VARIABLES
 // --------------------------------------------------
 $menu-item: '.menu-item';
 
@@ -8,20 +8,20 @@ $locals: (
 );
 
 // --------------------------------------------------
-// PLACEHOLDERS 
+// PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
 
 // --------------------------------------------------
-// SELECTORS 
+// SELECTORS
 // --------------------------------------------------
 /**
  * ...
  */
 nav {
     @include size( auto 100% );
-    @include display( flex );
+    @include display( none );
     @include flex-grow( 1 );
 
     z-index: 999;
@@ -36,8 +36,13 @@ nav {
             @include align-items( center );
 
             margin: 0;
-            padding: 0 1rem;
+            padding-left: 1rem;
         }
+    }
+
+    // Media queries.
+    @media ( min-width: 768px ) {
+        @include display( flex );
     }
 }
 
@@ -146,6 +151,13 @@ nav {
 .drawer-nav-toggle {
     @include size( rem( 35 ) auto );
     @include position( relative );
+
+    display: block;
+
+    // Media queries.
+    @media( min-width: 768px ) {
+        display: none;
+    }
 }
 
 .drawer-nav-toggle__elem {

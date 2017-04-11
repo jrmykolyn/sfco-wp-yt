@@ -1,5 +1,5 @@
 // --------------------------------------------------
-// VARIABLES 
+// VARIABLES
 // --------------------------------------------------
 $drawer-nav: '.drawer-nav';
 $drawer-nav-header: #{$drawer-nav}-header;
@@ -7,13 +7,13 @@ $drawer-nav-body: #{$drawer-nav}-body;
 $drawer-nav-footer: #{$drawer-nav}-footer;
 
 // --------------------------------------------------
-// PLACEHOLDERS 
+// PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
 
 // --------------------------------------------------
-// SELECTORS 
+// SELECTORS
 // --------------------------------------------------
 #{$drawer-nav} {
     @include size( rem( 300 ) 100% );
@@ -39,6 +39,8 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
     @include size( 100% rem( 50 ) );
     @include position( absolute, 0 null null 0 );
 
+	display: flex;
+	align-items: center;
     padding: 0 rem( 20 );
 }
 

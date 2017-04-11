@@ -1,18 +1,18 @@
 // --------------------------------------------------
-// VARIABLES 
+// VARIABLES
 // --------------------------------------------------
 $header: '.header';
 $logo: '.logo';
 
 
 // --------------------------------------------------
-// PLACEHOLDERS 
+// PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
 
 // --------------------------------------------------
-// SELECTORS 
+// SELECTORS
 // --------------------------------------------------
 /**
  * ...
@@ -36,6 +36,8 @@ $logo: '.logo';
     @include size( 100% );
     @include display( flex );
 
+    justify-content: space-between;
+
     margin: 0 auto;
 }
 
@@ -48,6 +50,8 @@ $logo: '.logo';
     @include display( block );
     @include set( padding-top padding-bottom, rem( 5 ) );
     @include flex-shrink( 0 );
+
+    margin-right: auto;
 
     img {
         @include size( auto );
