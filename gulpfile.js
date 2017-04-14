@@ -5,6 +5,7 @@ var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var connect = require('gulp-connect');
+var filter = require('gulp-filter');
 
 
 /* DECLARE VARS */
@@ -112,18 +113,22 @@ gulp.task( 'sass', function() {
 
 
 /**
- * Task concatenates, minifies and renames all `*.js` files in
- * `src/`directory. Resulting files are saved to specified 'dest'.
+ * Task minifies and renames all theme-specific `*.js` files in `src/`directory; resulting files are saved to specified 'dest'.
+ * Task also moves/migrates all 'vendor' JS files from 'src/' to specified destination folder.
  */
 gulp.task( 'scripts', function() {
+	var vendorScriptFilter = filter( [ '*', '!vendor/**/*.js' ], { restore: true } ); // NOTE - Array of patterns cannot start with `!...`. See: http://stackoverflow.com/questions/24235860/gulp-filter-not-filtering-out-excluded-files-correctly
+
     return gulp.src( PATHS.js.src )
-        .pipe( concat( 'main.js' ) )
+		.pipe( vendorScriptFilter )
         .pipe( uglify() )
         .pipe( rename( function( path ) {
             path.basename += '.min';
             path.extname = '.js';
         } ) )
         .pipe( gulp.dest( PATHS.js.dest ) )
+		.pipe( vendorScriptFilter.restore ) // Migrate filtered out 'vendor' scripts.
+		.pipe( gulp.dest( PATHS.js.dest ) )
         .pipe( connect.reload() );
 } );
 
