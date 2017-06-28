@@ -1,5 +1,5 @@
 <div class="post-header">
-    <a href="#" class="post-tag--leading">Post Tag</a>
+    <?php get_template_part( 'includes/category-node/_category-node' ); ?>
     <h1><?= the_title(); ?></h1>
     <p class="post-copy--leading"><?= get_field( 'dek' ); ?></p>
     <div class="post-byline-wrap">

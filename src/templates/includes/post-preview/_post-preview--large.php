@@ -14,9 +14,16 @@ $thumb = get_the_post_thumbnail();
             ?>
         </div><!-- /.post-preview-supporting-content--large -->
         <div class="post-preview-main-content--large">
+            <?php
+            /// TODO[@jrmykolyn] - Update 'category' markup to include link.
+            if ( get_first_post_category( get_the_ID() ) ):
+            ?>
             <div class="post-preview-header--large">
-                <span class="post-tag--preview">Test Tag 123</span>
+                <span class="category-node">Test Tag 123</span>
             </div>
+            <?php
+            endif;
+            ?>
             <div class="post-preview-body--large">
                 <h1 class="post-preview-title"><?= the_title(); ?></h1>
                 <p class="post-preview-dek">
