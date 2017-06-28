@@ -1,17 +1,31 @@
 // --------------------------------------------------
-// VARIABLES 
+// VARIABLES
 // --------------------------------------------------
 $footer: '.footer';
+$footer-section: '.footer-section';
+$footer-col: '.footer-col';
 
 
 // --------------------------------------------------
-// PLACEHOLDERS 
+// PLACEHOLDERS
 // --------------------------------------------------
-// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+%__footer-section--base {
+    @extend #{$layout-section};
+
+    // Positional styles
+    &:not( :last-child ) {
+        margin-bottom: rem( 30 );
+    }
+
+    // Descendent elems
+    > *:last-child {
+        margin-bottom: 0;
+    }
+}
 
 
 // --------------------------------------------------
-// SELECTORS 
+// SELECTORS
 // --------------------------------------------------
 /**
  * ...
@@ -19,8 +33,33 @@ $footer: '.footer';
 #{$footer} {
     @extend #{$layout-section};
 
+    @include set( padding-top padding-bottom, rem( 30 ) );
+
     min-height: rem( 200 );
     background-color: #222;
+    font-size: rem( 14 );
+
+    * {
+        color: #666; /// TEMP
+        margin-top: 0;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    ul {
+        @include set( margin padding, 0 );
+
+        list-style: none;
+    }
+
+    li {
+        @include set( margin padding, 0 );
+
+        display: block;
+        margin-bottom: 0.625em;
+    }
 }
 
 
@@ -31,4 +70,39 @@ $footer: '.footer';
     @extend #{$layout-section}__inner;
 
     margin: 0 auto;
+}
+
+
+/**
+ * ...
+ */
+#{$footer-section} {
+    @extend %__footer-section--base;
+}
+
+
+/**
+ * ...
+ */
+#{$footer-section}--bottom {
+    @extend %__footer-section--base;
+
+    text-align: center;
+}
+
+
+/**
+ * ...
+ */
+#{$footer-col} {
+    @include span( 3 of 12 );
+
+    // Positional styles
+    &:nth-child( 4n ) {
+        @include last;
+    }
+
+    &:nth-child( 4n + 1 ) {
+        clear: left;
+    }
 }
