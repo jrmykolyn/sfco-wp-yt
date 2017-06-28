@@ -60,4 +60,20 @@ function add_plugin_notice( $pluginName, $pluginType="error") {
 function add_acf_plugin_notice() {
     add_plugin_notice( 'Advanced Custom Fields' );
 }
+
+/* MISC. */
+/// TODO[@jrmykolyn] - Move 'magic number' into config. variable/object.
+function get_max_featured_posts() {
+    return 3; /// TEMP
+}
+
+function get_first_post_category( $id ) {
+    $category = get_the_category( $id );
+
+    if ( !$category || !$category[ 0 ] || $category[ 0 ]->name == 'Uncategorized' ) {
+        return null;
+    } else {
+        return $category[ 0 ];
+    }
+}
 ?>
