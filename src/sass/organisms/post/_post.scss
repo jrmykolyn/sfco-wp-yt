@@ -1,21 +1,20 @@
 // --------------------------------------------------
-// VARIABLES 
+// VARIABLES
 // --------------------------------------------------
 $post: '.post';
 $post-header: #{$post}-header;
 $post-body: #{$post}-body;
-$post-footer: #{$post}-footer;
 $post-byline: #{$post}-byline;
 
 
 // --------------------------------------------------
-// PLACEHOLDERS 
+// PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
 
 // --------------------------------------------------
-// SELECTORS 
+// SELECTORS
 // --------------------------------------------------
 #{$post} {
     h1,
@@ -26,7 +25,7 @@ $post-byline: #{$post}-byline;
     h6 {
         @extend %__post-heading;
     }
-    
+
     h1 {
         @extend %__post-title;
     }
@@ -50,13 +49,6 @@ $post-byline: #{$post}-byline;
     @include descendant( last ) {
         margin-bottom: 0;
     }
-}
-
-
-#{$post-footer} {
-    border-top: rem( 1 ) solid getColor( grey--xlight );
-    margin-bottom: rem( 40 );
-    padding-top: rem( 30 );
 }
 
 

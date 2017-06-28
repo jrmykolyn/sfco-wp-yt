@@ -1,0 +1,27 @@
+// --------------------------------------------------
+// VARIABLES
+// --------------------------------------------------
+$post-footer: '.post-footer';
+
+// --------------------------------------------------
+// PLACEHOLDERS
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+// --------------------------------------------------
+// SELECTORS
+// --------------------------------------------------
+#{$post-footer} {
+    border-top: rem( 1 ) solid getColor( grey--xlight );
+    margin-bottom: rem( 40 );
+    padding-top: rem( 30 );
+
+    // Descendant elems.
+    @include descendant( last ) {
+        margin-bottom: 0;
+    }
+}
+
+#{$post-footer}__tags {
+    margin-bottom: rem( 10 );
+}
