@@ -1,17 +1,17 @@
 // --------------------------------------------------
-// VARIABLES 
+// VARIABLES
 // --------------------------------------------------
 // Add any SASS variables that are specific to this file here.
 
 
 // --------------------------------------------------
-// PLACEHOLDERS 
+// PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
 
 // --------------------------------------------------
-// SELECTORS 
+// SELECTORS
 // --------------------------------------------------
 /**
  * Theme-wide styles for <address> tag.
@@ -118,4 +118,28 @@ ins {
     }
 
     text-decoration: none !important;
+}
+
+/**
+ * Theme-wide styles for 'pre-formatted' (<pre>) text.
+ */
+pre {
+    max-width: 100%;
+    color: getColor( off-white );
+    background: getColor( black );
+    padding: rem( 20 );
+    overflow: auto;
+
+    /// TODO[@jrmykolyn] - Consider moving 'scrollbar' rules into mixin.
+    &::-webkit-scrollbar {
+        @include set( width height, rem( 14 ) );
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: getColor( accent );
+    }
+
+    &::-webkit-scrollbar-track {
+        background: getColor( grey--light );
+    }
 }
