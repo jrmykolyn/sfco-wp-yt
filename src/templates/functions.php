@@ -16,6 +16,20 @@ if ( !is_admin() ) {
 wp_register_script( 'main', get_stylesheet_directory_uri() . '/js/main.min.js', array( 'jquery' ), '', true );
 wp_enqueue_script( 'main' );
 
+/* MENUS */
+add_action( 'init', 'register_menus' );
+
+/**
+ * Function adds theme-specific menus to WP admin.
+ */
+function register_menus() {
+   register_nav_menus(
+	   array(
+		   'primary' => __( 'Primary' )
+	   )
+   );
+}
+
 /* PLUGINS AND DEPENDENCIES */
 add_action( "admin_init", "handle_admin_init" );
 
