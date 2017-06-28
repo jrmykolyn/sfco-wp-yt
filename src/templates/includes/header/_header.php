@@ -5,14 +5,19 @@
                 <img src="http://placeholdit.imgix.net/~text?txtsize=24&txt=LOGO&w=150&h=50" alt="#" />
             </a><!-- /.logo-wrap__link -->
         </div><!-- /.logo-wrap -->
-        
+
         <nav class="nav">
-        <?php wp_nav_menu(
-            array(
-                'link_before' => '<span class="nav-link-text">',
-                'link_after' => '</span>',
-            )
-        ); ?>
+		<?php
+		if ( has_nav_menu( 'primary' ) ) {
+			wp_nav_menu(
+				array(
+					'theme_location' => 'primary',
+					'link_before' => '<span class="nav-link-text">',
+	                'link_after' => '</span>'
+				)
+			);
+		}
+		?>
         </nav><!-- /.nav -->
         <button type="button" name="drawer-nav-toggle" class="drawer-nav-toggle js--drawer-nav-toggle">
             <span class="drawer-nav-toggle__elem"></span>

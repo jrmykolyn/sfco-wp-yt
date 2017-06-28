@@ -6,10 +6,20 @@
             </button>
         </div>
         <div class="drawer-nav-body">
-            
+		<?php
+		if ( has_nav_menu( 'primary' ) ) {
+			wp_nav_menu(
+				array(
+					'theme_location' => 'primary',
+					'link_before' => '<span class="nav-link-text">',
+					'link_after' => '</span>'
+				)
+			);
+		}
+		?>
         </div>
         <div class="drawer-nav-footer">
-            
+
         </div>
     </div>
 </section>
