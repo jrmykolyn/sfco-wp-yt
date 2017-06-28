@@ -117,7 +117,7 @@ gulp.task( 'sass', function() {
  * Task also moves/migrates all 'vendor' JS files from 'src/' to specified destination folder.
  */
 gulp.task( 'scripts', function() {
-	var vendorScriptFilter = filter( [ '*', '!vendor/**/*.js' ], { restore: true } ); // NOTE - Array of patterns cannot start with `!...`. See: http://stackoverflow.com/questions/24235860/gulp-filter-not-filtering-out-excluded-files-correctly
+	var vendorScriptFilter = filter( [ '**', '!src/**/vendor/' ], { restore: true } ); // NOTE - Array of patterns cannot start with `!...`. See: http://stackoverflow.com/questions/24235860/gulp-filter-not-filtering-out-excluded-files-correctly
 
     return gulp.src( PATHS.js.src )
 		.pipe( vendorScriptFilter )
