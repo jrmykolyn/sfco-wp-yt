@@ -1,6 +1,7 @@
 // --------------------------------------------------
-// VARIABLES 
+// VARIABLES
 // --------------------------------------------------
+$pagination-wrapper: '.pagination-wrapper';
 $pagination: '.pagination';
 $nav-links: '.nav-links';
 $dots: '.dots';
@@ -9,15 +10,25 @@ $next: '.next';
 
 
 // --------------------------------------------------
-// PLACEHOLDERS 
+// PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
 
 // --------------------------------------------------
-// SELECTORS 
+// SELECTORS
 // --------------------------------------------------
+#{$pagination-wrapper} {
+    display: flex;
+    justify-content: center;
+    padding: rem( 20 ) 0;
+}
+
 #{$pagination} {
+    height: auto;
+    display: inline-block;
+    flex: 0 1 auto; // NOTE - Declaration is required in order to override global styles for <nav> elem.
+
     #{$nav-links} {
         display: block;
         margin: 0 auto;
@@ -47,6 +58,7 @@ $next: '.next';
     span {
         &:not(#{$dots}) {
             color: getColor( black );
+            border-top: rem( 3 ) solid transparent; // Add transparent top border for vertical centering.
             border-bottom: rem( 3 ) solid getColor( black );
         }
     }
@@ -57,7 +69,7 @@ $next: '.next';
 
     #{$prev},
     #{$next} {
-        @include display( block );
+        @include display( inline-block );
         @include set( padding-left padding-right, 0 );
         @include position( relative );
         // @include pseudo( after ) {
@@ -66,12 +78,13 @@ $next: '.next';
         //     height: rem( 2 );
         //     display: block;
         //     background-color: getColor( grey--xlight );
-        //     
+        //
         //     @include position( absolute, 50% null null null );
         // }
 
         text-align: center;
 
+        // Media queries
         @media ( min-width: rem( 600 ) ) {
             display: inline-block;
         }
@@ -80,6 +93,7 @@ $next: '.next';
     #{$prev} {
         margin-bottom: rem( 20 );
 
+        // Media queries
         @media ( min-width: rem( 600 ) ) {
             margin-right: rem( 40 );
             margin-bottom: 0;
@@ -95,6 +109,7 @@ $next: '.next';
     #{$next} {
         margin-top: rem( 20 );
 
+        // Media queries
         @media ( min-width: rem( 600 ) ) {
             margin-top: 0;
             margin-left: rem( 40 );
