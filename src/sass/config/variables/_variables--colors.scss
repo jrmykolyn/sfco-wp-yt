@@ -1,23 +1,25 @@
 // --------------------------------------------------
-// VARIABLES 
+// VARIABLES
 // --------------------------------------------------
 // Add any SASS variables that are specific to this file here.
 
 
 // --------------------------------------------------
-// PLACEHOLDERS 
+// PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
 
 // --------------------------------------------------
-// SELECTORS 
+// SELECTORS
 // --------------------------------------------------
 $colorMap: (
     base: (
         accent: #215ef3,
         black: #222,
+        rich-black: #000,
         white: #FFF,
+        off-white: #FAFAFA,
         grey: #666,
         grey--dark: #444,
         grey--light: #BBB,
