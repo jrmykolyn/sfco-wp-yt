@@ -1,0 +1,55 @@
+// --------------------------------------------------
+// VARIABLES
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// PLACEHOLDERS
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS
+// --------------------------------------------------
+#{$post-preview}--min {
+    @extend #{$post-preview};
+
+    @include container;
+}
+
+
+#{$post-preview}--min__inner {
+    @extend #{$post-preview}__inner;
+}
+
+#{$post-preview}-main-content--min {
+    @extend #{$post-preview}-main-content;
+
+    padding: rem( 15 );
+}
+
+#{$post-preview}-body--min {
+    @extend #{$post-preview}-body;
+
+    margin-bottom: rem( 10 );
+    padding: 0;
+}
+
+
+#{$post-preview}-footer--min {
+    @extend #{$post-preview}-footer--min;
+
+    padding: 0;
+}
+
+
+#{$post-preview}-title--min {
+    @extend %__post-preview-title;
+
+    display: inline;
+    color: getColor( accent );
+    border-bottom: rem( 2 ) solid;
+    font-size: rem( 20 );
+    line-height: 1.6;
+}
