@@ -25,3 +25,11 @@ $post-footer: '.post-footer';
 #{$post-footer}__tags {
     margin-bottom: rem( 10 );
 }
+
+#{$post-footer}__more {
+    // ...
+}
+
+#{$post-footer}-title {
+    @extend %__post-footer-title;
+}

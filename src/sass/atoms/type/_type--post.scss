@@ -1,11 +1,11 @@
 // --------------------------------------------------
-// VARIABLES 
+// VARIABLES
 // --------------------------------------------------
 // Add any SASS variables that are specific to this file here.
 
 
 // --------------------------------------------------
-// PLACEHOLDERS 
+// PLACEHOLDERS
 // --------------------------------------------------
 %__post-type--base {
     margin-top: 0;
@@ -25,9 +25,16 @@
     margin-bottom: rem( 10 );
 }
 
+%__post-footer-title {
+    @extend %__post-type--base;
+
+    color: getColor( grey--dark );
+    font-size: rem( 14 );
+    text-transform: uppercase;
+}
+
 
 // --------------------------------------------------
-// SELECTORS 
+// SELECTORS
 // --------------------------------------------------
 // Rules, logic, and anything else that can be compiled to "vanilla" CSS goes here.
-
