@@ -13,6 +13,11 @@
 // --------------------------------------------------
 // SELECTORS
 // --------------------------------------------------
+::selection {
+    color: getColor( accent );
+    background: rgba( getColor( accent ), 0.2 );
+}
+
 * {
     box-sizing: border-box;
 }
