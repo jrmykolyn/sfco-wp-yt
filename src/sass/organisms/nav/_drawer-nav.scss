@@ -25,8 +25,12 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
     background: linear-gradient( 45deg, getColor( accent ), darken( getColor( accent ), 20% ) );
     z-index: 1000;
 
-    .drawer-nav-active & {
-        @include transform( translateX( 0 ) );
+    // Media queries
+    @media ( max-width: 767px ) {
+        // Allow 'active' state at 767px and below.
+        .drawer-nav-active & {
+            @include transform( translateX( 0 ) );
+        }
     }
 }
 
@@ -39,8 +43,8 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
     @include size( 100% rem( 50 ) );
     @include position( absolute, 0 null null 0 );
 
-	display: flex;
-	align-items: center;
+    display: flex;
+    align-items: center;
     padding: 0 rem( 20 );
 }
 
@@ -50,7 +54,58 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
 
     width: 100%;
     height: calc( 100% - #{rem(200)} );
-    padding: 0 rem( 20 );
+    padding: 0;
+
+    .menu-primary-container {
+        width: 100%;
+    }
+
+    .menu {
+        @include set( margin padding, 0 );
+
+        list-style: none;
+    }
+
+    .menu-item {
+        @include set( margin padding, 0 );
+
+        a {
+            color: getColor( white );
+            padding: rem( 14 ) rem( 20 );
+        }
+
+    }
+
+    .menu-item-has-children {
+        & > ul {
+            @include size( 100% auto );
+            @include position( static );
+
+            display: block;
+            background: rgba( getColor( black ), 0.1 );
+            box-shadow: none;
+            transform: none !important; /// TEMP
+
+            li {
+                border: none;
+
+            }
+
+            a {
+                padding-left: rem( 25 );
+            }
+
+            ul {
+                @include position( static );
+
+                a {
+                    padding-left: rem( 35 );
+                }
+            }
+        }
+    }
+
+    .nav-link-text {}
 }
 
 
