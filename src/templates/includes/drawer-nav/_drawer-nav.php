@@ -11,6 +11,7 @@
 			wp_nav_menu(
 				array(
 					'theme_location' => 'primary',
+					'menu_class' => 'drawer-menu',
 					'link_before' => '<span class="nav-link-text">',
 					'link_after' => '</span>'
 				)

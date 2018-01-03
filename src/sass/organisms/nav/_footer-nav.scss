@@ -1,0 +1,23 @@
+// --------------------------------------------------
+// VARIABLES
+// --------------------------------------------------
+// Add any SASS variables that are specific to this file here.
+
+
+// --------------------------------------------------
+// PLACEHOLDERS
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS
+// --------------------------------------------------
+// Rules, logic, and anything else that can be compiled to "vanilla" CSS goes here.
+.footer-menu {
+
+}
+
+.footer-menu .menu-item {
+    @extend %menu-item--footer;
+}

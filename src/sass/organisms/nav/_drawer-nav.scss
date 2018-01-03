@@ -60,7 +60,7 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
         width: 100%;
     }
 
-    .menu {
+    .drawer-menu {
         @include set( margin padding, 0 );
 
         list-style: none;
@@ -72,6 +72,17 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
         a {
             color: getColor( white );
             padding: rem( 14 ) rem( 20 );
+            font-weight: 700;
+            text-transform: uppercase;
+
+            @include pseudo( before ) {
+                display: none;
+            }
+
+            @include on( hover focus ) {
+                color: getColor( white );
+                background: rgba( getColor( black ), 0.2 );
+            }
         }
 
     }

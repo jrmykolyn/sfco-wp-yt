@@ -11,6 +11,39 @@ $locals: (
 // PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
+%menu-item--base {
+    @include size( auto 100% );
+    @include display( block );
+    @include position( relative );
+    @include set( margin padding, 0 );
+
+    & > a {
+        @include size( auto 100% );
+        @include display( flex );
+        @include align-items( center );
+        @include transition( all, 0.25s );
+
+        color: getColor( grey--dark );
+
+        font-size: rem( 13 );
+
+        span {
+            @include display( block );
+        }
+    }
+}
+
+%menu-item--footer {
+    display: block;
+
+    & > a {
+        display: inline-block;
+        color: #666; /// TEMP
+
+        font-size: rem( 14 );
+        line-height: 1.428571; // 14 / 20
+    }
+}
 
 
 // --------------------------------------------------
@@ -50,45 +83,31 @@ nav {
 /**
  * ...
  *
- * TODO:
- * - Pulled nested declarations out into dedicated rules;
  */
  #{$menu-item} {
-    @include size( auto 100% );
-    @include display( block );
-    @include position( relative );
-    @include set( margin padding, 0);
+    @extend %menu-item--base;
+}
 
-    & > a {
-        @include size( auto 100% );
-        @include display( flex );
-        @include align-items( center );
-        @include transition( all, 0.25s );
-
-        @include on( hover focus ) {
-            color: getColor( white );
-            background-color: getColor( accent );
-        }
-
-        @include pseudo( before ) {
-            display: none;
-        }
-
-        color: getColor( grey--dark );
+.header-menu .menu-item {
+    // Descendant elems.
+    a {
         padding: 0 rem( 15 );
 
-        font-size: rem( 13 );
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 1px;
         text-align: center;
 
-        span {
-            @include display( block );
+        @include pseudo( before ) {
+            display: none;
+        }
+
+        @include on( hover focus ) {
+            color: getColor( white );
+            background-color: getColor( accent );
         }
     }
 }
-
 
 /**
  * ...
@@ -126,7 +145,7 @@ nav {
                 font-weight: 400;
             }
 
-            // Styles for '3nd level' nav. menu:
+            // Styles for '3rd level' nav. menu:
             // TODO:
             // - Pull styles out into dedicated rule.
             ul {
@@ -193,7 +212,7 @@ nav {
         background-color: transparent;
 
         @include pseudo( before after ) {
-            background-color: getColor( accent );
+            background-color: getColor( white );
         }
 
         @include pseudo( before ) {

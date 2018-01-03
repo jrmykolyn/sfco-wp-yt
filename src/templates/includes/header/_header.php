@@ -12,8 +12,9 @@
 			wp_nav_menu(
 				array(
 					'theme_location' => 'primary',
+					'menu_class' => 'header-menu',
 					'link_before' => '<span class="nav-link-text">',
-	                'link_after' => '</span>'
+					'link_after' => '</span>'
 				)
 			);
 		}
