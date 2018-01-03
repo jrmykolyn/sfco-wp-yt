@@ -1,7 +1,7 @@
-<section class="drawer-nav">
+<section class="drawer-nav js--drawer-nav">
     <div class="drawer-nav__inner">
         <div class="drawer-nav-header">
-            <button type="button" name="drawer-nav-toggle" class="drawer-nav-toggle js--drawer-nav-toggle">
+            <button type="button" name="drawer-nav-toggle" class="drawer-nav-toggle js--drawer-nav-toggle" tabindex="-1">
                 <span class="drawer-nav-toggle__elem"></span>
             </button>
         </div>

@@ -9,6 +9,7 @@ $( document ).ready( function() {
 
     var body = $( 'body' );
     var toggle = $( '.js--drawer-nav-toggle' );
+    var drawerNavElem = $( '.js--drawer-nav' );
     var btn_close = $( '.js--close' );
     var fade_in = $ (MODIFIER_CLASSES[ 'fade-in' ] );
 
@@ -39,7 +40,23 @@ $( document ).ready( function() {
 
     if ( toggle ) {
         toggle.on( 'click', function( event ) {
+            // Update classes.
             body.toggleClass( 'drawer-nav-active' );
+
+            var isActive = body.hasClass( 'drawer-nav-active' );
+            var tabindexVal = isActive ? 0 : -1;
+
+            // Update elem. `tabindex`.
+            drawerNavElem.find( '[tabindex]' ).each( function( i, el ) {
+                $( el ).attr( 'tabindex', tabindexVal );
+            } );
+
+            // Set focus.
+            if ( isActive ) {
+                drawerNavElem.find( toggle ).focus();
+            } else {
+                toggle.eq( 0 ).focus();
+            }
         } );
     }
 

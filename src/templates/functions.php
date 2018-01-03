@@ -21,6 +21,18 @@ wp_enqueue_script( 'main' );
 
 /* MENUS */
 add_action( 'init', 'register_menus' );
+add_filter( 'nav_menu_link_attributes', 'set_tabindex_on_drawer_nav_items', 10, 3 );
+
+/**
+ * Function ensures that the 'drawer nav' menu items are unfocusable by default.
+ */
+function set_tabindex_on_drawer_nav_items( $attrs, $item, $args ) {
+    if ( $args->menu_class === 'drawer-menu' ) {
+        $attrs[ 'tabindex' ] = -1;
+    }
+
+    return $attrs;
+}
 
 /**
  * Function adds theme-specific menus to WP admin.
