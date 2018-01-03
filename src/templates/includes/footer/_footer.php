@@ -1,11 +1,13 @@
 <footer class="footer">
     <div class="footer__inner">
+        <?php
+        if ( get_theme_mods()[ 'yt_footer_msg_text' ] ) {
+        ?>
         <section class="footer-section">
-            <h2>Footer Title</h2>
-            <p>
-                Lorem ipsum dolor sit amet, <strong>consectetur adipisicing elit</strong>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat <a href="#">cupidatat non</a> proident, sunt in culpa qui officia <em>deserunt mollit anim</em> id est laborum.
-            </p>
+            <h2><?= get_theme_mods()[ 'yt_footer_msg_title' ]?></h2>
+            <p><?= get_theme_mods()[ 'yt_footer_msg_text' ]?></p>
         </section>
+        <?php } ?>
         <section class="footer-section">
             <?php
             /// TEMP
@@ -30,10 +32,14 @@
             endfor;
             ?>
         </section>
+        <?php
+        if ( get_theme_mods()[ 'yt_footer_attribution_text' ] ) {
+        ?>
         <section class="footer-section--bottom">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
-                </p>
+                <p><?= get_theme_mods()[ 'yt_footer_attribution_text' ]; ?></p>
         </section>
+        <?php
+        }
+        ?>
     </div>
 </footer><!-- /.footer -->
