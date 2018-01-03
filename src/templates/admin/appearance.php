@@ -4,9 +4,28 @@
  * Wrapper around all theme-specific option logic.
  */
 function do_customize_register( $wp_customize ) {
+
+    // --------------------------------------------------
+    // Add panel(s).
+    // --------------------------------------------------
+    $wp_customize->add_panel( 'yt_footer', array(
+        'title' => __( 'Footer', 'yt' ),
+        'capability'  => 'edit_theme_options',
+    ) );
+
     // --------------------------------------------------
     // Add section(s).
     // --------------------------------------------------
+    $wp_customize->add_section( 'yt_footer_msg', array(
+        'title'       => __( 'Footer Message', 'yt' ),
+        'panel' => 'yt_footer',
+    ) );
+
+    $wp_customize->add_section( 'yt_footer_attribution', array(
+        'title'       => __( 'Footer Attribution', 'yt' ),
+        'panel' => 'yt_footer',
+    ) );
+
     $wp_customize->add_section( 'yt_preheader', array(
         'title'       => __( 'Preheader', 'yt' ),
         'capability'  => 'edit_theme_options',
@@ -15,6 +34,50 @@ function do_customize_register( $wp_customize ) {
     // --------------------------------------------------
     // Add field(s).
     // --------------------------------------------------
+    /**
+     * Footer Message.
+     */
+    $wp_customize->add_setting( 'yt_footer_msg_title', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'yt_footer_msg_title', array(
+        'label'      => __( 'Title', 'yt' ),
+        'description' => 'Use this field to include a title above the footer message.',
+        'section'    => 'yt_footer_msg',
+        'settings'   => 'yt_footer_msg_title',
+    ) ) );
+
+    $wp_customize->add_setting( 'yt_footer_msg_text', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'yt_footer_msg_text', array(
+        'label'      => __( 'Text', 'yt' ),
+        'description' => 'Use this field to populate the footer element with a short message. Leave this field blank to omit the message.',
+        'section'    => 'yt_footer_msg',
+        'settings'   => 'yt_footer_msg_text',
+        'type' => 'textarea',
+    ) ) );
+
+    /**
+     * Footer Attribution.
+     */
+     $wp_customize->add_setting( 'yt_footer_attribution_text', array(
+         'default' => '',
+         'transport' => 'refresh',
+     ) );
+
+     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'yt_footer_attribution_text', array(
+         'label'      => __( 'Text', 'yt' ),
+         'description' => 'Use this field to insert a short string of legal/attribution text.',
+         'section'    => 'yt_footer_attribution',
+         'settings'   => 'yt_footer_attribution_text',
+         'type' => 'textarea',
+     ) ) );
+
     /**
      * Preheader.
      */
