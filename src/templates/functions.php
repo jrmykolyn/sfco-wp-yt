@@ -2,6 +2,9 @@
 /* THEME DEFAULTS */
 add_theme_support( 'post-thumbnails' );
 
+/* ADMIN */
+require_once( dirname( __FILE__ ) . '/admin/appearance.php' );
+
 /* THEME SCRIPTS */
 if ( !is_admin() ) {
     add_action( "wp_enqueue_scripts", "enqueue_jquery", 11 ) ;
