@@ -38,8 +38,6 @@ $post-byline: #{$post}-byline;
 
 #{$post-header} {
     @include set( padding-bottom margin-bottom, rem( 40 ) );
-
-    border-bottom: rem( 1 ) solid get-color( grey--xlight );
 }
 
 
@@ -60,7 +58,6 @@ $post-byline: #{$post}-byline;
     min-height: rem( 40 );
     padding-top: rem( 12 );
     padding-bottom: rem( 10 );
-    padding-left: rem( 60 );
 
     img {
         @include size( rem( 40 ) );
