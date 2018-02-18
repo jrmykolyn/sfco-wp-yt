@@ -12,6 +12,11 @@ $post-copy: '.post-copy';
 
     font-size: rem( 18 );
     line-height: 1.75;
+
+    // Media queries
+    @media ( min-width: 960px ) {
+        font-size: rem( 22 );
+    }
 }
 
 
@@ -82,7 +87,6 @@ h6 {
     font-weight: 700;
 }
 
-
 #{$post-copy}--leading {
     color: get-color( accent );
     margin-bottom: rem( 10 );
@@ -90,7 +94,6 @@ h6 {
     font-size: rem( 22 );
     line-height: 1.4;
 }
-
 
 blockquote {
     @include size( 100% auto );
