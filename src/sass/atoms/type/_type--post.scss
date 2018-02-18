@@ -28,7 +28,7 @@
 %__post-footer-title {
     @extend %__post-type--base;
 
-    color: getColor( grey--dark );
+    color: get-color( grey--dark );
     font-size: rem( 14 );
     text-transform: uppercase;
 }

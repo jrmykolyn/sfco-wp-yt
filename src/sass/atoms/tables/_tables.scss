@@ -17,19 +17,19 @@ table {
     @include size( 100% auto );
 
     background-color: #F9F9F9;
-    border: rem( 1 ) solid getColor( grey--light );
+    border: rem( 1 ) solid get-color( grey--light );
     border-collapse: collapse;
     border-spacing: 0;
     margin: rem( 50 ) 0;
 
     thead {
-        border-bottom: rem( 1 ) solid getColor( grey--light );
+        border-bottom: rem( 1 ) solid get-color( grey--light );
     }
     
     tbody {
         tr {
             &:nth-child( odd ) {
-                background: rgba( getColor( black ), 0.05 );
+                background: rgba( get-color( black ), 0.05 );
             }
         }
     }

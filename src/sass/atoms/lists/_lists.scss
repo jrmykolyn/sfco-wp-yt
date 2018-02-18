@@ -18,12 +18,12 @@
 dl {
     dt,
     dd {
-        color: getColor( grey );
+        color: get-color( grey );
     }
 
     dt {
         display: inline-block;
-        border-bottom: rem( 2 ) solid getColor( grey );
+        border-bottom: rem( 2 ) solid get-color( grey );
         padding-bottom: rem( 2 );
 
         font-weight: 700;

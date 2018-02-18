@@ -1,17 +1,17 @@
 // --------------------------------------------------
-// VARIABLES 
+// VARIABLES
 // --------------------------------------------------
 // Add any SASS variables that are specific to this file here.
 
 
 // --------------------------------------------------
-// PLACEHOLDERS 
+// PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
 
 // --------------------------------------------------
-// SELECTORS 
+// SELECTORS
 // --------------------------------------------------
 $susy: (
     columns: 12,
@@ -22,7 +22,7 @@ $susy: (
     )
 );
 
-$gridMap: (
+$grid-map: (
     default: (
         width: 100%,
         max-width: rem( 960 )

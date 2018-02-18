@@ -1,17 +1,17 @@
 // --------------------------------------------------
-// VARIABLES 
+// VARIABLES
 // --------------------------------------------------
 $post-preview: '.post-preview';
 
 
 // --------------------------------------------------
-// PLACEHOLDERS 
+// PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
 
 // --------------------------------------------------
-// SELECTORS 
+// SELECTORS
 // --------------------------------------------------
 #{$post-preview} {
     display: block; /// TEMP - Force rule to compile.
@@ -22,19 +22,17 @@ $post-preview: '.post-preview';
     @include clearfix;
     @include display( block );
     @include transition( all, 0.25s );
-    @include transform( translateY( 0 ) );
 
     @include pseudo( before ) {
         display: none;
     }
 
     @include on( hover focus ) {
-        @include transform( translateY( -1% ) );
-        box-shadow: 0 rem( 10 ) rem( 20 ) rem( -5 ) rgba( getColor( black ), 0.1 );
+        box-shadow: 0 rem( 10 ) rem( 20 ) rem( -5 ) rgba( get-color( black ), 0.1 );
     }
 
-    background-color: getColor( white );
-    box-shadow: 0 rem( 5 ) rem( 20 ) rem( -5 ) rgba( getColor( black ), 0.15 );
+    background-color: get-color( white );
+    box-shadow: 0 rem( 5 ) rem( 20 ) rem( -5 ) rgba( get-color( black ), 0.15 );
     margin-bottom: rem( 20 );
 }
 
@@ -65,7 +63,7 @@ $post-preview: '.post-preview';
 
 
 #{$post-preview}-footer {
-    border-top: rem( 1 ) solid getColor( grey--xlight );
+    border-top: rem( 1 ) solid get-color( grey--xlight );
     padding-top: rem( 20 );
 }
 

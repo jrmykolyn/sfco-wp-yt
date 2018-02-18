@@ -51,20 +51,20 @@ $next: '.next';
 
     a {
         @include on( hover ) {
-            border-bottom: rem( 3 ) solid getColor( grey--xlight );
+            border-bottom: rem( 3 ) solid get-color( grey--xlight );
         }
     }
 
     span {
         &:not(#{$dots}) {
-            color: getColor( black );
+            color: get-color( black );
             border-top: rem( 3 ) solid transparent; // Add transparent top border for vertical centering.
-            border-bottom: rem( 3 ) solid getColor( black );
+            border-bottom: rem( 3 ) solid get-color( black );
         }
     }
 
     #{$dots} {
-        color: getColor( accent );
+        color: get-color( accent );
     }
 
     #{$prev},
@@ -77,7 +77,7 @@ $next: '.next';
         //     width: rem( 20 );
         //     height: rem( 2 );
         //     display: block;
-        //     background-color: getColor( grey--xlight );
+        //     background-color: get-color( grey--xlight );
         //
         //     @include position( absolute, 50% null null null );
         // }

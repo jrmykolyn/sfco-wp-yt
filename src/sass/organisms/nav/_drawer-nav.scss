@@ -22,7 +22,7 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
     @include transition( all, 0.25s );
     @include transform( translateX( 100% ) );
 
-    background: linear-gradient( 45deg, getColor( accent ), darken( getColor( accent ), 20% ) );
+    background: linear-gradient( 45deg, get-color( accent ), darken( get-color( accent ), 20% ) );
     z-index: 1000;
 
     // Media queries
@@ -70,7 +70,7 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
         @include set( margin padding, 0 );
 
         a {
-            color: getColor( white );
+            color: get-color( white );
             padding: rem( 14 ) rem( 20 );
             font-weight: 700;
             text-transform: uppercase;
@@ -80,8 +80,8 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
             }
 
             @include on( hover focus ) {
-                color: getColor( white );
-                background: rgba( getColor( black ), 0.2 );
+                color: get-color( white );
+                background: rgba( get-color( black ), 0.2 );
             }
         }
 
@@ -93,7 +93,7 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
             @include position( static );
 
             display: block;
-            background: rgba( getColor( black ), 0.1 );
+            background: rgba( get-color( black ), 0.1 );
             box-shadow: none;
             transform: none !important; /// TEMP
 

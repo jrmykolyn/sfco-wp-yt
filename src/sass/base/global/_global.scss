@@ -14,8 +14,8 @@
 // SELECTORS
 // --------------------------------------------------
 ::selection {
-    color: getColor( accent );
-    background: rgba( getColor( accent ), 0.2 );
+    color: get-color( accent );
+    background: rgba( get-color( accent ), 0.2 );
 }
 
 * {
@@ -31,7 +31,7 @@ html,
 body {
     margin: 0;
     padding: 0;
-    color: getColor( black );
+    color: get-color( black );
     background-color: #FAFAFA;
 
     font-family: 'Catamaran', Arial, Helvetica, sans-serif;

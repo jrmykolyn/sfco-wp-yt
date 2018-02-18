@@ -23,7 +23,7 @@ $locals: (
         @include align-items( center );
         @include transition( all, 0.25s );
 
-        color: getColor( grey--dark );
+        color: get-color( grey--dark );
 
         font-size: rem( 13 );
 
@@ -103,8 +103,8 @@ nav {
         }
 
         @include on( hover focus ) {
-            color: getColor( white );
-            background-color: getColor( accent );
+            color: get-color( white );
+            background-color: get-color( accent );
         }
     }
 }
@@ -124,7 +124,7 @@ nav {
         @include set( margin padding, 0 );
 
         display: none;
-        background-color: getColor( white );
+        background-color: get-color( white );
         box-shadow: 0 rem( 3 ) rem( 20 ) rem( -5 ) rgba( 0,0,0,0.2 );
 
         li {
@@ -132,11 +132,11 @@ nav {
             @include display( block );
 
             position: relative;
-            border-top: map-get( $locals, border-thickness ) solid getColor( grey--xlight );
+            border-top: map-get( $locals, border-thickness ) solid get-color( grey--xlight );
 
             a {
                 @include on( hover focus ) {
-                    color: getColor( grey--dark );
+                    color: get-color( grey--dark );
                     background-color: #F9F9F9;
                 }
 
@@ -184,7 +184,7 @@ nav {
     @include size( 100% rem( 3 ) );
     @include position( absolute, 50% null null 0 );
 
-    background-color: getColor( accent );
+    background-color: get-color( accent );
 
     @include pseudo( before after ) {
         @include size( 100% );
@@ -212,7 +212,7 @@ nav {
         background-color: transparent;
 
         @include pseudo( before after ) {
-            background-color: getColor( white );
+            background-color: get-color( white );
         }
 
         @include pseudo( before ) {

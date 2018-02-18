@@ -1,14 +1,14 @@
 // --------------------------------------------------
-// VARIABLES 
+// VARIABLES
 // --------------------------------------------------
 $post-copy: '.post-copy';
 
 
 // --------------------------------------------------
-// PLACEHOLDERS 
+// PLACEHOLDERS
 // --------------------------------------------------
 %__copy {
-    color: getColor( black );
+    color: get-color( black );
 
     font-size: rem( 18 );
     line-height: 1.75;
@@ -16,7 +16,7 @@ $post-copy: '.post-copy';
 
 
 %__caption {
-    color: getColor( grey--med );
+    color: get-color( grey );
 
     font-family: 'Catamaran', Arial, Helvetica, sans-serif;
     font-size: rem( 11 );
@@ -28,12 +28,12 @@ $post-copy: '.post-copy';
 %__citation {
     @extend %__caption;
 
-    color: getColor( grey--light );
+    color: get-color( grey--light );
 }
 
 
 // --------------------------------------------------
-// SELECTORS 
+// SELECTORS
 // --------------------------------------------------
 p {
     @extend %__copy;
@@ -49,7 +49,7 @@ p {
 a {
     @include position( relative );
 
-    color: getColor( accent );
+    color: get-color( accent );
     text-decoration: none;
 
     &:before,
@@ -60,14 +60,14 @@ a {
 
         content: '';
         display: block;
-        background-color: rgba( getColor( accent ), 0.5 );
+        background-color: rgba( get-color( accent ), 0.5 );
     }
 
     @include on( hover focus ) {
         &:before,
         &::before {
             height: rem( 6 );
-            background-color: rgba( getColor( accent ), 0.3 );
+            background-color: rgba( get-color( accent ), 0.3 );
         }
     }
 }
@@ -84,7 +84,7 @@ h6 {
 
 
 #{$post-copy}--leading {
-    color: getColor( accent );
+    color: get-color( accent );
     margin-bottom: rem( 10 );
 
     font-size: rem( 22 );
@@ -98,7 +98,7 @@ blockquote {
     margin: rem( 50 ) 0;
 
     p {
-        color: getColor( accent );
+        color: get-color( accent );
         margin: 0;
 
         font-family: 'Montserrat', Helvetica, Arial, sans-serif;
@@ -111,7 +111,7 @@ blockquote {
         @extend %__citation;
 
         display: block;
-        border-top: rem( 1 ) solid getColor( grey--xlight );
+        border-top: rem( 1 ) solid get-color( grey--xlight );
         margin-top: rem( 15 );
         padding-top: rem( 15 );
     }

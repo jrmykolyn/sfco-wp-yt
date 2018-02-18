@@ -19,7 +19,7 @@
 address {
     @include set( margin-top margin-bottom, rem( 20 ) );
 
-    color: getColor( grey );
+    color: get-color( grey );
 }
 
 /**
@@ -65,9 +65,9 @@ kbd,
 tt,
 var {
     display: inline-block;
-    color: getColor( accent );
+    color: get-color( accent );
     background-color: #F6F6F6;
-    border: rem( 1 ) solid getColor( grey--xlight );
+    border: rem( 1 ) solid get-color( grey--xlight );
     border-radius: rem( 3 );
 
     padding-left: rem( 5 );
@@ -90,11 +90,11 @@ strike {
 
         content: '';
         display: block;
-        background-color: getColor( accent );
+        background-color: get-color( accent );
     }
 
     display: inline-block;
-    color: getColor( grey--light );
+    color: get-color( grey--light );
     position: relative;
     text-decoration: none !important;
 }
@@ -105,7 +105,7 @@ strike {
  */
 ins {
     @include pseudo( before after ) {
-        color: getColor( accent );
+        color: get-color( accent );
         font-weight: 700;
     }
 
@@ -125,8 +125,8 @@ ins {
  */
 pre {
     max-width: 100%;
-    color: getColor( off-white );
-    background: getColor( black );
+    color: get-color( off-white );
+    background: get-color( black );
     padding: rem( 20 );
     overflow: auto;
 
@@ -136,10 +136,10 @@ pre {
     }
 
     &::-webkit-scrollbar-thumb {
-        background: getColor( accent );
+        background: get-color( accent );
     }
 
     &::-webkit-scrollbar-track {
-        background: getColor( grey--light );
+        background: get-color( grey--light );
     }
 }

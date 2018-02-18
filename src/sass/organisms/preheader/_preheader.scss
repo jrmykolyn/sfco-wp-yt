@@ -18,7 +18,7 @@ $preheader: '.preheader';
     @include size( 100% auto );
     @include position( relative );
 
-    background-color: getColor( black );
+    background-color: get-color( black );
     padding: rem( 8 ) 12.5%;
 }
 
@@ -44,7 +44,7 @@ $preheader: '.preheader';
 
         content: '';
         display: block;
-        background-color: getColor( white );
+        background-color: get-color( white );
     }
 
     @include pseudo( after ) {
@@ -53,7 +53,7 @@ $preheader: '.preheader';
 
     display: block;
     background-color: transparent;
-    border: rem( 2 ) solid getColor( white );
+    border: rem( 2 ) solid get-color( white );
     border-radius: 50%;
 }
 
@@ -61,7 +61,7 @@ $preheader: '.preheader';
 #{$preheader}-copy {
     @include set( margin padding, 0 );
 
-    color: getColor( white );
+    color: get-color( white );
 
     font-size: rem( 14 );
     line-height: 1.5;

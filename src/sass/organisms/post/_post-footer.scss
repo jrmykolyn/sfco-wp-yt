@@ -12,7 +12,7 @@ $post-footer: '.post-footer';
 // SELECTORS
 // --------------------------------------------------
 #{$post-footer} {
-    border-top: rem( 1 ) solid getColor( grey--xlight );
+    border-top: rem( 1 ) solid get-color( grey--xlight );
     margin-bottom: rem( 40 );
     padding-top: rem( 30 );
 

@@ -70,7 +70,7 @@ $wp-class--align-center: '.aligncenter';
 #{$image-embed-text} {
     @extend %__caption;
 
-    border-bottom: rem( 1 ) solid getColor( grey--xlight );
+    border-bottom: rem( 1 ) solid get-color( grey--xlight );
     margin-bottom: 0;
     padding-top: rem( 15 );
     padding-bottom: rem( 12 );

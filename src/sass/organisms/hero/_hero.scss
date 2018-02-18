@@ -51,7 +51,7 @@ $hero-wrap: #{$hero}-wrap;
 
         content: '';
         display: block;
-        background: linear-gradient( transparent, getColor( accent ) );
+        background: linear-gradient( transparent, get-color( accent ) );
         opacity: 0.5;
     }
 }

@@ -23,7 +23,7 @@
 %__post-preview-title {
     @extend %__post-preview-type--base;
 
-    color: getColor( black );
+    color: get-color( black );
     margin-bottom: rem( 10 );
 }
 
