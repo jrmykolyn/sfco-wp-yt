@@ -4,7 +4,6 @@
  * Wrapper around all theme-specific option logic.
  */
 function do_customize_register( $wp_customize ) {
-
     // --------------------------------------------------
     // Add panel(s).
     // --------------------------------------------------
@@ -34,6 +33,20 @@ function do_customize_register( $wp_customize ) {
     // --------------------------------------------------
     // Add field(s).
     // --------------------------------------------------
+    /**
+     * Logo.
+     */
+    $wp_customize->add_setting( 'yt_header_logo', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'yt_header_logo', array(
+        'label'      => __( 'Logo', 'yt' ),
+        'description' => 'Use this field upload the site logo. Asset should be 3:1 aspect ratio, minimum dimensions: 300px x 100px.',
+        'section'    => 'title_tagline',
+        'settings'   => 'yt_header_logo',
+    ) ) );
+
     /**
      * Footer Message.
      */
