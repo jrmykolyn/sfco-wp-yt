@@ -115,7 +115,7 @@ nav {
  * TODO:
  * - Pulled nested declarations out into dedicated rules;
  */
-#{$menu-item}-has-children {
+.header-menu #{$menu-item}-has-children {
     // Styles for '2nd level' nav. menu:
     & > ul {
         @include size( 200% auto );

@@ -1,5 +1,5 @@
 // --------------------------------------------------
-// VARIABLES 
+// VARIABLES
 // --------------------------------------------------
 $image-embed-wrap: '.wp-caption';
 $image-embed-text: '.wp-caption-text';
@@ -10,7 +10,7 @@ $wp-class--align-center: '.aligncenter';
 
 
 // --------------------------------------------------
-// PLACEHOLDERS 
+// PLACEHOLDERS
 // --------------------------------------------------
 %__image-embed--base {
     margin: rem( 30 ) auto;
@@ -30,7 +30,7 @@ $wp-class--align-center: '.aligncenter';
 
 
 // --------------------------------------------------
-// SELECTORS 
+// SELECTORS
 // --------------------------------------------------
 #{$image-embed-wrap} {
     @extend %__image-embed--base;
@@ -56,8 +56,6 @@ $wp-class--align-center: '.aligncenter';
             height: auto;
             margin-left: calc( (50vw - 50%)*-1 );
 
-            /// TODO:
-            // - replace media query with call to SASS @mixin.
             @media ( min-width: 768px ) {
                 width: 100%;
                 margin-left: 0;
@@ -65,7 +63,6 @@ $wp-class--align-center: '.aligncenter';
         }
     }
 }
-
 
 #{$image-embed-text} {
     @extend %__caption;
@@ -75,7 +72,6 @@ $wp-class--align-center: '.aligncenter';
     padding-top: rem( 15 );
     padding-bottom: rem( 12 );
 }
-
 
 /**
  * Styles for <img> elems. with supplementary, WordPress-specific classes.

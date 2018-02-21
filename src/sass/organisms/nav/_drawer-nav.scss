@@ -19,7 +19,7 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
     @include size( rem( 300 ) 100% );
     @include display( block );
     @include position( fixed, 0 0 null null );
-    @include transition( all, 0.25s );
+    @include transition( all, 0.15s );
     @include transform( translateX( 100% ) );
 
     background: linear-gradient( 45deg, get-color( accent ), darken( get-color( accent ), 20% ) );
@@ -34,7 +34,6 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
     }
 }
 
-
 #{$drawer-nav}__inner {
     @include position( absolute, 0 0 0 0 );
 }
@@ -48,7 +47,6 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
     padding: 0 rem( 20 );
 }
 
-
 #{$drawer-nav-body} {
     @include position( absolute, rem( 50 ) null null 0 );
 
@@ -56,14 +54,16 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
     height: calc( 100% - #{rem(200)} );
     padding: 0;
 
-    .menu-primary-container {
-        width: 100%;
-    }
-
-    .drawer-menu {
-        @include set( margin padding, 0 );
+    // Descendant elems.
+    ul {
+        margin: 0;
+        padding: 0;
 
         list-style: none;
+    }
+
+    .menu-primary-container {
+        width: 100%;
     }
 
     .menu-item {
@@ -118,7 +118,6 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
 
     .nav-link-text {}
 }
-
 
 #{$drawer-nav-footer} {
     @include size( 100% rem( 150 ) );
