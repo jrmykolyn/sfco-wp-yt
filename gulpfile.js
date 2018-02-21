@@ -14,6 +14,10 @@ var PATHS = {
         src: 'src/templates/',
         dest: './dist/'
     },
+    images: {
+        src: 'src/img',
+        dest: './dist/img',
+    },
     styles: {
         src: 'src/sass/',
         dest: './dist/css/',
@@ -39,7 +43,7 @@ var PATHS = {
  * - `scripts`
  * - `watch`
  */
-gulp.task( 'default', [ 'connect', 'meta', 'templates', 'sass', 'scripts', 'watch' ], function() {
+gulp.task( 'default', [ 'connect', 'meta', 'templates', 'images', 'sass', 'scripts', 'watch' ], function() {
     console.log( 'INSIDE TASK: `default`' );
 } );
 
@@ -72,6 +76,18 @@ gulp.task( 'templates', function() {
         .pipe( gulp.dest( PATHS.templates.dest ) );
 } );
 
+/**
+ * Migrate images from `src/` to `dist/`.
+ */
+gulp.task( 'images', function() {
+    console.log( 'INSIDE TASK: `images`' );
+
+    gulp.src( [
+        PATHS.images.src + '/**/*.jpg',
+        PATHS.images.src + '/**/*.png',
+    ] )
+        .pipe( gulp.dest( PATHS.images.dest ) );
+} );
 
 /**
  * Task starts `gulp-connect` server.

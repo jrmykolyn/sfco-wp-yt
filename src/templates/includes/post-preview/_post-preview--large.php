@@ -10,7 +10,9 @@ $cat = get_first_post_category( get_the_ID() );
             if ( $thumb ):
                 echo $thumb;
             else:
-                echo '<img src="https://placeholdit.imgix.net/~text?txtsize=48&txt=PLACEHOLDER&w=800&h=450" alt="Placeholder Image" />';
+            ?>
+                <img src="<?= get_template_directory_uri() . '/img/placeholder/post-preview-image.png' ?>" alt="Placeholder Image" />
+            <?php
             endif;
             ?>
         </div><!-- /.post-preview-supporting-content--large -->
