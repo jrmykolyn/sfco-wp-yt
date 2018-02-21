@@ -124,22 +124,16 @@ ins {
  * Theme-wide styles for 'pre-formatted' (<pre>) text.
  */
 pre {
+    @include scrollbar(
+        $width: rem( 14 ),
+        $height: rem( 14 ),
+        $thumb-color: get-color( accent ),
+        $track-color: get-color( grey--light )
+    );
+
     max-width: 100%;
     color: get-color( off-white );
     background: get-color( black );
     padding: rem( 20 );
     overflow: auto;
-
-    /// TODO[@jrmykolyn] - Consider moving 'scrollbar' rules into mixin.
-    &::-webkit-scrollbar {
-        @include set( width height, rem( 14 ) );
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background: get-color( accent );
-    }
-
-    &::-webkit-scrollbar-track {
-        background: get-color( grey--light );
-    }
 }
