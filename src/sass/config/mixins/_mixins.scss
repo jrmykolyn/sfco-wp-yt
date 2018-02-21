@@ -1,0 +1,19 @@
+@mixin scrollbar(
+    $width: 10px,
+    $height: 10px,
+    $thumb-color: #222,
+    $track-color: #ddd
+) {
+    &::-webkit-scrollbar {
+        width: $width;
+        height: $height;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $thumb-color;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $track-color;
+    }
+}
