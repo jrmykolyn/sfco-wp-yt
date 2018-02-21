@@ -1,12 +1,16 @@
+<?php
+$cat = get_first_post_category( get_the_ID() );
+?>
+
 <article class="post-preview">
     <a href="<?= get_permalink(); ?>"class="post-preview__inner">
         <div class="post-preview-main-content">
             <?php
             /// TODO[@jrmykolyn] - Update 'category' markup to include link.
-            if ( get_first_post_category( get_the_ID() ) ):
-                ?>
+            if ( $cat ):
+            ?>
             <div class="post-preview-header">
-                <span class="category-node">Test Tag 123</span>
+                <span class="category-node"><?= $cat->name; ?></span>
             </div>
             <?php
             endif;

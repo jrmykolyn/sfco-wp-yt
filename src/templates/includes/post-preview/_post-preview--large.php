@@ -1,5 +1,6 @@
 <?php
 $thumb = get_the_post_thumbnail();
+$cat = get_first_post_category( get_the_ID() );
 ?>
 
 <article class="post-preview--large">
@@ -16,10 +17,10 @@ $thumb = get_the_post_thumbnail();
         <div class="post-preview-main-content--large">
             <?php
             /// TODO[@jrmykolyn] - Update 'category' markup to include link.
-            if ( get_first_post_category( get_the_ID() ) ):
+            if ( $cat ):
             ?>
             <div class="post-preview-header--large">
-                <span class="category-node">Test Tag 123</span>
+                <span class="category-node"><?= $cat->name; ?></span>
             </div>
             <?php
             endif;
