@@ -11,21 +11,21 @@ var filter = require('gulp-filter');
 /* DECLARE VARS */
 var PATHS = {
     templates: {
-        src: 'src/templates/',
-        dest: './dist/'
+        src: 'src/templates',
+        dest: './dist',
     },
     images: {
         src: 'src/img',
         dest: './dist/img',
     },
     styles: {
-        src: 'src/sass/',
-        dest: './dist/css/',
+        src: 'src/sass',
+        dest: './dist/css',
     },
     js: {
         src: 'src/js/**/*.js',
-        dest: './dist/js/'
-    }
+        dest: './dist/js'
+    },
 };
 
 
@@ -39,6 +39,7 @@ var PATHS = {
  * - `connect`
  * - `meta`
  * - `templates`
+ * - `images`
  * - `sass`
  * - `scripts`
  * - `watch`
@@ -72,7 +73,7 @@ gulp.task( 'meta', function() {
 gulp.task( 'templates', function() {
     console.log( 'INSIDE TASK: `templates`' );
 
-    gulp.src( PATHS.templates.src + '**/*.php' )
+    gulp.src( PATHS.templates.src + '/**/*.php' )
         .pipe( gulp.dest( PATHS.templates.dest ) );
 } );
 
@@ -111,7 +112,7 @@ gulp.task( 'connect', function() {
 gulp.task( 'sass', function() {
     console.log( 'INSIDE TASK: `sass`' );
 
-    return gulp.src( PATHS.styles.src + 'styles.scss' )
+    return gulp.src( PATHS.styles.src + '/styles.scss' )
         .pipe( sass(
             {
                 outputStyle: 'compressed',
@@ -133,18 +134,18 @@ gulp.task( 'sass', function() {
  * Task also moves/migrates all 'vendor' JS files from 'src/' to specified destination folder.
  */
 gulp.task( 'scripts', function() {
-	var vendorScriptFilter = filter( [ '**', '!src/**/vendor/' ], { restore: true } ); // NOTE - Array of patterns cannot start with `!...`. See: http://stackoverflow.com/questions/24235860/gulp-filter-not-filtering-out-excluded-files-correctly
+    var vendorScriptFilter = filter( [ '**', '!src/**/vendor/' ], { restore: true } ); // NOTE - Array of patterns cannot start with `!...`. See: http://stackoverflow.com/questions/24235860/gulp-filter-not-filtering-out-excluded-files-correctly
 
     return gulp.src( PATHS.js.src )
-		.pipe( vendorScriptFilter )
+    .pipe( vendorScriptFilter )
         .pipe( uglify() )
         .pipe( rename( function( path ) {
             path.basename += '.min';
             path.extname = '.js';
         } ) )
         .pipe( gulp.dest( PATHS.js.dest ) )
-		.pipe( vendorScriptFilter.restore ) // Migrate filtered out 'vendor' scripts.
-		.pipe( gulp.dest( PATHS.js.dest ) )
+    .pipe( vendorScriptFilter.restore ) // Migrate filtered out 'vendor' scripts.
+    .pipe( gulp.dest( PATHS.js.dest ) )
         .pipe( connect.reload() );
 } );
 
@@ -156,7 +157,7 @@ gulp.task( 'scripts', function() {
 gulp.task( 'watch', function() {
     console.log( 'INSIDE TASK: `watch`' );
 
-    gulp.watch( PATHS.templates.src + '**/*.php', [ 'templates' ] );
-    gulp.watch( PATHS.styles.src + '**/*.scss', [ 'sass' ] );
+    gulp.watch( PATHS.templates.src + '/**/*.php', [ 'templates' ] );
+    gulp.watch( PATHS.styles.src + '/**/*.scss', [ 'sass' ] );
     gulp.watch( PATHS.js.src, [ 'scripts' ] );
 } );
