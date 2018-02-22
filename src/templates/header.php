@@ -4,10 +4,7 @@
         <?php wp_head(); ?>
         <meta charset="utf-8">
         <title><?php the_title_attribute(); ?></title>
-        <!-- FONTS -->
-        <link href="https://fonts.googleapis.com/css?family=Catamaran:400,500,600,700|Montserrat:400,700" rel="stylesheet">
-        <!-- PROJECT STYLES -->
-        <link rel="stylesheet" href="<?= get_stylesheet_directory_uri(); ?>/css/styles.css">
+        <?php get_template_part( 'includes/head/_head' ); ?>
     </head>
     <body>
     <?php
