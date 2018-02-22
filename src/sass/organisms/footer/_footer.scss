@@ -40,7 +40,7 @@ $footer-col: '.footer-col';
     font-size: rem( 14 );
 
     * {
-        color: #666; /// TEMP
+        color: get-color( grey--med );
         margin-top: 0;
     }
 

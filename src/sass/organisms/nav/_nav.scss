@@ -36,7 +36,7 @@ $locals: (
 
     & > a {
         display: inline-block;
-        color: #666; /// TEMP
+        color: get-color( grey--med );
 
         font-size: rem( 14 );
         line-height: 1.428571; // 14 / 20
