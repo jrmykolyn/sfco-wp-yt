@@ -23,7 +23,7 @@ $layout-section: '.layout-section';
     @include container;
 
     padding: 0 4%;
-    max-width: map-get( map-get( $grid-map, default ), max-width ); /// TEMP - Replace nest `map-get` @left.
+    max-width: get-grid-setting( max-width );
     margin: 0 auto;
 }
 
@@ -31,5 +31,5 @@ $layout-section: '.layout-section';
 #{$layout-section}__inner--narrow {
     @extend #{$layout-section}__inner;
 
-    max-width: map-get( map-get( $grid-map, narrow ), max-width ); /// TEMP - Replace nest `map-get` @left.
+    max-width: get-grid-setting( max-width, narrow );
 }
