@@ -27,6 +27,7 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
 
     // Media queries
     @media ( max-width: 767px ) {
+        // Additional styles to be applied when <body> element is 'active'.
         // Allow 'active' state at 767px and below.
         .drawer-nav-active & {
             @include transform( translateX( 0 ) );

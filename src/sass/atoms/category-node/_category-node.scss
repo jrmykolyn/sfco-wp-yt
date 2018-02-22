@@ -1,25 +1,22 @@
 // --------------------------------------------------
 // VARIABLES
 // --------------------------------------------------
-$category-node: '.category-node';
-
 
 // --------------------------------------------------
 // PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
-
 // --------------------------------------------------
 // SELECTORS
 // --------------------------------------------------
-#{$category-node} {
+.category-node {
     @include display( inline-block );
     @include set( margin-right margin-bottom, rem( 20 ) );
 
     color: get-color( white );
     background: linear-gradient( 45deg, get-color( accent ), darken( get-color( accent ), 20% ) );
-    padding: rem( 12 ) rem( 14 ) rem( 10 );
+    padding: rem( 12 ) rem( 14 ) rem( 8 );
 
     font-size: rem( 14 );
     line-height: 1;

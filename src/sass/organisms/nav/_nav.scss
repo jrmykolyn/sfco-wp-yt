@@ -1,8 +1,6 @@
 // --------------------------------------------------
 // VARIABLES
 // --------------------------------------------------
-$menu-item: '.menu-item';
-
 $locals: (
     border-thickness: rem( 1 )
 );
@@ -49,9 +47,6 @@ $locals: (
 // --------------------------------------------------
 // SELECTORS
 // --------------------------------------------------
-/**
- * ...
- */
 nav {
     @include size( auto 100% );
     @include display( none );
@@ -79,12 +74,7 @@ nav {
     }
 }
 
-
-/**
- * ...
- *
- */
- #{$menu-item} {
+.menu-item {
     @extend %menu-item--base;
 }
 
@@ -109,13 +99,7 @@ nav {
     }
 }
 
-/**
- * ...
- *
- * TODO:
- * - Pulled nested declarations out into dedicated rules;
- */
-.header-menu #{$menu-item}-has-children {
+.header-menu .menu-item-has-children {
     // Styles for '2nd level' nav. menu:
     & > ul {
         @include size( 200% auto );
@@ -146,8 +130,6 @@ nav {
             }
 
             // Styles for '3rd level' nav. menu:
-            // TODO:
-            // - Pull styles out into dedicated rule.
             ul {
                 width: 100%;
                 top: map-get( $locals, border-thickness)*-1;
@@ -165,7 +147,6 @@ nav {
         }
     }
 }
-
 
 .drawer-nav-toggle {
     @include size( rem( 35 ) auto );
@@ -205,9 +186,7 @@ nav {
         @include transform( translateY( 250% ) );
     }
 
-    /// TODO:
-    // - Move 'active' class into SASS var.
-    // - Pull declarations below into new rule.
+    // Additional styles to be applied when <body> element is 'active'.
     .drawer-nav-active & {
         background-color: transparent;
 
