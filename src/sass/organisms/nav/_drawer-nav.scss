@@ -96,7 +96,6 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
             display: block;
             background: rgba( get-color( black ), 0.1 );
             box-shadow: none;
-            transform: none !important; /// TEMP
 
             li {
                 border: none;

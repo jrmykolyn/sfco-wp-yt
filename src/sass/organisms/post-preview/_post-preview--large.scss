@@ -1,16 +1,16 @@
 // --------------------------------------------------
-// VARIABLES 
+// VARIABLES
 // --------------------------------------------------
 
 
 // --------------------------------------------------
-// PLACEHOLDERS 
+// PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
 
 // --------------------------------------------------
-// SELECTORS 
+// SELECTORS
 // --------------------------------------------------
 #{$post-preview}--large {
     @extend #{$post-preview};
@@ -42,14 +42,15 @@
 
 
 #{$post-preview}-supporting-content--large {
-    @include span( 6 of 12 );
+    @include span( 12 of 12 );
     @include position( relative );
 
-    padding-top: 30%; /// TEMP
+    padding-top: 56.25%;
 
-    @media ( max-width: 599px ) {
-        @include span( 12 of 12 );
-        padding-top: 56.25%; /// TEMP
+    @media ( min-width: 600px ) {
+        @include span( 6 of 12 );
+
+        padding-top: 30%;
     }
 
     img {
@@ -57,7 +58,7 @@
         @include display( block );
         @include position( absolute, 0 null null 0 );
 
-        object-fit: cover; /// TEMP
+        object-fit: cover;
     }
 }
 

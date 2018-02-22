@@ -1,18 +1,18 @@
 // --------------------------------------------------
-// VARIABLES 
+// VARIABLES
 // --------------------------------------------------
 $hero: '.hero';
 $hero-wrap: #{$hero}-wrap;
 
 
 // --------------------------------------------------
-// PLACEHOLDERS 
+// PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
 
 // --------------------------------------------------
-// SELECTORS 
+// SELECTORS
 // --------------------------------------------------
 /**
  * ...
@@ -28,7 +28,7 @@ $hero-wrap: #{$hero}-wrap;
         @include size( 100% );
         @include position( absolute, 0 null null 0 );
 
-        object-fit: cover; /// TEMP
+        object-fit: cover;
     }
 
     // Media Queries

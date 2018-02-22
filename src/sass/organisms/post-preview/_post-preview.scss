@@ -14,9 +14,8 @@ $post-preview: '.post-preview';
 // SELECTORS
 // --------------------------------------------------
 #{$post-preview} {
-    display: block; /// TEMP - Force rule to compile.
+    display: block;
 }
-
 
 #{$post-preview}__inner {
     @include clearfix;
@@ -43,7 +42,6 @@ $post-preview: '.post-preview';
     @include last;
 }
 
-
 #{$post-preview}-header,
 #{$post-preview}-body,
 #{$post-preview}-footer {
@@ -53,7 +51,6 @@ $post-preview: '.post-preview';
     }
 }
 
-
 #{$post-preview}-header {}
 
 
@@ -61,16 +58,13 @@ $post-preview: '.post-preview';
     @include set( padding-top padding-bottom, rem( 20 ) );
 }
 
-
 #{$post-preview}-footer {
     padding-top: rem( 20 );
 }
 
-
 #{$post-preview}-title {
     @extend %__post-preview-title;
 }
-
 
 #{$post-preview}-dek {
     @extend %__post-preview-copy;
