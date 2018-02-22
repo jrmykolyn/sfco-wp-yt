@@ -6,7 +6,6 @@ $cat = get_first_post_category( get_the_ID() );
     <a href="<?= get_permalink(); ?>"class="post-preview__inner">
         <div class="post-preview-main-content">
             <?php
-            /// TODO[@jrmykolyn] - Update 'category' markup to include link.
             if ( $cat ):
             ?>
             <div class="post-preview-header">

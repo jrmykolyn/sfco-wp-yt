@@ -18,7 +18,6 @@ $cat = get_first_post_category( get_the_ID() );
         </div><!-- /.post-preview-supporting-content--large -->
         <div class="post-preview-main-content--large">
             <?php
-            /// TODO[@jrmykolyn] - Update 'category' markup to include link.
             if ( $cat ):
             ?>
             <div class="post-preview-header--large">
