@@ -2,6 +2,9 @@
 /* THEME DEFAULTS */
 add_theme_support( 'post-thumbnails' );
 
+/* CONFIG */
+require_once( dirname( __FILE__ ) . '/config.php' );
+
 /* ADMIN */
 require_once( dirname( __FILE__ ) . '/admin/appearance.php' );
 
@@ -79,9 +82,10 @@ function add_acf_plugin_notice() {
 }
 
 /* MISC. */
-/// TODO[@jrmykolyn] - Move 'magic number' into config. variable/object.
 function get_max_featured_posts() {
-    return 3; /// TEMP
+    global $CONFIG;
+
+    return $CONFIG[ 'defaults' ][ 'max_featured_posts' ];
 }
 
 function get_first_post_category( $id ) {

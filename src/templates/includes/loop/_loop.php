@@ -1,9 +1,10 @@
 <?php
 if ( have_posts() ):
     $index = 0;
+    $max_featured_posts = get_max_featured_posts();
 
     while ( have_posts() ): the_post();
-        if ( $index < get_max_featured_posts() ):
+        if ( $index < $max_featured_posts ):
             get_template_part( 'includes/post-preview/_post-preview--large' );
         else:
             get_template_part( 'includes/post-preview/_post-preview' );
