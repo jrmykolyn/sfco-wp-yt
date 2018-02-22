@@ -1,0 +1,3 @@
+@function get-grid-setting( $setting, $submap: default  ) {
+    @return map-get( map-get( $grid-map, $submap ), $setting );
+}
