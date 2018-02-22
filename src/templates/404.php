@@ -3,7 +3,7 @@ get_header();
 ?>
 <main class="main">
     <section class="layout-section">
-        <div class="layout-section__inner--narrow">
+        <div class="layout-section__inner">
             <h1>Whoops, looks like we couldn't find what you're looking for!</h1>
             <h2>Why not check out one of these recent posts instead?</h2>
             <?php
