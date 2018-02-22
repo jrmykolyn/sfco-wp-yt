@@ -79,14 +79,13 @@ gulp.task( 'templates', function() {
 
 /**
  * Migrate images from `src/` to `dist/`.
+ *
+ * NOTE: Task migrates files of *any* types within the dedicated images dir. Required for favicon-related files.
  */
 gulp.task( 'images', function() {
     console.log( 'INSIDE TASK: `images`' );
 
-    gulp.src( [
-        PATHS.images.src + '/**/*.jpg',
-        PATHS.images.src + '/**/*.png',
-    ] )
+    gulp.src( PATHS.images.src + '/**/*.*' )
         .pipe( gulp.dest( PATHS.images.dest ) );
 } );
 
