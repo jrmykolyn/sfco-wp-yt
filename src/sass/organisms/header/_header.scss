@@ -40,6 +40,13 @@ $logo: '.logo';
     align-items: center;
 
     margin: 0 auto;
+
+    // Media queries
+    @media ( min-width: 960px ) {
+        max-width: 100%;
+        padding-left: rem( 20 );
+        padding-right: rem( 20 );
+    }
 }
 
 
