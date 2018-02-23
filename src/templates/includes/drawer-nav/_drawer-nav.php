@@ -1,11 +1,11 @@
 <section class="drawer-nav js--drawer-nav">
-    <div class="drawer-nav__inner">
-        <div class="drawer-nav-header">
-            <button type="button" name="drawer-nav-toggle" class="drawer-nav-toggle js--drawer-nav-toggle" tabindex="-1">
-                <span class="drawer-nav-toggle__elem"></span>
-            </button>
-        </div>
-        <div class="drawer-nav-body">
+	<div class="drawer-nav__inner">
+		<div class="drawer-nav-header">
+			<button type="button" name="drawer-nav-toggle" class="drawer-nav-toggle js--drawer-nav-toggle" tabindex="-1">
+				<span class="drawer-nav-toggle__elem"></span>
+			</button>
+		</div>
+		<div class="drawer-nav-body">
 		<?php
 		if ( has_nav_menu( 'primary' ) ) {
 			wp_nav_menu(
@@ -18,9 +18,9 @@
 			);
 		}
 		?>
-        </div>
-        <div class="drawer-nav-footer">
+		</div>
+		<div class="drawer-nav-footer">
 
-        </div>
-    </div>
+		</div>
+	</div>
 </section>
