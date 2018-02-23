@@ -7,7 +7,7 @@ while ( have_posts() ): the_post();
         get_template_part( 'includes/post/_post-hero' );
     endif;
 ?>
-<main class="main post"><!-- /// TEMP - Move `post` class to new element; rebuild template. -->
+<main class="main post">
     <section class="layout-section">
         <div class="layout-section__inner">
         <?php

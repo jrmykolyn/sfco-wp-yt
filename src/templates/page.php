@@ -4,7 +4,7 @@ get_header();
 if ( have_posts() ):
     while ( have_posts() ): the_post();
 ?>
-<main class="main page"><!-- /// TEMP - Move `page` class to new element; rebuild template. -->
+<main class="main">
     <section class="layout-section">
         <div class="layout-section__inner">
         <?php
