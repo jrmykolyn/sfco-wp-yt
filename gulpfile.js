@@ -10,22 +10,22 @@ var filter = require('gulp-filter');
 
 /* DECLARE VARS */
 var PATHS = {
-    templates: {
-        src: 'src/templates',
-        dest: './dist',
-    },
-    images: {
-        src: 'src/img',
-        dest: './dist/img',
-    },
-    styles: {
-        src: 'src/sass',
-        dest: './dist/css',
-    },
-    js: {
-        src: 'src/js/**/*.js',
-        dest: './dist/js'
-    },
+	templates: {
+		src: 'src/templates',
+		dest: './dist',
+	},
+	images: {
+		src: 'src/img',
+		dest: './dist/img',
+	},
+	styles: {
+		src: 'src/sass',
+		dest: './dist/css',
+	},
+	js: {
+		src: 'src/js/**/*.js',
+		dest: './dist/js'
+	},
 };
 
 
@@ -45,7 +45,7 @@ var PATHS = {
  * - `watch`
  */
 gulp.task( 'default', [ 'connect', 'meta', 'templates', 'images', 'sass', 'scripts', 'watch' ], function() {
-    console.log( 'INSIDE TASK: `default`' );
+	console.log( 'INSIDE TASK: `default`' );
 } );
 
 
@@ -53,7 +53,7 @@ gulp.task( 'default', [ 'connect', 'meta', 'templates', 'images', 'sass', 'scrip
  * ...
  */
 gulp.task( 'build', [ 'meta', 'templates', 'sass', 'scripts' ], function() {
-    console.log( 'INSIDE TASK: `build`' );
+	console.log( 'INSIDE TASK: `build`' );
 } );
 
 
@@ -61,20 +61,20 @@ gulp.task( 'build', [ 'meta', 'templates', 'sass', 'scripts' ], function() {
  * ...
  */
 gulp.task( 'meta', function() {
-    console.log( 'INSIDE TASK: `meta`' );
+	console.log( 'INSIDE TASK: `meta`' );
 
-    gulp.src( './src/style.css' )
-        .pipe( gulp.dest( './dist/' ) );
+	gulp.src( './src/style.css' )
+		.pipe( gulp.dest( './dist/' ) );
 } );
 
 /**
  * ...
  */
 gulp.task( 'templates', function() {
-    console.log( 'INSIDE TASK: `templates`' );
+	console.log( 'INSIDE TASK: `templates`' );
 
-    gulp.src( PATHS.templates.src + '/**/*.php' )
-        .pipe( gulp.dest( PATHS.templates.dest ) );
+	gulp.src( PATHS.templates.src + '/**/*.php' )
+		.pipe( gulp.dest( PATHS.templates.dest ) );
 } );
 
 /**
@@ -83,10 +83,10 @@ gulp.task( 'templates', function() {
  * NOTE: Task migrates files of *any* types within the dedicated images dir. Required for favicon-related files.
  */
 gulp.task( 'images', function() {
-    console.log( 'INSIDE TASK: `images`' );
+	console.log( 'INSIDE TASK: `images`' );
 
-    gulp.src( PATHS.images.src + '/**/*.*' )
-        .pipe( gulp.dest( PATHS.images.dest ) );
+	gulp.src( PATHS.images.src + '/**/*.*' )
+		.pipe( gulp.dest( PATHS.images.dest ) );
 } );
 
 /**
@@ -94,9 +94,9 @@ gulp.task( 'images', function() {
  * eg. allows for other tasks to hook into live-reload functionality.
  */
 gulp.task( 'connect', function() {
-    connect.server( {
-        livereload: true
-    } );
+	connect.server( {
+		livereload: true
+	} );
 } );
 
 
@@ -109,22 +109,22 @@ gulp.task( 'connect', function() {
  * Output of task is also piped to `connect`, triggering live-reload
  */
 gulp.task( 'sass', function() {
-    console.log( 'INSIDE TASK: `sass`' );
+	console.log( 'INSIDE TASK: `sass`' );
 
-    return gulp.src( PATHS.styles.src + '/styles.scss' )
-        .pipe( sass(
-            {
-                outputStyle: 'compressed',
-                includePaths: [
-                    'node_modules/normalize.css',
-                    'node_modules/bourbon/app/assets/stylesheets',
-                    'node_modules/susy/sass',
-                    'node_modules/sfco-sass-utils'
-                ]
-            }).on( 'error', sass.logError )
-        )
-        .pipe( gulp.dest( PATHS.styles.dest ) )
-        .pipe( connect.reload() );
+	return gulp.src( PATHS.styles.src + '/styles.scss' )
+		.pipe( sass(
+			{
+				outputStyle: 'compressed',
+				includePaths: [
+					'node_modules/normalize.css',
+					'node_modules/bourbon/app/assets/stylesheets',
+					'node_modules/susy/sass',
+					'node_modules/sfco-sass-utils'
+				]
+			}).on( 'error', sass.logError )
+		)
+		.pipe( gulp.dest( PATHS.styles.dest ) )
+		.pipe( connect.reload() );
 } );
 
 
@@ -133,19 +133,19 @@ gulp.task( 'sass', function() {
  * Task also moves/migrates all 'vendor' JS files from 'src/' to specified destination folder.
  */
 gulp.task( 'scripts', function() {
-    var vendorScriptFilter = filter( [ '**', '!src/**/vendor/' ], { restore: true } ); // NOTE - Array of patterns cannot start with `!...`. See: http://stackoverflow.com/questions/24235860/gulp-filter-not-filtering-out-excluded-files-correctly
+	var vendorScriptFilter = filter( [ '**', '!src/**/vendor/' ], { restore: true } ); // NOTE - Array of patterns cannot start with `!...`. See: http://stackoverflow.com/questions/24235860/gulp-filter-not-filtering-out-excluded-files-correctly
 
-    return gulp.src( PATHS.js.src )
-    .pipe( vendorScriptFilter )
-        .pipe( uglify() )
-        .pipe( rename( function( path ) {
-            path.basename += '.min';
-            path.extname = '.js';
-        } ) )
-        .pipe( gulp.dest( PATHS.js.dest ) )
-    .pipe( vendorScriptFilter.restore ) // Migrate filtered out 'vendor' scripts.
-    .pipe( gulp.dest( PATHS.js.dest ) )
-        .pipe( connect.reload() );
+	return gulp.src( PATHS.js.src )
+	.pipe( vendorScriptFilter )
+		.pipe( uglify() )
+		.pipe( rename( function( path ) {
+			path.basename += '.min';
+			path.extname = '.js';
+		} ) )
+		.pipe( gulp.dest( PATHS.js.dest ) )
+	.pipe( vendorScriptFilter.restore ) // Migrate filtered out 'vendor' scripts.
+	.pipe( gulp.dest( PATHS.js.dest ) )
+		.pipe( connect.reload() );
 } );
 
 
@@ -154,9 +154,9 @@ gulp.task( 'scripts', function() {
  * executes appropriate task.
  */
 gulp.task( 'watch', function() {
-    console.log( 'INSIDE TASK: `watch`' );
+	console.log( 'INSIDE TASK: `watch`' );
 
-    gulp.watch( PATHS.templates.src + '/**/*.php', [ 'templates' ] );
-    gulp.watch( PATHS.styles.src + '/**/*.scss', [ 'sass' ] );
-    gulp.watch( PATHS.js.src, [ 'scripts' ] );
+	gulp.watch( PATHS.templates.src + '/**/*.php', [ 'templates' ] );
+	gulp.watch( PATHS.styles.src + '/**/*.scss', [ 'sass' ] );
+	gulp.watch( PATHS.js.src, [ 'scripts' ] );
 } );
