@@ -4,11 +4,15 @@ $header_logo_path = get_theme_mods()[ 'yt_header_logo' ] ? get_theme_mods()[ 'yt
 <header class="header">
     <div class="header__inner">
 
+        <?php if ( get_theme_mods()[ 'yt_header_hide_logo' ] ) { ?>
+            <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+        <?php } else { ?>
         <div class="logo-wrap">
             <a href="<?= get_site_url(); ?>" class="logo-wrap__link">
                 <img src="<?= $header_logo_path; ?>" alt="" />
             </a><!-- /.logo-wrap__link -->
         </div><!-- /.logo-wrap -->
+        <?php } ?>
 
         <?php
         // Only inject mobile/desktop markup if 'primary' menu exists.

@@ -119,3 +119,22 @@ blockquote {
         padding-top: rem( 15 );
     }
 }
+
+.site-title {
+    padding: 0;
+    padding-top: rem( 1 );
+    padding-right: rem( 10 );
+    margin: 0;
+    margin-right: auto;
+    line-height: 1.2;
+
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    font-size: rem( 16 );
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    @media ( min-width: 768px ) {
+        font-size: rem( 20 );
+    }
+}
