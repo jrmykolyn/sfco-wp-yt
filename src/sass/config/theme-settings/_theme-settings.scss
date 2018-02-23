@@ -3,36 +3,34 @@
 // --------------------------------------------------
 // Add any SASS variables that are specific to this file here.
 
-
 // --------------------------------------------------
 // PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
-
 // --------------------------------------------------
 // SELECTORS
 // --------------------------------------------------
 $susy: (
-    columns: 12,
-    gutters: 1/2,
-    debug: (
-        image: hide,
-        color: rgba( 0,0,255,0.2 )
-    )
+	columns: 12,
+	gutters: 1/2,
+	debug: (
+		image: hide,
+		color: rgba( 0,0,255,0.2 ),
+	),
 );
 
 $grid-map: (
-    default: (
-        width: 100%,
-        max-width: rem( 960 )
-    ),
-    narrow: (
-        width: 100%,
-        max-width: rem( 700 )
-    ),
-    wide: (
-        width: 100%,
-        max-width: rem( 1024 )
-    )
+	default: (
+		width: 100%,
+		max-width: rem( 960 )
+	),
+	narrow: (
+		width: 100%,
+		max-width: rem( 700 )
+	),
+	wide: (
+		width: 100%,
+		max-width: rem( 1024 )
+	),
 );

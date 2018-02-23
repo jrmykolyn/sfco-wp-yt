@@ -1,18 +1,16 @@
 // --------------------------------------------------
-// VARIABLES 
+// VARIABLES
 // --------------------------------------------------
 $code-snippet: '.crayon-syntax';
 
-
 // --------------------------------------------------
-// PLACEHOLDERS 
+// PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
-
 // --------------------------------------------------
-// SELECTORS 
+// SELECTORS
 // --------------------------------------------------
 #{$code-snippet} {
-    @include set( margin-top margin-bottom, rem( 50 ) );
+	@include set( margin-top margin-bottom, rem( 50 ) );
 }

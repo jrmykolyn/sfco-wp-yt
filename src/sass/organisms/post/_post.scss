@@ -6,84 +6,82 @@ $post-header: #{$post}-header;
 $post-body: #{$post}-body;
 $post-byline: #{$post}-byline;
 
-
 // --------------------------------------------------
 // PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
-
 // --------------------------------------------------
 // SELECTORS
 // --------------------------------------------------
 #{$post} {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        @extend %__post-heading;
-    }
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@extend %__post-heading;
+	}
 
-    h1 {
-        @extend %__post-title;
-    }
+	h1 {
+		@extend %__post-title;
+	}
 
-    p {
-        @extend %__post-copy;
-    }
+	p {
+		@extend %__post-copy;
+	}
 }
 
 
 #{$post-header} {
-    @include set( padding-bottom margin-bottom, rem( 40 ) );
+	@include set( padding-bottom margin-bottom, rem( 40 ) );
 }
 
 
 #{$post-body} {
-    margin-bottom: rem( 30 );
+	margin-bottom: rem( 30 );
 
-    @include descendant( last ) {
-        margin-bottom: 0;
-    }
+	@include descendant( last ) {
+		margin-bottom: 0;
+	}
 }
 
 
 #{$post-byline}-wrap {
-    @include clearfix;
-    @include size( 100% auto );
-    @include position( relative );
+	@include clearfix;
+	@include size( 100% auto );
+	@include position( relative );
 
-    min-height: rem( 40 );
-    padding-top: rem( 12 );
-    padding-bottom: rem( 10 );
+	min-height: rem( 40 );
+	padding-top: rem( 12 );
+	padding-bottom: rem( 10 );
 
-    img {
-        @include size( rem( 40 ) );
-        @include display( block );
-        @include position( absolute, 50% null null 0 );
-        @include transform( translateY( -50% ) );
+	img {
+		@include size( rem( 40 ) );
+		@include display( block );
+		@include position( absolute, 50% null null 0 );
+		@include transform( translateY( -50% ) );
 
-        border-radius: 50%;
-    }
+		border-radius: 50%;
+	}
 }
 
 
 #{$post-byline} {
-    display: block;
-    margin: 0;
-    font-size: rem( 15 );
-    line-height: 1.2;
+	display: block;
+	margin: 0;
+	font-size: rem( 15 );
+	line-height: 1.2;
 
-    @include descendant( first ) {
-        display: inline-block;
-        margin-right: rem( 8 );
-        padding-right: rem( 10 );
-        border-right: rem( 1 ) solid get-color( grey--xlight );
-    }
+	@include descendant( first ) {
+		display: inline-block;
+		margin-right: rem( 8 );
+		padding-right: rem( 10 );
+		border-right: rem( 1 ) solid get-color( grey--xlight );
+	}
 
-    @include descendant( last ) {
-        display: inline;
-    }
+	@include descendant( last ) {
+		display: inline;
+	}
 }

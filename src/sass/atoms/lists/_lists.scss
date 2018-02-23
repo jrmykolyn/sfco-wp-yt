@@ -1,64 +1,57 @@
 // --------------------------------------------------
-// VARIABLES 
+// VARIABLES
 // --------------------------------------------------
 
-
 // --------------------------------------------------
-// PLACEHOLDERS 
+// PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
-
 // --------------------------------------------------
-// SELECTORS 
+// SELECTORS
 // --------------------------------------------------
-/**
- * Theme-wide styles for 'definition list' (<dl>) elems.
- */
+// Theme-wide styles for 'definition list' (<dl>) elems.
 dl {
-    dt,
-    dd {
-        color: get-color( grey );
-    }
+	dt,
+	dd {
+		color: get-color( grey );
+	}
 
-    dt {
-        display: inline-block;
-        border-bottom: rem( 2 ) solid get-color( grey );
-        padding-bottom: rem( 2 );
+	dt {
+		display: inline-block;
+		border-bottom: rem( 2 ) solid get-color( grey );
+		padding-bottom: rem( 2 );
 
-        font-weight: 700;
+		font-weight: 700;
 
-        &:not(:last-child) {
-            margin-bottom: rem( 8 );
-        }
-    }
+		&:not(:last-child) {
+			margin-bottom: rem( 8 );
+		}
+	}
 
-    dd {
-        margin: 0;
+	dd {
+		margin: 0;
 
-        &:not(:last-child) {
-            margin-bottom: rem( 15 );
-        }
-    }
+		&:not(:last-child) {
+			margin-bottom: rem( 15 );
+		}
+	}
 }
 
-
-/**
- * Theme-wide styles for both 'unordered list' (<ul>) and 'ordered list' (<ol>) elems.
- */
+// Theme-wide styles for both 'unordered list' (<ul>) and 'ordered list' (<ol>) elems.
 ul,
 ol {
-    padding-left: rem( 40 );
-    list-style-position: inside;
+	padding-left: rem( 40 );
+	list-style-position: inside;
 
-    li {
-        margin-left: rem( -40 );
-        padding: rem( 4 ) 0 rem( 2 );
-        line-height: 1.2;
+	li {
+		margin-left: rem( -40 );
+		padding: rem( 4 ) 0 rem( 2 );
+		line-height: 1.2;
 
-        ul li,
-        ol li {
-            margin-left: 0;
-        }
-    }
+		ul li,
+		ol li {
+			margin-left: 0;
+		}
+	}
 }

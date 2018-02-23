@@ -1,30 +1,28 @@
 // --------------------------------------------------
-// VARIABLES 
+// VARIABLES
 // --------------------------------------------------
 $wp-admin-bar: '#wpadminbar';
 
-
 // --------------------------------------------------
-// PLACEHOLDERS 
+// PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
-
 // --------------------------------------------------
-// SELECTORS 
+// SELECTORS
 // --------------------------------------------------
 #{$wp-admin-bar} {
-    a {
-        // NOTE:
-        // Declaration below required in order to prevent conflict between theme and WordPress default styles.
-        @include pseudo( before ) {
-            display: none;
-        }
-    }
+	a {
+		// NOTE:
+		// Declaration below required in order to prevent conflict between theme and WordPress default styles.
+		@include pseudo( before ) {
+			display: none;
+		}
+	}
 }
 
 
 .screen-reader-text {
-    font-size: rem( 0 );
-    visibility: hidden;
+	font-size: rem( 0 );
+	visibility: hidden;
 }

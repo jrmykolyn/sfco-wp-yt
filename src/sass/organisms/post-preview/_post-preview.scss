@@ -3,69 +3,67 @@
 // --------------------------------------------------
 $post-preview: '.post-preview';
 
-
 // --------------------------------------------------
 // PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
-
 // --------------------------------------------------
 // SELECTORS
 // --------------------------------------------------
 #{$post-preview} {
-    display: block;
+	display: block;
 }
 
 #{$post-preview}__inner {
-    @include clearfix;
-    @include display( block );
-    @include transition( all, 0.25s );
+	@include clearfix;
+	@include display( block );
+	@include transition( all, 0.25s );
 
-    @include pseudo( before ) {
-        display: none;
-    }
+	@include pseudo( before ) {
+		display: none;
+	}
 
-    @include on( hover focus ) {
-        box-shadow: 0 rem( 10 ) rem( 20 ) rem( -5 ) rgba( get-color( black ), 0.1 );
-    }
+	@include on( hover focus ) {
+		box-shadow: 0 rem( 10 ) rem( 20 ) rem( -5 ) rgba( get-color( black ), 0.1 );
+	}
 
-    background-color: get-color( white );
-    box-shadow: 0 rem( 5 ) rem( 20 ) rem( -5 ) rgba( get-color( black ), 0.15 );
-    margin-bottom: rem( 20 );
+	background-color: get-color( white );
+	box-shadow: 0 rem( 5 ) rem( 20 ) rem( -5 ) rgba( get-color( black ), 0.15 );
+	margin-bottom: rem( 20 );
 }
 
 #{$post-preview}-main-content {
-    @include set( padding-top padding-bottom, rem( 20 ) );
+	@include set( padding-top padding-bottom, rem( 20 ) );
 
-    @include span( 12 of 12 );
-    @include last;
+	@include span( 12 of 12 );
+	@include last;
 }
 
 #{$post-preview}-header,
 #{$post-preview}-body,
 #{$post-preview}-footer {
-    @include set( padding-right padding-left, rem( 20 ) );
-    @include descendant( last ) {
-        margin-bottom: 0;
-    }
+	@include set( padding-right padding-left, rem( 20 ) );
+	@include descendant( last ) {
+		margin-bottom: 0;
+	}
 }
 
 #{$post-preview}-header {}
 
 
 #{$post-preview}-body {
-    @include set( padding-top padding-bottom, rem( 20 ) );
+	@include set( padding-top padding-bottom, rem( 20 ) );
 }
 
 #{$post-preview}-footer {
-    padding-top: rem( 20 );
+	padding-top: rem( 20 );
 }
 
 #{$post-preview}-title {
-    @extend %__post-preview-title;
+	@extend %__post-preview-title;
 }
 
 #{$post-preview}-dek {
-    @extend %__post-preview-copy;
+	@extend %__post-preview-copy;
 }

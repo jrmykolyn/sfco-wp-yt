@@ -3,36 +3,34 @@
 // --------------------------------------------------
 // Add any SASS variables that are specific to this file here.
 
-
 // --------------------------------------------------
 // PLACEHOLDERS
 // --------------------------------------------------
 %__post-type--base {
-    margin-top: 0;
+	margin-top: 0;
 }
 
 %__post-heading {
-    @extend %__post-type--base;
+	@extend %__post-type--base;
 }
 
 %__post-copy {
-    @extend %__post-type--base;
+	@extend %__post-type--base;
 }
 
 %__post-title {
-    @extend %__post-heading;
+	@extend %__post-heading;
 
-    margin-bottom: rem( 10 );
+	margin-bottom: rem( 10 );
 }
 
 %__post-footer-title {
-    @extend %__post-type--base;
+	@extend %__post-type--base;
 
-    color: get-color( grey--dark );
-    font-size: rem( 14 );
-    text-transform: uppercase;
+	color: get-color( grey--dark );
+	font-size: rem( 14 );
+	text-transform: uppercase;
 }
-
 
 // --------------------------------------------------
 // SELECTORS

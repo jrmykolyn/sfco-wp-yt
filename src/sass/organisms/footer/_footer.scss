@@ -5,104 +5,83 @@ $footer: '.footer';
 $footer-section: '.footer-section';
 $footer-col: '.footer-col';
 
-
 // --------------------------------------------------
 // PLACEHOLDERS
 // --------------------------------------------------
 %__footer-section--base {
-    @extend #{$layout-section};
+	@extend #{$layout-section};
 
-    // Positional styles
-    &:not( :last-child ) {
-        margin-bottom: rem( 30 );
-    }
+	// Positional styles
+	&:not( :last-child ) {
+		margin-bottom: rem( 30 );
+	}
 
-    // Descendent elems
-    > *:last-child {
-        margin-bottom: 0;
-    }
+	// Descendent elems
+	> *:last-child {
+		margin-bottom: 0;
+	}
 }
-
 
 // --------------------------------------------------
 // SELECTORS
 // --------------------------------------------------
-/**
- * ...
- */
 #{$footer} {
-    @extend #{$layout-section};
+	@extend #{$layout-section};
 
-    @include set( padding-top padding-bottom, rem( 30 ) );
+	@include set( padding-top padding-bottom, rem( 30 ) );
 
-    min-height: rem( 200 );
-    background-color: get-color( black );
-    font-size: rem( 14 );
+	min-height: rem( 200 );
+	background-color: get-color( black );
+	font-size: rem( 14 );
 
-    * {
-        color: get-color( grey--med );
-        margin-top: 0;
-    }
+	* {
+		color: get-color( grey--med );
+		margin-top: 0;
+	}
 
-    p {
-        font-size: 1em;
-    }
+	p {
+		font-size: 1em;
+	}
 
-    ul {
-        @include set( margin padding, 0 );
+	ul {
+		@include set( margin padding, 0 );
 
-        list-style: none;
-    }
+		list-style: none;
+	}
 
-    li {
-        @include set( margin padding, 0 );
+	li {
+		@include set( margin padding, 0 );
 
-        display: block;
-        margin-bottom: 0.625em;
-    }
+		display: block;
+		margin-bottom: 0.625em;
+	}
 }
 
-
-/**
- * ...
- */
 #{$footer}__inner {
-    @extend #{$layout-section}__inner;
+	@extend #{$layout-section}__inner;
 
-    margin: 0 auto;
+	margin: 0 auto;
 }
 
-
-/**
- * ...
- */
 #{$footer-section} {
-    @extend %__footer-section--base;
+	@extend %__footer-section--base;
 }
 
-
-/**
- * ...
- */
 #{$footer-section}--bottom {
-    @extend %__footer-section--base;
+	@extend %__footer-section--base;
 
-    text-align: center;
+	text-align: center;
 }
 
-
-/**
- * ...
- */
 #{$footer-col} {
-    @include span( 3 of 12 );
+	@include span( 3 of 12 );
 
-    // Positional styles
-    &:nth-child( 4n ) {
-        @include last;
-    }
+	// Positional styles
+	&:nth-child( 4n ) {
+		@include last;
+	}
 
-    &:nth-child( 4n + 1 ) {
-        clear: left;
-    }
+	&:nth-child( 4n + 1 ) {
+		clear: left;
+	}
 }

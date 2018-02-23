@@ -11,21 +11,21 @@
 // SELECTORS
 // --------------------------------------------------
 .category-node {
-    @include display( inline-block );
-    @include set( margin-right margin-bottom, rem( 20 ) );
+	@include display( inline-block );
+	@include set( margin-right margin-bottom, rem( 20 ) );
 
-    color: get-color( white );
-    background: linear-gradient( 45deg, get-color( accent ), darken( get-color( accent ), 20% ) );
-    padding: rem( 12 ) rem( 14 ) rem( 8 );
+	color: get-color( white );
+	background: linear-gradient( 45deg, get-color( accent ), darken( get-color( accent ), 20% ) );
+	padding: rem( 12 ) rem( 14 ) rem( 8 );
 
-    font-size: rem( 14 );
-    line-height: 1;
-    font-weight: 700;
-    letter-spacing: rem( 0.5 );
-    text-transform: uppercase;
+	font-size: rem( 14 );
+	line-height: 1;
+	font-weight: 700;
+	letter-spacing: rem( 0.5 );
+	text-transform: uppercase;
 
-    // Pseudo elems.
-    @include pseudo( before ) {
-        display: none;
-    }
+	// Pseudo elems.
+	@include pseudo( before ) {
+		display: none;
+	}
 }

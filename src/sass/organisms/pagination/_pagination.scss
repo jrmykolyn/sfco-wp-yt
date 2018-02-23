@@ -8,117 +8,115 @@ $dots: '.dots';
 $prev: '.prev';
 $next: '.next';
 
-
 // --------------------------------------------------
 // PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
-
 // --------------------------------------------------
 // SELECTORS
 // --------------------------------------------------
 #{$pagination-wrapper} {
-    display: flex;
-    justify-content: center;
-    padding: rem( 20 ) 0;
+	display: flex;
+	justify-content: center;
+	padding: rem( 20 ) 0;
 }
 
 #{$pagination} {
-    height: auto;
-    display: inline-block;
-    flex: 0 1 auto; // NOTE - Declaration is required in order to override global styles for <nav> elem.
+	height: auto;
+	display: inline-block;
+	flex: 0 1 auto; // NOTE - Declaration is required in order to override global styles for <nav> elem.
 
-    #{$nav-links} {
-        display: block;
-        margin: 0 auto;
-    }
+	#{$nav-links} {
+		display: block;
+		margin: 0 auto;
+	}
 
-    a,
-    span {
-        @include pseudo( before ) {
-            display: none;
-        }
+	a,
+	span {
+		@include pseudo( before ) {
+			display: none;
+		}
 
-        @include display( inline-block );
+		@include display( inline-block );
 
-        padding: 0 rem( 10 );
-        font-size: rem( 16 );
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: rem( 1 );
-    }
+		padding: 0 rem( 10 );
+		font-size: rem( 16 );
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: rem( 1 );
+	}
 
-    a {
-        @include on( hover ) {
-            border-bottom: rem( 3 ) solid get-color( grey--xlight );
-        }
-    }
+	a {
+		@include on( hover ) {
+			border-bottom: rem( 3 ) solid get-color( grey--xlight );
+		}
+	}
 
-    span {
-        &:not(#{$dots}) {
-            color: get-color( black );
-            border-top: rem( 3 ) solid transparent; // Add transparent top border for vertical centering.
-            border-bottom: rem( 3 ) solid get-color( black );
-        }
-    }
+	span {
+		&:not(#{$dots}) {
+			color: get-color( black );
+			border-top: rem( 3 ) solid transparent; // Add transparent top border for vertical centering.
+			border-bottom: rem( 3 ) solid get-color( black );
+		}
+	}
 
-    #{$dots} {
-        color: get-color( accent );
-    }
+	#{$dots} {
+		color: get-color( accent );
+	}
 
-    #{$prev},
-    #{$next} {
-        @include display( inline-block );
-        @include set( padding-left padding-right, 0 );
-        @include position( relative );
-        // @include pseudo( after ) {
-        //     content: '';
-        //     width: rem( 20 );
-        //     height: rem( 2 );
-        //     display: block;
-        //     background-color: get-color( grey--xlight );
-        //
-        //     @include position( absolute, 50% null null null );
-        // }
+	#{$prev},
+	#{$next} {
+		@include display( inline-block );
+		@include set( padding-left padding-right, 0 );
+		@include position( relative );
+		// @include pseudo( after ) {
+		//     content: '';
+		//     width: rem( 20 );
+		//     height: rem( 2 );
+		//     display: block;
+		//     background-color: get-color( grey--xlight );
+		//
+		//     @include position( absolute, 50% null null null );
+		// }
 
-        text-align: center;
+		text-align: center;
 
-        // Media queries
-        @media ( min-width: rem( 600 ) ) {
-            display: inline-block;
-        }
-    }
+		// Media queries
+		@media ( min-width: rem( 600 ) ) {
+			display: inline-block;
+		}
+	}
 
-    #{$prev} {
-        margin-bottom: rem( 20 );
+	#{$prev} {
+		margin-bottom: rem( 20 );
 
-        // Media queries
-        @media ( min-width: rem( 600 ) ) {
-            margin-right: rem( 40 );
-            margin-bottom: 0;
+		// Media queries
+		@media ( min-width: rem( 600 ) ) {
+			margin-right: rem( 40 );
+			margin-bottom: 0;
 
-            @include pseudo( after ) {
-                @include transform( translate( 80%, -50% ) )
+			@include pseudo( after ) {
+				@include transform( translate( 80%, -50% ) )
 
-                right: rem( -20 );
-            }
-        }
-    }
+				right: rem( -20 );
+			}
+		}
+	}
 
-    #{$next} {
-        margin-top: rem( 20 );
+	#{$next} {
+		margin-top: rem( 20 );
 
-        // Media queries
-        @media ( min-width: rem( 600 ) ) {
-            margin-top: 0;
-            margin-left: rem( 40 );
+		// Media queries
+		@media ( min-width: rem( 600 ) ) {
+			margin-top: 0;
+			margin-left: rem( 40 );
 
-            @include pseudo( after ) {
-                @include transform( translate( -80%, -50% ) )
+			@include pseudo( after ) {
+				@include transform( translate( -80%, -50% ) )
 
-                left: rem( -20 );
-            }
-        }
-    }
+				left: rem( -20 );
+			}
+		}
+	}
 }

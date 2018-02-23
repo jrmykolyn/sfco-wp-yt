@@ -3,33 +3,31 @@
 // --------------------------------------------------
 $layout-section: '.layout-section';
 
-
 // --------------------------------------------------
 // PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
-
 // --------------------------------------------------
 // SELECTORS
 // --------------------------------------------------
 #{$layout-section} {
-    @include clearfix;
-    @include size( 100% auto );
+	@include clearfix;
+	@include size( 100% auto );
 }
 
 
 #{$layout-section}__inner {
-    @include container;
+	@include container;
 
-    padding: 0 4%;
-    max-width: get-grid-setting( max-width );
-    margin: 0 auto;
+	padding: 0 4%;
+	max-width: get-grid-setting( max-width );
+	margin: 0 auto;
 }
 
 
 #{$layout-section}__inner--narrow {
-    @extend #{$layout-section}__inner;
+	@extend #{$layout-section}__inner;
 
-    max-width: get-grid-setting( max-width, narrow );
+	max-width: get-grid-setting( max-width, narrow );
 }

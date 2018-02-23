@@ -4,79 +4,62 @@
 $header: '.header';
 $logo: '.logo';
 
-
 // --------------------------------------------------
 // PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
-
 // --------------------------------------------------
 // SELECTORS
 // --------------------------------------------------
-/**
- * ...
- */
 #{$header} {
-    @extend #{$layout-section};
+	@extend #{$layout-section};
 
-    height: rem( 50 );
-    display: block;
-    background-color: #FFF;
-    box-shadow: 0px 3px 20px -5px rgba(0,0,0,0.15);
+	height: rem( 50 );
+	display: block;
+	background-color: #FFF;
+	box-shadow: 0px 3px 20px -5px rgba(0,0,0,0.15);
 }
 
-
-/**
- * ...
- */
 #{$header}__inner {
-    @extend #{$layout-section}__inner;
+	@extend #{$layout-section}__inner;
 
-    @include size( 100% );
-    @include display( flex );
+	@include size( 100% );
+	@include display( flex );
 
-    justify-content: space-between;
-    align-items: center;
+	justify-content: space-between;
+	align-items: center;
 
-    margin: 0 auto;
+	margin: 0 auto;
 
-    // Media queries
-    @media ( min-width: 960px ) {
-        max-width: 100%;
-        padding-left: rem( 20 );
-        padding-right: rem( 20 );
-    }
+	// Media queries
+	@media ( min-width: 960px ) {
+		max-width: 100%;
+		padding-left: rem( 20 );
+		padding-right: rem( 20 );
+	}
 }
 
+#{$logo}-wrap {
+	@include size( auto 100% );
+	@include display( block );
+	@include set( padding-top padding-bottom, rem( 5 ) );
+	@include flex-shrink( 0 );
 
-/**
- * ...
- */
- #{$logo}-wrap {
-    @include size( auto 100% );
-    @include display( block );
-    @include set( padding-top padding-bottom, rem( 5 ) );
-    @include flex-shrink( 0 );
+	margin-right: auto;
 
-    margin-right: auto;
+	img {
+		@include size( auto );
 
-    img {
-        @include size( auto );
+		max-width: 100%;
+		max-height: 100%;
+	}
+}
 
-        max-width: 100%;
-        max-height: 100%;
-    }
- }
-
-
- /**
- * ...
- */
- #{$logo}-wrap__link {
-     @include size( auto 100% );
-     @include display( block );
-     @include pseudo( before ) {
-         display: none;
-     }
- }
+#{$logo}-wrap__link {
+	@include size( auto 100% );
+	@include display( block );
+	@include pseudo( before ) {
+		display: none;
+	}
+}

@@ -8,85 +8,79 @@ $wp-class--align-left: '.alignleft';
 $wp-class--align-right: '.alignright';
 $wp-class--align-center: '.aligncenter';
 
-
 // --------------------------------------------------
 // PLACEHOLDERS
 // --------------------------------------------------
 %__image-embed--base {
-    margin: rem( 30 ) auto;
+	margin: rem( 30 ) auto;
 }
-
 
 %__image-embed--align-left {
-    float: left;
-    margin-right: rem( 30 );
+	float: left;
+	margin-right: rem( 30 );
 }
-
 
 %__image-embed--align-right {
-    float: right;
-    margin-left: rem( 30 );
+	float: right;
+	margin-left: rem( 30 );
 }
-
 
 // --------------------------------------------------
 // SELECTORS
 // --------------------------------------------------
 #{$image-embed-wrap} {
-    @extend %__image-embed--base;
+	@extend %__image-embed--base;
 
-    width: auto;
-    max-width: 100%;
-    height: auto;
+	width: auto;
+	max-width: 100%;
+	height: auto;
 
-    &#{$wp-class--align-left}, {
-        @extend %__image-embed--align-left;
-    }
+	&#{$wp-class--align-left}, {
+		@extend %__image-embed--align-left;
+	}
 
-    &#{$wp-class--align-right}, {
-        @extend %__image-embed--align-left;
-    }
+	&#{$wp-class--align-right}, {
+		@extend %__image-embed--align-left;
+	}
 
-    &#{$wp-class--align-center} {
-        img {
-            @include display( block );
+	&#{$wp-class--align-center} {
+		img {
+			@include display( block );
 
-            width: 100vw;
-            max-width: 100vw;
-            height: auto;
-            margin-left: calc( (50vw - 50%)*-1 );
+			width: 100vw;
+			max-width: 100vw;
+			height: auto;
+			margin-left: calc( (50vw - 50%)*-1 );
 
-            @media ( min-width: 768px ) {
-                width: 100%;
-                margin-left: 0;
-            }
-        }
-    }
+			@media ( min-width: 768px ) {
+				width: 100%;
+				margin-left: 0;
+			}
+		}
+	}
 }
 
 #{$image-embed-text} {
-    @extend %__caption;
+	@extend %__caption;
 
-    border-bottom: rem( 1 ) solid get-color( grey--xlight );
-    margin-bottom: 0;
-    padding-top: rem( 15 );
-    padding-bottom: rem( 12 );
+	border-bottom: rem( 1 ) solid get-color( grey--xlight );
+	margin-bottom: 0;
+	padding-top: rem( 15 );
+	padding-bottom: rem( 12 );
 }
 
-/**
- * Styles for <img> elems. with supplementary, WordPress-specific classes.
- */
+// Styles for <img> elems. with supplementary, WordPress-specific classes.
 img {
-    &#{$wp-class--align-left},
-    &#{$wp-class--align-right} {
-        @extend %__image-embed--base;
-    }
+	&#{$wp-class--align-left},
+	&#{$wp-class--align-right} {
+		@extend %__image-embed--base;
+	}
 
-    &#{$wp-class--align-left} {
-        @extend %__image-embed--align-left;
-    }
+	&#{$wp-class--align-left} {
+		@extend %__image-embed--align-left;
+	}
 
-    &#{$wp-class--align-right} {
-        @extend %__image-embed--align-right;
-    }
+	&#{$wp-class--align-right} {
+		@extend %__image-embed--align-right;
+	}
 }

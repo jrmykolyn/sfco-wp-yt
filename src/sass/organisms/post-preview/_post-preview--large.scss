@@ -2,82 +2,75 @@
 // VARIABLES
 // --------------------------------------------------
 
-
 // --------------------------------------------------
 // PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
-
 // --------------------------------------------------
 // SELECTORS
 // --------------------------------------------------
 #{$post-preview}--large {
-    @extend #{$post-preview};
+	@extend #{$post-preview};
 
-    @include container;
+	@include container;
 }
-
 
 #{$post-preview}--large__inner {
-    @extend #{$post-preview}__inner;
+	@extend #{$post-preview}__inner;
 }
-
 
 #{$post-preview}-main-content--large {
-    @extend #{$post}-preview-main-content;
+	@extend #{$post}-preview-main-content;
 
-    @include span( 6 of 12 );
-    @include last;
+	@include span( 6 of 12 );
+	@include last;
 
-    padding-right: rem( 20 );
+	padding-right: rem( 20 );
 
-    // Media queries
-    @media ( max-width: 599px ) {
-        @include span( 12 of 12 );
+	// Media queries
+	@media ( max-width: 599px ) {
+		@include span( 12 of 12 );
 
-        padding-left: rem( 20 );
-    }
+		padding-left: rem( 20 );
+	}
 }
 
-
 #{$post-preview}-supporting-content--large {
-    @include span( 12 of 12 );
-    @include position( relative );
+	@include span( 12 of 12 );
+	@include position( relative );
 
-    padding-top: 56.25%;
+	padding-top: 56.25%;
 
-    @media ( min-width: 600px ) {
-        @include span( 6 of 12 );
+	@media ( min-width: 600px ) {
+		@include span( 6 of 12 );
 
-        padding-top: 30%;
-    }
+		padding-top: 30%;
+	}
 
-    img {
-        @include size( 100% );
-        @include display( block );
-        @include position( absolute, 0 null null 0 );
+	img {
+		@include size( 100% );
+		@include display( block );
+		@include position( absolute, 0 null null 0 );
 
-        object-fit: cover;
-    }
+		object-fit: cover;
+	}
 }
 
 #{$post-preview}-header--large {
-    @extend #{$post-preview}-header;
+	@extend #{$post-preview}-header;
 
-    @include set( padding-left padding-right, 0 );
+	@include set( padding-left padding-right, 0 );
 }
-
 
 #{$post-preview}-body--large {
-    @extend #{$post-preview}-body;
+	@extend #{$post-preview}-body;
 
-    @include set( padding-left padding-right, 0 );
+	@include set( padding-left padding-right, 0 );
 }
 
-
 #{$post-preview}-footer--large {
-    @extend #{$post-preview}-footer;
+	@extend #{$post-preview}-footer;
 
-    @include set( padding-left padding-right, 0 );
+	@include set( padding-left padding-right, 0 );
 }

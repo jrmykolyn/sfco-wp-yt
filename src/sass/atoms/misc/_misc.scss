@@ -3,137 +3,118 @@
 // --------------------------------------------------
 // Add any SASS variables that are specific to this file here.
 
-
 // --------------------------------------------------
 // PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
-
 // --------------------------------------------------
 // SELECTORS
 // --------------------------------------------------
-/**
- * Theme-wide styles for <address> tag.
- */
+// Theme-wide styles for <address> tag.
 address {
-    @include set( margin-top margin-bottom, rem( 20 ) );
+	@include set( margin-top margin-bottom, rem( 20 ) );
 
-    color: get-color( grey );
+	color: get-color( grey );
 }
 
-/**
- * Theme-wide styles for 'abbreviated' (<abbr>) text.
- */
+// Theme-wide styles for 'abbreviated' (<abbr>) text.
 abbr {
-    font-weight: 600;
-    font-style: italic;
-    text-decoration: none !important;
+	font-weight: 600;
+	font-style: italic;
+	text-decoration: none !important;
 
-    @include pseudo( after ) {
-        content: '.';
-    }
+	@include pseudo( after ) {
+		content: '.';
+	}
 }
 
-/**
- * Theme-wide styles for 'acronym' text.
- */
+// Theme-wide styles for 'acronym' text.
 acronym {
-    font-weight: 600;
-    text-transform: uppercase;
+	font-weight: 600;
+	text-transform: uppercase;
 }
 
-/**
- * Theme-wide styles for 'big' text.
- *
- * NOTE: Rule below forces <big> text to display at same size as surrounding characters.
- */
+// Theme-wide styles for 'big' text.
+// NOTE: Rule below forces <big> text to display at same size as surrounding characters.
 big {
-    font-size: inherit; // NOTE: `initial` value prevents type from appearing larger than surrounding text.
+	font-size: inherit; // NOTE: `initial` value prevents type from appearing larger than surrounding text.
 }
 
-
-/**
- * Theme wide styles for the following type/text styles:
- * - 'code' (<code>);
- * -'keyboard' (<kbd>);
- * - 'teletype' (<tt>);
- * - 'variable' (<var>).
- */
+// Theme wide styles for the following type/text styles:
+// - 'code' (<code>);
+// -'keyboard' (<kbd>);
+// - 'teletype' (<tt>);
+// - 'variable' (<var>).
 code,
 kbd,
 tt,
 var {
-    display: inline-block;
-    color: get-color( accent );
-    background-color: #F6F6F6;
-    border: rem( 1 ) solid get-color( grey--xlight );
-    border-radius: rem( 3 );
+	display: inline-block;
+	color: get-color( accent );
+	background-color: #F6F6F6;
+	border: rem( 1 ) solid get-color( grey--xlight );
+	border-radius: rem( 3 );
 
-    padding-left: rem( 5 );
-    padding-right: rem( 5 );
+	padding-left: rem( 5 );
+	padding-right: rem( 5 );
 
-    font-size: smaller;
-    font-style: normal;
+	font-size: smaller;
+	font-style: normal;
 }
 
 
 /**
- * Theme-wide styles for 'deleted' (<delete>) and 'strike through' (<strike>) text.
- */
+* Theme-wide styles for 'deleted' (<delete>) and 'strike through' (<strike>) text.
+*/
 del,
 strike {
-    @include pseudo( after ) {
-        @include size( 100% rem( 3 ) );
-        @include position( absolute, 50% null null 0 );
-        @include transform( translateY( -50% ) );
+	@include pseudo( after ) {
+		@include size( 100% rem( 3 ) );
+		@include position( absolute, 50% null null 0 );
+		@include transform( translateY( -50% ) );
 
-        content: '';
-        display: block;
-        background-color: get-color( accent );
-    }
+		content: '';
+		display: block;
+		background-color: get-color( accent );
+	}
 
-    display: inline-block;
-    color: get-color( grey--light );
-    position: relative;
-    text-decoration: none !important;
+	display: inline-block;
+	color: get-color( grey--light );
+	position: relative;
+	text-decoration: none !important;
 }
 
-
-/**
- * Theme-wide styles for 'inserted' (<ins>) text.
- */
+// Theme-wide styles for 'inserted' (<ins>) text.
 ins {
-    @include pseudo( before after ) {
-        color: get-color( accent );
-        font-weight: 700;
-    }
+	@include pseudo( before after ) {
+		color: get-color( accent );
+		font-weight: 700;
+	}
 
-    @include pseudo( before ) {
-        content: '>> ';
-    }
+	@include pseudo( before ) {
+		content: '>> ';
+	}
 
-    @include pseudo( after ) {
-        content: ' <<';
-    }
+	@include pseudo( after ) {
+		content: ' <<';
+	}
 
-    text-decoration: none !important;
+	text-decoration: none !important;
 }
 
-/**
- * Theme-wide styles for 'pre-formatted' (<pre>) text.
- */
+// Theme-wide styles for 'pre-formatted' (<pre>) text.
 pre {
-    @include scrollbar(
-        $width: rem( 14 ),
-        $height: rem( 14 ),
-        $thumb-color: get-color( accent ),
-        $track-color: get-color( grey--light )
-    );
+	@include scrollbar(
+	$width: rem( 14 ),
+	$height: rem( 14 ),
+	$thumb-color: get-color( accent ),
+	$track-color: get-color( grey--light )
+	);
 
-    max-width: 100%;
-    color: get-color( off-white );
-    background: get-color( black );
-    padding: rem( 20 );
-    overflow: auto;
+	max-width: 100%;
+	color: get-color( off-white );
+	background: get-color( black );
+	padding: rem( 20 );
+	overflow: auto;
 }

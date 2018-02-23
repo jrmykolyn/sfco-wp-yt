@@ -12,24 +12,24 @@ $post-footer: '.post-footer';
 // SELECTORS
 // --------------------------------------------------
 #{$post-footer} {
-    border-top: rem( 1 ) solid get-color( grey--xlight );
-    margin-bottom: rem( 40 );
-    padding-top: rem( 30 );
+	border-top: rem( 1 ) solid get-color( grey--xlight );
+	margin-bottom: rem( 40 );
+	padding-top: rem( 30 );
 
-    // Descendant elems.
-    @include descendant( last ) {
-        margin-bottom: 0;
-    }
+	// Descendant elems.
+	@include descendant( last ) {
+		margin-bottom: 0;
+	}
 }
 
 #{$post-footer}__tags {
-    margin-bottom: rem( 10 );
+	margin-bottom: rem( 10 );
 }
 
 #{$post-footer}__more {
-    // ...
+	// ...
 }
 
 #{$post-footer}-title {
-    @extend %__post-footer-title;
+	@extend %__post-footer-title;
 }

@@ -1,68 +1,65 @@
 // --------------------------------------------------
-// VARIABLES 
+// VARIABLES
 // --------------------------------------------------
 $preheader: '.preheader';
 
-
 // --------------------------------------------------
-// PLACEHOLDERS 
+// PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
-
 // --------------------------------------------------
-// SELECTORS 
+// SELECTORS
 // --------------------------------------------------
 #{$preheader} {
-    @include clearfix;
-    @include size( 100% auto );
-    @include position( relative );
+	@include clearfix;
+	@include size( 100% auto );
+	@include position( relative );
 
-    background-color: get-color( black );
-    padding: rem( 8 ) 12.5%;
+	background-color: get-color( black );
+	padding: rem( 8 ) 12.5%;
 }
 
 #{$preheader}__inner {
-    @include container;
-    @include size( 100% auto );
+	@include container;
+	@include size( 100% auto );
 
-    max-width: rem( 960 );
-    margin: 0 auto;
-    text-align: center;
+	max-width: rem( 960 );
+	margin: 0 auto;
+	text-align: center;
 }
 
 #{$preheader}__cta {
-    @include size( rem( 20 ) );
-    @include position( absolute, 50% 5% null null );
-    @include transform( translate( 0, -50% ) );
-    @include set( margin padding, 0 );
+	@include size( rem( 20 ) );
+	@include position( absolute, 50% 5% null null );
+	@include transform( translate( 0, -50% ) );
+	@include set( margin padding, 0 );
 
-    @include pseudo( before after ) {
-        @include size( 50% rem( 2 ) );
-        @include position( absolute, 50% null null 50% );
-        @include transform( translate( -50%, -50% ) rotate( 45deg ) );
+	@include pseudo( before after ) {
+		@include size( 50% rem( 2 ) );
+		@include position( absolute, 50% null null 50% );
+		@include transform( translate( -50%, -50% ) rotate( 45deg ) );
 
-        content: '';
-        display: block;
-        background-color: get-color( white );
-    }
+		content: '';
+		display: block;
+		background-color: get-color( white );
+	}
 
-    @include pseudo( after ) {
-        @include transform( translate( -50%, -50% ) rotate( -45deg ) );
-    }
+	@include pseudo( after ) {
+		@include transform( translate( -50%, -50% ) rotate( -45deg ) );
+	}
 
-    display: block;
-    background-color: transparent;
-    border: rem( 2 ) solid get-color( white );
-    border-radius: 50%;
+	display: block;
+	background-color: transparent;
+	border: rem( 2 ) solid get-color( white );
+	border-radius: 50%;
 }
 
-
 #{$preheader}-copy {
-    @include set( margin padding, 0 );
+	@include set( margin padding, 0 );
 
-    color: get-color( white );
+	color: get-color( white );
 
-    font-size: rem( 14 );
-    line-height: 1.5;
+	font-size: rem( 14 );
+	line-height: 1.5;
 }

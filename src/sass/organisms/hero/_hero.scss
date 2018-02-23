@@ -4,54 +4,47 @@
 $hero: '.hero';
 $hero-wrap: #{$hero}-wrap;
 
-
 // --------------------------------------------------
 // PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
-
 // --------------------------------------------------
 // SELECTORS
 // --------------------------------------------------
-/**
- * ...
- */
 #{$hero-wrap} {
-    @include size( 100% auto );
-    @include position( relative );
+	@include size( 100% auto );
+	@include position( relative );
 
-    background-color: #DADADA;
-    padding-top: 56.25%;
+	background-color: #DADADA;
+	padding-top: 56.25%;
 
-    img {
-        @include size( 100% );
-        @include position( absolute, 0 null null 0 );
+	img {
+		@include size( 100% );
+		@include position( absolute, 0 null null 0 );
 
-        object-fit: cover;
-    }
+		object-fit: cover;
+	}
 
-    // Media Queries
-    @media ( min-width: 960px ) {
-
-        & {
-            height: #{960*0.5625}#{'px'};
-            padding-top: 0px;
-        }
-    }
+	// Media Queries
+	@media ( min-width: 960px ) {
+		& {
+			height: #{960*0.5625}#{'px'};
+			padding-top: 0px;
+		}
+	}
 }
 
-
 #{$hero-wrap}--has-overlay {
-    @extend #{$hero-wrap};
+	@extend #{$hero-wrap};
 
-    @include pseudo( after ) {
-        @include size( 100% );
-        @include position( absolute, 0 0 0 0 );
+	@include pseudo( after ) {
+		@include size( 100% );
+		@include position( absolute, 0 0 0 0 );
 
-        content: '';
-        display: block;
-        background: linear-gradient( transparent, get-color( accent ) );
-        opacity: 0.5;
-    }
+		content: '';
+		display: block;
+		background: linear-gradient( transparent, get-color( accent ) );
+		opacity: 0.5;
+	}
 }

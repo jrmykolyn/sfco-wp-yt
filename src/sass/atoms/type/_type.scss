@@ -3,78 +3,76 @@
 // --------------------------------------------------
 $post-copy: '.post-copy';
 
-
 // --------------------------------------------------
 // PLACEHOLDERS
 // --------------------------------------------------
 %__copy {
-    color: get-color( black );
+	color: get-color( black );
 
-    font-size: rem( 18 );
-    line-height: 1.75;
+	font-size: rem( 18 );
+	line-height: 1.75;
 
-    // Media queries
-    @media ( min-width: 960px ) {
-        font-size: rem( 22 );
-    }
+	// Media queries
+	@media ( min-width: 960px ) {
+		font-size: rem( 22 );
+	}
 }
 
 
 %__caption {
-    color: get-color( grey );
+	color: get-color( grey );
 
-    font-family: 'Catamaran', Arial, Helvetica, sans-serif;
-    font-size: rem( 11 );
-    text-transform: uppercase;
-    line-height: 1.2;
-    letter-spacing: 0.5px;
+	font-family: 'Catamaran', Arial, Helvetica, sans-serif;
+	font-size: rem( 11 );
+	text-transform: uppercase;
+	line-height: 1.2;
+	letter-spacing: 0.5px;
 }
 
 %__citation {
-    @extend %__caption;
+	@extend %__caption;
 
-    color: get-color( grey--light );
+	color: get-color( grey--light );
 }
-
 
 // --------------------------------------------------
 // SELECTORS
 // --------------------------------------------------
 p {
-    @extend %__copy;
+	@extend %__copy;
 
-    // Styles for 'inline' citation.
-    cite {
-        @extend %__citation;
+	// Styles for 'inline' citation.
+	cite {
+		@extend %__citation;
 
-        line-height: inherit;
-    }
+		line-height: inherit;
+	}
 }
 
 a {
-    @include position( relative );
+	@include position( relative );
 
-    color: get-color( accent );
-    text-decoration: none;
+	color: get-color( accent );
+	text-decoration: none;
 
-    &:before,
-    &::before {
-        @include size( 100% rem( 3 ) );
-        @include position( absolute, null null 0 0 );
-        @include transition( height 0.125s, background-color 0.125s );
+	&:before,
+	&::before {
+		@include size( 100% rem( 3 ) );
+		@include position( absolute, null null 0 0 );
+		@include transition( height 0.125s, background-color 0.125s );
 
-        content: '';
-        display: block;
-        background-color: rgba( get-color( accent ), 0.5 );
-    }
+		content: '';
+		display: block;
+		background-color: rgba( get-color( accent ), 0.5 );
+	}
 
-    @include on( hover focus ) {
-        &:before,
-        &::before {
-            height: rem( 6 );
-            background-color: rgba( get-color( accent ), 0.3 );
-        }
-    }
+	@include on( hover focus ) {
+		&:before,
+		&::before {
+			height: rem( 6 );
+			background-color: rgba( get-color( accent ), 0.3 );
+		}
+	}
 }
 
 h1,
@@ -83,58 +81,58 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
-    font-weight: 700;
+	font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+	font-weight: 700;
 }
 
 #{$post-copy}--leading {
-    color: get-color( accent );
-    margin-bottom: rem( 10 );
+	color: get-color( accent );
+	margin-bottom: rem( 10 );
 
-    font-size: rem( 22 );
-    line-height: 1.4;
+	font-size: rem( 22 );
+	line-height: 1.4;
 }
 
 blockquote {
-    @include size( 100% auto );
+	@include size( 100% auto );
 
-    margin: rem( 50 ) 0;
+	margin: rem( 50 ) 0;
 
-    p {
-        color: get-color( accent );
-        margin: 0;
+	p {
+		color: get-color( accent );
+		margin: 0;
 
-        font-family: 'Montserrat', Helvetica, Arial, sans-serif;
-        font-size: rem( 24 );
-        line-height: 1.5;
-    }
+		font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+		font-size: rem( 24 );
+		line-height: 1.5;
+	}
 
-    // Styles for 'pull/block quote' citation.
-    cite {
-        @extend %__citation;
+	// Styles for 'pull/block quote' citation.
+	cite {
+		@extend %__citation;
 
-        display: block;
-        border-top: rem( 1 ) solid get-color( grey--xlight );
-        margin-top: rem( 15 );
-        padding-top: rem( 15 );
-    }
+		display: block;
+		border-top: rem( 1 ) solid get-color( grey--xlight );
+		margin-top: rem( 15 );
+		padding-top: rem( 15 );
+	}
 }
 
 .site-title {
-    padding: 0;
-    padding-top: rem( 1 );
-    padding-right: rem( 10 );
-    margin: 0;
-    margin-right: auto;
-    line-height: 1.2;
+	padding: 0;
+	padding-top: rem( 1 );
+	padding-right: rem( 10 );
+	margin: 0;
+	margin-right: auto;
+	line-height: 1.2;
 
-    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
-    font-size: rem( 16 );
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+	font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+	font-size: rem( 16 );
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 
-    @media ( min-width: 768px ) {
-        font-size: rem( 20 );
-    }
+	@media ( min-width: 768px ) {
+		font-size: rem( 20 );
+	}
 }

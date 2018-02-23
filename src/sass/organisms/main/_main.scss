@@ -1,24 +1,22 @@
 // --------------------------------------------------
-// VARIABLES 
+// VARIABLES
 // --------------------------------------------------
 $main: '.main';
 
-
 // --------------------------------------------------
-// PLACEHOLDERS 
+// PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
-
 // --------------------------------------------------
-// SELECTORS 
+// SELECTORS
 // --------------------------------------------------
 #{$main} {
-    @include size( 100% auto );
-    @include descendant( last ) {
-        margin-bottom: 0;
-    }
+	@include size( 100% auto );
+	@include descendant( last ) {
+		margin-bottom: 0;
+	}
 
-    margin: 0 auto;
-    padding: rem( 40 ) 0;
+	margin: 0 auto;
+	padding: rem( 40 ) 0;
 }
