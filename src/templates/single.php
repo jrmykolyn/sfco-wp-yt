@@ -7,7 +7,7 @@ while ( have_posts() ): the_post();
         get_template_part( 'includes/post/_post-hero' );
     endif;
 ?>
-<main class="main post">
+<main class="main">
     <section class="layout-section">
         <div class="layout-section__inner">
         <?php

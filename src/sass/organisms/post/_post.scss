@@ -14,7 +14,8 @@ $post-byline: #{$post}-byline;
 // --------------------------------------------------
 // SELECTORS
 // --------------------------------------------------
-#{$post} {
+#{$post-header},
+#{$post-body} {
 	h1,
 	h2,
 	h3,
@@ -33,11 +34,9 @@ $post-byline: #{$post}-byline;
 	}
 }
 
-
 #{$post-header} {
 	@include set( padding-bottom margin-bottom, rem( 40 ) );
 }
-
 
 #{$post-body} {
 	margin-bottom: rem( 30 );
@@ -46,7 +45,6 @@ $post-byline: #{$post}-byline;
 		margin-bottom: 0;
 	}
 }
-
 
 #{$post-byline}-wrap {
 	@include clearfix;
@@ -66,7 +64,6 @@ $post-byline: #{$post}-byline;
 		border-radius: 50%;
 	}
 }
-
 
 #{$post-byline} {
 	display: block;
