@@ -64,6 +64,9 @@ These options may be accessed via the `Appearance > Customize` menu.
 ##### Logo
 Use this field to insert a custom/project-specific logo into the theme.
 
+##### Hide Logo
+Use this option to hide the logo asset, and display the site title instead.
+
 #### Preheader
 These options may be accessed via the `Appearance > Customize` menu.
 
