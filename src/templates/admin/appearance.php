@@ -48,6 +48,22 @@ function do_customize_register( $wp_customize ) {
     ) ) );
 
     /**
+     * Hide logo.
+     */
+     $wp_customize->add_setting( 'yt_header_hide_logo', array(
+         'default' => '',
+         'transport' => 'refresh',
+     ) );
+
+     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'yt_header_hide_logo', array(
+         'label'      => __( 'Hide Logo', 'yt' ),
+         'description' => 'If checked, the header will display the site title <em>instead</em> of the logo.',
+         'section'    => 'title_tagline',
+         'settings'   => 'yt_header_hide_logo',
+         'type' => 'checkbox',
+     ) ) );
+
+    /**
      * Footer Message.
      */
     $wp_customize->add_setting( 'yt_footer_msg_title', array(
