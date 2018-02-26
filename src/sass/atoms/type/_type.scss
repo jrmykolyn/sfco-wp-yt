@@ -22,7 +22,7 @@ $post-copy: '.post-copy';
 %__caption {
 	color: get-color( grey );
 
-	font-family: 'Catamaran', Arial, Helvetica, sans-serif;
+	font-family: get-font( copy );
 	font-size: rem( 11 );
 	text-transform: uppercase;
 	line-height: 1.2;
@@ -83,7 +83,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+	font-family: get-font( heading );
 	font-weight: 700;
 }
 
@@ -104,7 +104,7 @@ blockquote {
 		color: get-color( accent );
 		margin: 0;
 
-		font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+		font-family: get-font( heading );
 		font-size: rem( 24 );
 		line-height: 1.5;
 	}
@@ -128,7 +128,7 @@ blockquote {
 	margin-right: auto;
 	line-height: 1.2;
 
-	font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+	font-family: get-font( copy );
 	font-size: rem( 16 );
 	text-overflow: ellipsis;
 	white-space: nowrap;
