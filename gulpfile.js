@@ -1,4 +1,6 @@
 /* IMPORT MODULES */
+var esLint = require( 'gulp-eslint' );
+var esLintConfig = require( './.eslintrc.json' );
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
@@ -6,6 +8,7 @@ var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var connect = require('gulp-connect');
 var filter = require('gulp-filter');
+
 
 
 /* DECLARE VARS */
@@ -23,8 +26,13 @@ var PATHS = {
 		dest: './dist/css',
 	},
 	js: {
-		src: 'src/js/**/*.js',
-		dest: './dist/js'
+		theme: {
+			src: 'src/js/theme/**/*.js',
+			dest: './dist/js',
+		},
+		vendor: {
+			src: 'src/js/**/*.js',
+	 	},
 	},
 };
 
@@ -135,17 +143,28 @@ gulp.task( 'sass', function() {
 gulp.task( 'scripts', function() {
 	var vendorScriptFilter = filter( [ '**', '!src/**/vendor/' ], { restore: true } ); // NOTE - Array of patterns cannot start with `!...`. See: http://stackoverflow.com/questions/24235860/gulp-filter-not-filtering-out-excluded-files-correctly
 
-	return gulp.src( PATHS.js.src )
+	return gulp.src( [ PATHS.js.theme.src, PATHS.js.vendor.src ] )
 	.pipe( vendorScriptFilter )
 		.pipe( uglify() )
 		.pipe( rename( function( path ) {
 			path.basename += '.min';
 			path.extname = '.js';
 		} ) )
-		.pipe( gulp.dest( PATHS.js.dest ) )
+		.pipe( gulp.dest( PATHS.js.theme.dest ) )
 	.pipe( vendorScriptFilter.restore ) // Migrate filtered out 'vendor' scripts.
-	.pipe( gulp.dest( PATHS.js.dest ) )
+	.pipe( gulp.dest( PATHS.js.theme.dest ) )
 		.pipe( connect.reload() );
+} );
+
+
+/**
+ * Lint theme scripts via ESLint.
+ */
+gulp.task( 'scripts:lint', function() {
+	gulp.src( PATHS.js.theme.src )
+		.pipe( esLint( esLintConfig ) )
+		.pipe( esLint.format() )
+		.pipe( esLint.failAfterError() );
 } );
 
 
