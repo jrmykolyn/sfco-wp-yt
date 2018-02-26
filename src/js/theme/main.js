@@ -1,3 +1,5 @@
+/* eslint-env jquery */
+
 $( document ).ready( function() {
 	/* -------------------------------------------------- */
 	/* DECLARE VARS */
@@ -10,9 +12,8 @@ $( document ).ready( function() {
 	var body = $( 'body' );
 	var toggle = $( '.js--drawer-nav-toggle' );
 	var drawerNavElem = $( '.js--drawer-nav' );
-	var btn_close = $( '.js--close' );
-	var fade_in = $ (MODIFIER_CLASSES[ 'fade-in' ] );
-
+	var btnCloseElem = $( '.js--close' );
+	var fadeInElems = $ ( MODIFIER_CLASSES[ 'fade-in' ] );
 
 	/* -------------------------------------------------- */
 	/* DECLARE FUNCTIONS */
@@ -25,21 +26,20 @@ $( document ).ready( function() {
 		return className;
 	}
 
-
 	/* -------------------------------------------------- */
 	/* EVENTS */
 	/* -------------------------------------------------- */
-	if ( btn_close ) {
-		btn_close.on( 'click', function( event ) {
-			var target_class = $( this ).data( 'close-target' );
-			var target_elem = $( this ).closest( '.' + target_class );
+	if ( btnCloseElem ) {
+		btnCloseElem.on( 'click', function() {
+			var targetClass = $( this ).data( 'close-target' );
+			var targetElem = $( this ).closest( '.' + targetClass );
 
-			target_elem.slideUp( 200 );;
+			targetElem.slideUp( 200 );
 		} );
 	}
 
 	if ( toggle ) {
-		toggle.on( 'click', function( event ) {
+		toggle.on( 'click', function() {
 			// Update classes.
 			body.toggleClass( 'drawer-nav-active' );
 
@@ -60,8 +60,8 @@ $( document ).ready( function() {
 		} );
 	}
 
-	if ( fade_in ) {
-		fade_in.each( function( i, el ) {
+	if ( fadeInElems ) {
+		fadeInElems.each( function( i, el ) {
 			$( el ).addClass( classToString( MODIFIER_CLASSES[ 'faded-in' ] ) );
 		} );
 	}
