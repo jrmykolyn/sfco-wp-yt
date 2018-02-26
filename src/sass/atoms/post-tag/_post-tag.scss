@@ -14,7 +14,7 @@ $post-tag: '.post-tag';
 #{$post-tag} {
 	@include set( margin-right margin-bottom, rem( 20 ) );
 
-	display: inline;
+	display: inline-block;
 	padding-bottom: rem( 5 );
 	font-size: rem( 14 );
 	font-weight: 700;
