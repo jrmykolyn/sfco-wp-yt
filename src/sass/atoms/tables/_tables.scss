@@ -12,7 +12,7 @@
 // SELECTORS
 // --------------------------------------------------
 table {
-	@include size( 100% auto );
+	@include dims( 100% auto );
 
 	background-color: #F9F9F9;
 	border: rem( 1 ) solid get-color( grey--light );

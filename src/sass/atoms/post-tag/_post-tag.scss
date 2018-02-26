@@ -12,9 +12,9 @@ $post-tag: '.post-tag';
 // SELECTORS
 // --------------------------------------------------
 #{$post-tag} {
-	@include display( inline-block );
 	@include set( margin-right margin-bottom, rem( 20 ) );
 
+	display: inline;
 	padding-bottom: rem( 5 );
 	font-size: rem( 14 );
 	font-weight: 700;

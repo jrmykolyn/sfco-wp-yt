@@ -38,8 +38,7 @@ $next: '.next';
 			display: none;
 		}
 
-		@include display( inline-block );
-
+		display: inline-block;
 		padding: 0 rem( 10 );
 		font-size: rem( 16 );
 		font-weight: 700;
@@ -67,9 +66,8 @@ $next: '.next';
 
 	#{$prev},
 	#{$next} {
-		@include display( inline-block );
 		@include set( padding-left padding-right, 0 );
-		@include position( relative );
+
 		// @include pseudo( after ) {
 		//     content: '';
 		//     width: rem( 20 );
@@ -80,6 +78,8 @@ $next: '.next';
 		//     @include position( absolute, 50% null null null );
 		// }
 
+		display: inline-block;
+		position: relative;
 		text-align: center;
 
 		// Media queries
@@ -97,7 +97,7 @@ $next: '.next';
 			margin-bottom: 0;
 
 			@include pseudo( after ) {
-				@include transform( translate( 80%, -50% ) )
+				transform: translate( 80%, -50% );
 
 				right: rem( -20 );
 			}
@@ -113,8 +113,7 @@ $next: '.next';
 			margin-left: rem( 40 );
 
 			@include pseudo( after ) {
-				@include transform( translate( -80%, -50% ) )
-
+				transform: translate( -80%, -50% );
 				left: rem( -20 );
 			}
 		}

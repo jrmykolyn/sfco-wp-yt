@@ -13,17 +13,19 @@ $hero-wrap: #{$hero}-wrap;
 // SELECTORS
 // --------------------------------------------------
 #{$hero-wrap} {
-	@include size( 100% auto );
-	@include position( relative );
+	@include dims( 100% auto );
 
 	background-color: #DADADA;
 	padding-top: 56.25%;
+	position: relative;
 
 	img {
-		@include size( 100% );
-		@include position( absolute, 0 null null 0 );
+		@include dims( 100% );
 
 		object-fit: cover;
+		position: absolute;
+		top: 0;
+		left: 0;
 	}
 
 	// Media Queries
@@ -39,12 +41,16 @@ $hero-wrap: #{$hero}-wrap;
 	@extend #{$hero-wrap};
 
 	@include pseudo( after ) {
-		@include size( 100% );
-		@include position( absolute, 0 0 0 0 );
+		@include dims( 100% );
 
 		content: '';
 		display: block;
 		background: linear-gradient( transparent, get-color( accent ) );
 		opacity: 0.5;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
 	}
 }

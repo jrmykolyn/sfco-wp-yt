@@ -45,12 +45,11 @@ $wp-class--align-center: '.aligncenter';
 
 	&#{$wp-class--align-center} {
 		img {
-			@include display( block );
-
 			width: 100vw;
 			max-width: 100vw;
 			height: auto;
-			margin-left: calc( (50vw - 50%)*-1 );
+			display: block;
+			margin-left: calc( (50vw - 50%) * -1 );
 
 			@media ( min-width: 768px ) {
 				width: 100%;

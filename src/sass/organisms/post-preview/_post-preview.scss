@@ -17,8 +17,6 @@ $post-preview: '.post-preview';
 
 #{$post-preview}__inner {
 	@include clearfix;
-	@include display( block );
-	@include transition( all, 0.25s );
 
 	@include pseudo( before ) {
 		display: none;
@@ -28,6 +26,8 @@ $post-preview: '.post-preview';
 		box-shadow: 0 rem( 10 ) rem( 20 ) rem( -5 ) rgba( get-color( black ), 0.1 );
 	}
 
+	display: block;
+	transition: all 0.25s;
 	background-color: get-color( white );
 	box-shadow: 0 rem( 5 ) rem( 20 ) rem( -5 ) rgba( get-color( black ), 0.15 );
 	margin-bottom: rem( 20 );

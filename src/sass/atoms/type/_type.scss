@@ -50,20 +50,22 @@ p {
 }
 
 a {
-	@include position( relative );
-
 	color: get-color( accent );
 	text-decoration: none;
+	position: relative;
 
 	&:before,
 	&::before {
-		@include size( 100% rem( 3 ) );
-		@include position( absolute, null null 0 0 );
-		@include transition( height 0.125s, background-color 0.125s );
+		@include dims( 100% rem( 3 ) );
 
 		content: '';
 		display: block;
 		background-color: rgba( get-color( accent ), 0.5 );
+
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		transition: height 0.125s, background-color 0.125s;
 	}
 
 	@include on( hover focus ) {
@@ -94,7 +96,7 @@ h6 {
 }
 
 blockquote {
-	@include size( 100% auto );
+	@include dims( 100% auto );
 
 	margin: rem( 50 ) 0;
 

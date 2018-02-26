@@ -15,44 +15,53 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
 // SELECTORS
 // --------------------------------------------------
 #{$drawer-nav} {
-	@include size( rem( 300 ) 100% );
-	@include display( block );
-	@include position( fixed, 0 0 null null );
-	@include transition( all, 0.15s );
-	@include transform( translateX( 100% ) );
+	@include dims( rem( 300 ) 100% );
 
+	display: block;
 	background: linear-gradient( 45deg, get-color( accent ), darken( get-color( accent ), 20% ) );
 	z-index: 1000;
+	position: fixed;
+	top: 0;
+	right: 0;
+	transition: all 0.15s;
+	transform: translateX( 100% );
 
 	// Media queries
 	@media ( max-width: 767px ) {
 		// Additional styles to be applied when <body> element is 'active'.
 		// Allow 'active' state at 767px and below.
 		.drawer-nav-active & {
-			@include transform( translateX( 0 ) );
+			transform: translateX( 0 );
 		}
 	}
 }
 
 #{$drawer-nav}__inner {
-	@include position( absolute, 0 0 0 0 );
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 }
 
 #{$drawer-nav-header} {
-	@include size( 100% rem( 50 ) );
-	@include position( absolute, 0 null null 0 );
+	@include dims( 100% rem( 50 ) );
 
 	display: flex;
 	align-items: center;
 	padding: 0 rem( 20 );
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 #{$drawer-nav-body} {
-	@include position( absolute, rem( 50 ) null null 0 );
-
 	width: 100%;
 	height: calc( 100% - #{rem(200)} );
 	padding: 0;
+	position: absolute;
+	top: rem( 50 );
+	left: 0;
 
 	// Descendant elems.
 	ul {
@@ -89,16 +98,15 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
 
 	.menu-item-has-children {
 		& > ul {
-			@include size( 100% auto );
-			@include position( static );
+			@include dims( 100% auto );
 
 			display: block;
 			background: rgba( get-color( black ), 0.1 );
 			box-shadow: none;
+			position: static;
 
 			li {
 				border: none;
-
 			}
 
 			a {
@@ -106,7 +114,7 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
 			}
 
 			ul {
-				@include position( static );
+				position: static;
 
 				a {
 					padding-left: rem( 35 );
@@ -119,8 +127,10 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
 }
 
 #{$drawer-nav-footer} {
-	@include size( 100% rem( 150 ) );
-	@include position( absolute, null null 0 0 );
+	@include dims( 100% rem( 150 ) );
 
 	padding: 0 rem( 20 );
+	position: absolute;
+	bottom: 0;
+	left: 0;
 }

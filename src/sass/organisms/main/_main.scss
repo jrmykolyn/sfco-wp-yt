@@ -12,7 +12,7 @@ $main: '.main';
 // SELECTORS
 // --------------------------------------------------
 #{$main} {
-	@include size( 100% auto );
+	@include dims( 100% auto );
 	@include descendant( last ) {
 		margin-bottom: 0;
 	}

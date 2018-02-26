@@ -13,7 +13,7 @@ $layout-section: '.layout-section';
 // --------------------------------------------------
 #{$layout-section} {
 	@include clearfix;
-	@include size( 100% auto );
+	@include dims( 100% auto );
 }
 
 

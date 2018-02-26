@@ -10,23 +10,24 @@ $locals: (
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 %menu-item--base {
-	@include size( auto 100% );
-	@include display( block );
-	@include position( relative );
+	@include dims( auto 100% );
 	@include set( margin padding, 0 );
+
+	display: block;
+	position: relative;
 
 	& > a {
 		@include size( auto 100% );
-		@include display( flex );
-		@include align-items( center );
-		@include transition( all, 0.25s );
+
+		display: flex;
+		align-items: center;
+		transition: all, 0.25s;
 
 		color: get-color( grey--dark );
-
 		font-size: rem( 13 );
 
 		span {
-			@include display( block );
+			display: block;
 		}
 	}
 }
@@ -47,21 +48,22 @@ $locals: (
 // SELECTORS
 // --------------------------------------------------
 nav {
-	@include size( auto 100% );
-	@include display( none );
-	@include flex-grow( 1 );
+	@include dims( auto 100% );
+
+	display: none;
+	flex-grow: 1;
 
 	z-index: 999;
 
 	& > *[class^="menu"] {
-		@include size( 100% );
+		@include dims( 100% );
 
 		& > ul {
-			@include size( auto 100% );
-			@include display( flex );
-			@include justify-content( flex-end );
-			@include align-items( center );
+			@include dims( auto 100% );
 
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
 			margin: 0;
 			padding-left: 1rem;
 		}
@@ -69,7 +71,7 @@ nav {
 
 	// Media queries.
 	@media ( min-width: 768px ) {
-		@include display( flex );
+		display: flex;
 	}
 }
 
@@ -101,21 +103,24 @@ nav {
 .header-menu .menu-item-has-children {
 	// Styles for '2nd level' nav. menu:
 	& > ul {
-		@include size( 200% auto );
-		@include position( absolute, 100% null null 50% );
-		@include transform( translateX( -50% ) );
+		@include dims( 200% auto );
 		@include set( margin padding, 0 );
 
 		display: none;
 		background-color: get-color( white );
 		box-shadow: 0 rem( 3 ) rem( 20 ) rem( -5 ) rgba( 0,0,0,0.2 );
 
-		li {
-			@include size( 100% auto );
-			@include display( block );
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		transform: translateX( -50% ) ;
 
-			position: relative;
+		li {
+			@include dims( 100% auto );
+
+			display: block;
 			border-top: map-get( $locals, border-thickness ) solid get-color( grey--xlight );
+			position: relative;
 
 			a {
 				@include on( hover focus ) {
@@ -148,11 +153,11 @@ nav {
 }
 
 .drawer-nav-toggle {
-	@include size( rem( 35 ) auto );
-	@include position( relative );
+	@include dims( rem( 35 ) auto );
 
 	display: block;
 	cursor: pointer;
+	position: relative;
 
 	// Media queries.
 	@media( min-width: 768px ) {
@@ -161,28 +166,32 @@ nav {
 }
 
 .drawer-nav-toggle__elem {
-	@include size( 100% rem( 3 ) );
-	@include position( absolute, 50% null null 0 );
+	@include dims( 100% rem( 3 ) );
 
 	background-color: get-color( accent );
+	position: absolute;
+	top: 50%;
+	left: 0;
 
 	@include pseudo( before after ) {
-		@include size( 100% );
-		@include position( absolute, 0 null null 0 );
-		@include transition( transform 0.1s );
+		@include dims( 100% );
 
 		content: '';
 		display: block;
 		background-color: inherit;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: transform 0.1s;
 		transform-origin: center;
 	}
 
 	@include pseudo( before ) {
-		@include transform( translateY( -250% ) );
+		transform: translateY( -250% );
 	}
 
 	@include pseudo( after ) {
-		@include transform( translateY( 250% ) );
+		transform: translateY( 250% );
 	}
 
 	// Additional styles to be applied when <body> element is 'active'.
@@ -194,11 +203,11 @@ nav {
 		}
 
 		@include pseudo( before ) {
-			@include transform( translateY( 0 ) rotate( 45deg ) );
+			transform: translateY( 0 ) rotate( 45deg );
 		}
 
 		@include pseudo( after ) {
-			@include transform( translateY( 0 ) rotate( -45deg ) );
+			transform: translateY( 0 ) rotate( -45deg );
 		}
 	}
 }

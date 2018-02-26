@@ -12,9 +12,8 @@
 // SELECTORS
 // --------------------------------------------------
 .fade-in {
-	@include transition( opacity 0.4s 0.2s );
-
 	opacity: 0;
+	transition: opacity 0.4s 0.2s;
 
 	&.faded-in {
 		opacity: 1;

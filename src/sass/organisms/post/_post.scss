@@ -48,20 +48,22 @@ $post-byline: #{$post}-byline;
 
 #{$post-byline}-wrap {
 	@include clearfix;
-	@include size( 100% auto );
-	@include position( relative );
+	@include dims( 100% auto );
 
 	min-height: rem( 40 );
 	padding-top: rem( 12 );
 	padding-bottom: rem( 10 );
+	position: relative;
 
 	img {
-		@include size( rem( 40 ) );
-		@include display( block );
-		@include position( absolute, 50% null null 0 );
-		@include transform( translateY( -50% ) );
+		@include dims( rem( 40 ) );
 
+		display: block;
 		border-radius: 50%;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY( -50% );
 	}
 }
 

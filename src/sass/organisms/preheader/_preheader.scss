@@ -13,16 +13,16 @@ $preheader: '.preheader';
 // --------------------------------------------------
 #{$preheader} {
 	@include clearfix;
-	@include size( 100% auto );
-	@include position( relative );
+	@include dims( 100% auto );
 
 	background-color: get-color( black );
 	padding: rem( 8 ) 12.5%;
+	position: relative;
 }
 
 #{$preheader}__inner {
 	@include container;
-	@include size( 100% auto );
+	@include dims( 100% auto );
 
 	max-width: rem( 960 );
 	margin: 0 auto;
@@ -30,15 +30,20 @@ $preheader: '.preheader';
 }
 
 #{$preheader}__cta {
-	@include size( rem( 20 ) );
-	@include position( absolute, 50% 5% null null );
-	@include transform( translate( 0, -50% ) );
+	@include dims( rem( 20 ) );
 	@include set( margin padding, 0 );
 
+	position: absolute;
+	top: 50%;
+	right: 5%;
+	transform: translate( 0, -50% );
+
 	@include pseudo( before after ) {
-		@include size( 50% rem( 2 ) );
-		@include position( absolute, 50% null null 50% );
-		@include transform( translate( -50%, -50% ) rotate( 45deg ) );
+		@include dims( 50% rem( 2 ) );
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate( -50%, -50% ) rotate( 45deg );
 
 		content: '';
 		display: block;
@@ -46,7 +51,7 @@ $preheader: '.preheader';
 	}
 
 	@include pseudo( after ) {
-		@include transform( translate( -50%, -50% ) rotate( -45deg ) );
+		transform: translate( -50%, -50% ) rotate( -45deg );
 	}
 
 	display: block;

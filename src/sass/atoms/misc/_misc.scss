@@ -70,13 +70,15 @@ var {
 del,
 strike {
 	@include pseudo( after ) {
-		@include size( 100% rem( 3 ) );
-		@include position( absolute, 50% null null 0 );
-		@include transform( translateY( -50% ) );
+		@include dims( 100% rem( 3 ) );
 
 		content: '';
 		display: block;
 		background-color: get-color( accent );
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY( -50% );
 	}
 
 	display: inline-block;
@@ -106,10 +108,10 @@ ins {
 // Theme-wide styles for 'pre-formatted' (<pre>) text.
 pre {
 	@include scrollbar(
-	$width: rem( 14 ),
-	$height: rem( 14 ),
-	$thumb-color: get-color( accent ),
-	$track-color: get-color( grey--light )
+		$width: rem( 14 ),
+		$height: rem( 14 ),
+		$thumb-color: get-color( accent ),
+		$track-color: get-color( grey--light )
 	);
 
 	max-width: 100%;
