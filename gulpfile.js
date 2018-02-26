@@ -1,19 +1,23 @@
-/* IMPORT MODULES */
-var esLint = require( 'gulp-eslint' );
-var esLintConfig = require( './.eslintrc.json' );
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
-var concat = require('gulp-concat');
-var connect = require('gulp-connect');
-var filter = require('gulp-filter');
-var PathMap = require( 'sfco-path-map' );
-var postcss = require( 'gulp-postcss' );
-var autoprefixer = require( 'autoprefixer' );
+// --------------------------------------------------
+// IMPORT MODULES
+// --------------------------------------------------
+const esLint = require( 'gulp-eslint' );
+const esLintConfig = require( './.eslintrc.json' );
+const gulp = require('gulp' );
+const sass = require( 'gulp-sass' );
+const uglify = require( 'gulp-uglify' );
+const rename = require( 'gulp-rename' );
+const concat = require( 'gulp-concat' );
+const connect = require( 'gulp-connect' );
+const filter = require( 'gulp-filter' );
+const PathMap = require( 'sfco-path-map' );
+const postcss = require( 'gulp-postcss' );
+const autoprefixer = require( 'autoprefixer' );
 
-/* DECLARE VARS */
-var PATHS = new PathMap( {
+// --------------------------------------------------
+// DECLARE VARS
+// --------------------------------------------------
+const PATHS = new PathMap( {
 	src: './src',
 	dest: './dist',
 	// Templates
@@ -31,13 +35,13 @@ var PATHS = new PathMap( {
 	vendorScriptsSrc: '{{scriptsSrc}}/vendor',
 } );
 
-/* DECLARE TASKS */
+// --------------------------------------------------
+// DECLARE TASKS
+// --------------------------------------------------
 /**
- * 'Default' Gulp task, executed when `gulp` is run from the
- * command line with *no* arguments.
+ * 'Default' Gulp task, executed when `gulp` is run from the command line with *no* arguments.
  *
- * The following tasks are executed *before* the contents of
- * the `default` task.
+ * The following tasks are executed *before* the contents of the `default` task.
  * - `connect`
  * - `meta`
  * - `templates`
@@ -46,23 +50,23 @@ var PATHS = new PathMap( {
  * - `scripts`
  * - `watch`
  */
-gulp.task( 'default', [ 'connect', 'meta', 'templates', 'images', 'sass', 'scripts', 'watch' ], function() {
+gulp.task( 'default', [ 'connect', 'meta', 'templates', 'images', 'sass', 'scripts', 'watch' ], () => {
 	console.log( 'INSIDE TASK: `default`' );
 } );
 
 
 /**
- * ...
+ * Creates 'fully formed' `dist/` folder.
  */
-gulp.task( 'build', [ 'meta', 'templates', 'sass', 'scripts' ], function() {
+gulp.task( 'build', [ 'meta', 'templates', 'images', 'sass', 'scripts' ], () => {
 	console.log( 'INSIDE TASK: `build`' );
 } );
 
 
 /**
- * ...
+ * Migrates 'style.css' (required by WordPress).
  */
-gulp.task( 'meta', function() {
+gulp.task( 'meta', () => {
 	console.log( 'INSIDE TASK: `meta`' );
 
 	gulp.src( './src/style.css' )
@@ -70,9 +74,9 @@ gulp.task( 'meta', function() {
 } );
 
 /**
- * ...
+ * Migrates template files.
  */
-gulp.task( 'templates', function() {
+gulp.task( 'templates', () => {
 	console.log( 'INSIDE TASK: `templates`' );
 
 	gulp.src( PATHS.templatesSrc + '/**/*.php' )
@@ -80,11 +84,11 @@ gulp.task( 'templates', function() {
 } );
 
 /**
- * Migrate images from `src/` to `dist/`.
+ * Migrates images.
  *
  * NOTE: Task migrates files of *any* types within the dedicated images dir. Required for favicon-related files.
  */
-gulp.task( 'images', function() {
+gulp.task( 'images', () => {
 	console.log( 'INSIDE TASK: `images`' );
 
 	gulp.src( PATHS.imagesSrc + '/**/*.*' )
@@ -93,9 +97,10 @@ gulp.task( 'images', function() {
 
 /**
  * Task starts `gulp-connect` server.
+ *
  * eg. allows for other tasks to hook into live-reload functionality.
  */
-gulp.task( 'connect', function() {
+gulp.task( 'connect', () => {
 	connect.server( {
 		livereload: true
 	} );
@@ -103,14 +108,13 @@ gulp.task( 'connect', function() {
 
 
 /**
- * Task converts contents of `styles.scss` file (plus any
- * `*.scss` linked via `@import)` to vanilla CSS.
+ * Task converts contents of `styles.scss` file (plus any `*.scss` linked via `@import)` to vanilla CSS.
  *
  * Resulting CSS file is saved to specified 'dest' directory
  *
  * Output of task is also piped to `connect`, triggering live-reload
  */
-gulp.task( 'sass', function() {
+gulp.task( 'sass', () => {
 	console.log( 'INSIDE TASK: `sass`' );
 
 	return gulp.src( PATHS.stylesSrc + '/styles.scss' )
@@ -137,10 +141,11 @@ gulp.task( 'sass', function() {
 
 /**
  * Task minifies and renames all theme-specific `*.js` files in `src/`directory; resulting files are saved to specified 'dest'.
+ *
  * Task also moves/migrates all 'vendor' JS files from 'src/' to specified destination folder.
  */
-gulp.task( 'scripts', function() {
-	var vendorScriptFilter = filter( [ '**', '!src/**/vendor/' ], { restore: true } ); // NOTE - Array of patterns cannot start with `!...`. See: http://stackoverflow.com/questions/24235860/gulp-filter-not-filtering-out-excluded-files-correctly
+gulp.task( 'scripts', () => {
+	let vendorScriptFilter = filter( [ '**', '!src/**/vendor/' ], { restore: true } ); // NOTE - Array of patterns cannot start with `!...`. See: http://stackoverflow.com/questions/24235860/gulp-filter-not-filtering-out-excluded-files-correctly
 
 	return gulp.src( [
 		PATHS.themeScriptsSrc + '/**/*.js',
@@ -148,7 +153,7 @@ gulp.task( 'scripts', function() {
 	] )
 	.pipe( vendorScriptFilter )
 		.pipe( uglify() )
-		.pipe( rename( function( path ) {
+		.pipe( rename( ( path ) => {
 			path.basename += '.min';
 			path.extname = '.js';
 		} ) )
@@ -162,7 +167,7 @@ gulp.task( 'scripts', function() {
 /**
  * Lint theme scripts via ESLint.
  */
-gulp.task( 'scripts:lint', function() {
+gulp.task( 'scripts:lint', () => {
 	gulp.src( PATHS.themeScriptsSrc )
 		.pipe( esLint( esLintConfig ) )
 		.pipe( esLint.format() )
@@ -171,10 +176,9 @@ gulp.task( 'scripts:lint', function() {
 
 
 /**
- * Task watches for changes to files in `src/` directory,
- * executes appropriate task.
+ * Task watches for changes to files in `src/` directory, executes appropriate task.
  */
-gulp.task( 'watch', function() {
+gulp.task( 'watch', () => {
 	console.log( 'INSIDE TASK: `watch`' );
 
 	gulp.watch( PATHS.templatesSrc + '/**/*.php', [ 'templates' ] );
