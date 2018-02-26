@@ -9,6 +9,8 @@ var concat = require('gulp-concat');
 var connect = require('gulp-connect');
 var filter = require('gulp-filter');
 var PathMap = require( 'sfco-path-map' );
+var postcss = require( 'gulp-postcss' );
+var autoprefixer = require( 'autoprefixer' );
 
 /* DECLARE VARS */
 var PATHS = new PathMap( {
@@ -114,7 +116,7 @@ gulp.task( 'sass', function() {
 	return gulp.src( PATHS.stylesSrc + '/styles.scss' )
 		.pipe( sass(
 			{
-				outputStyle: 'compressed',
+				outputStyle: 'expanded',
 				includePaths: [
 					'node_modules/normalize.css',
 					'node_modules/bourbon/app/assets/stylesheets',
@@ -123,6 +125,11 @@ gulp.task( 'sass', function() {
 				]
 			}).on( 'error', sass.logError )
 		)
+		.pipe( postcss( [
+			autoprefixer( {
+				browsers: [ 'last 2 versions' ],
+			} ),
+		] ) )
 		.pipe( gulp.dest( PATHS.stylesDest ) )
 		.pipe( connect.reload() );
 } );
