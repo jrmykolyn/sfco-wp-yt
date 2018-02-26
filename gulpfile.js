@@ -8,34 +8,26 @@ var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var connect = require('gulp-connect');
 var filter = require('gulp-filter');
-
-
+var PathMap = require( 'sfco-path-map' );
 
 /* DECLARE VARS */
-var PATHS = {
-	templates: {
-		src: 'src/templates',
-		dest: './dist',
-	},
-	images: {
-		src: 'src/img',
-		dest: './dist/img',
-	},
-	styles: {
-		src: 'src/sass',
-		dest: './dist/css',
-	},
-	js: {
-		theme: {
-			src: 'src/js/theme/**/*.js',
-			dest: './dist/js',
-		},
-		vendor: {
-			src: 'src/js/**/*.js',
-	 	},
-	},
-};
-
+var PATHS = new PathMap( {
+	src: './src',
+	dest: './dist',
+	// Templates
+	templatesSrc: '{{src}}/templates',
+	// Images
+	imagesSrc: '{{src}}/img',
+	imagesDest: '{{dest}}/img',
+	// Styles
+	stylesSrc: '{{src}}/sass',
+	stylesDest: '{{dest}}/css',
+	// Scripts
+	scriptsSrc: '{{src}}/js',
+	scriptsDest: '{{dest}}/js',
+	themeScriptsSrc: '{{scriptsSrc}}/theme',
+	vendorScriptsSrc: '{{scriptsSrc}}/vendor',
+} );
 
 /* DECLARE TASKS */
 /**
@@ -81,8 +73,8 @@ gulp.task( 'meta', function() {
 gulp.task( 'templates', function() {
 	console.log( 'INSIDE TASK: `templates`' );
 
-	gulp.src( PATHS.templates.src + '/**/*.php' )
-		.pipe( gulp.dest( PATHS.templates.dest ) );
+	gulp.src( PATHS.templatesSrc + '/**/*.php' )
+		.pipe( gulp.dest( PATHS.dest ) );
 } );
 
 /**
@@ -93,8 +85,8 @@ gulp.task( 'templates', function() {
 gulp.task( 'images', function() {
 	console.log( 'INSIDE TASK: `images`' );
 
-	gulp.src( PATHS.images.src + '/**/*.*' )
-		.pipe( gulp.dest( PATHS.images.dest ) );
+	gulp.src( PATHS.imagesSrc + '/**/*.*' )
+		.pipe( gulp.dest( PATHS.imagesDest ) );
 } );
 
 /**
@@ -119,7 +111,7 @@ gulp.task( 'connect', function() {
 gulp.task( 'sass', function() {
 	console.log( 'INSIDE TASK: `sass`' );
 
-	return gulp.src( PATHS.styles.src + '/styles.scss' )
+	return gulp.src( PATHS.stylesSrc + '/styles.scss' )
 		.pipe( sass(
 			{
 				outputStyle: 'compressed',
@@ -131,7 +123,7 @@ gulp.task( 'sass', function() {
 				]
 			}).on( 'error', sass.logError )
 		)
-		.pipe( gulp.dest( PATHS.styles.dest ) )
+		.pipe( gulp.dest( PATHS.stylesDest ) )
 		.pipe( connect.reload() );
 } );
 
@@ -143,16 +135,19 @@ gulp.task( 'sass', function() {
 gulp.task( 'scripts', function() {
 	var vendorScriptFilter = filter( [ '**', '!src/**/vendor/' ], { restore: true } ); // NOTE - Array of patterns cannot start with `!...`. See: http://stackoverflow.com/questions/24235860/gulp-filter-not-filtering-out-excluded-files-correctly
 
-	return gulp.src( [ PATHS.js.theme.src, PATHS.js.vendor.src ] )
+	return gulp.src( [
+		PATHS.themeScriptsSrc + '/**/*.js',
+		PATHS.vendorScriptsSrc + '/**/*.js',
+	] )
 	.pipe( vendorScriptFilter )
 		.pipe( uglify() )
 		.pipe( rename( function( path ) {
 			path.basename += '.min';
 			path.extname = '.js';
 		} ) )
-		.pipe( gulp.dest( PATHS.js.theme.dest ) )
+		.pipe( gulp.dest( PATHS.scriptsDest ) )
 	.pipe( vendorScriptFilter.restore ) // Migrate filtered out 'vendor' scripts.
-	.pipe( gulp.dest( PATHS.js.theme.dest ) )
+	.pipe( gulp.dest( PATHS.scriptsDest ) )
 		.pipe( connect.reload() );
 } );
 
@@ -161,7 +156,7 @@ gulp.task( 'scripts', function() {
  * Lint theme scripts via ESLint.
  */
 gulp.task( 'scripts:lint', function() {
-	gulp.src( PATHS.js.theme.src )
+	gulp.src( PATHS.themeScriptsSrc )
 		.pipe( esLint( esLintConfig ) )
 		.pipe( esLint.format() )
 		.pipe( esLint.failAfterError() );
@@ -175,7 +170,7 @@ gulp.task( 'scripts:lint', function() {
 gulp.task( 'watch', function() {
 	console.log( 'INSIDE TASK: `watch`' );
 
-	gulp.watch( PATHS.templates.src + '/**/*.php', [ 'templates' ] );
-	gulp.watch( PATHS.styles.src + '/**/*.scss', [ 'sass' ] );
-	gulp.watch( PATHS.js.src, [ 'scripts' ] );
+	gulp.watch( PATHS.templatesSrc + '/**/*.php', [ 'templates' ] );
+	gulp.watch( PATHS.stylesSrc + '/**/*.scss', [ 'sass' ] );
+	gulp.watch( PATHS.scriptsSrc + '/**/*.js', [ 'scripts' ] );
 } );
