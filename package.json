@@ -5,7 +5,11 @@
   "main": "index.php",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "zip": "gulp build && cp -r dist ${PWD##*/} && zip -r ${PWD##*/}.zip ${PWD##*/} && rm -rf ${PWD##*/}"
+    "zip": "npm start && cp -r dist ${PWD##*/} && zip -r ${PWD##*/}.zip ${PWD##*/} && rm -rf ${PWD##*/}",
+    "start": "npm install && npm run gulp:build",
+    "gulp": "gulp",
+    "gulp:build": "gulp build",
+    "gulp:watch": "gulp watch"
   },
   "repository": {
     "type": "git",
