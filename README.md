@@ -2,6 +2,9 @@
 
 ## Table of Contents
 - [About](#about)
+- [Installation](#installaton)
+	- Overview
+	- Instructions
 - [Post Types](#post-types)
 	- Default
 	- Custom
@@ -24,6 +27,21 @@
 
 ## About
 This document includes information about the `YT` WordPress theme, including: post types; templates; options; components; routes; and dependencies. For usage details, as well as technical information, consult the in-code documentation.
+
+## Installation
+
+### Overview
+The YT theme can be installed directly from Github by following the instructions below. Please note that these instructions assume the following:
+- Your local development environment includes [`npm`](https://github.com/npm/npm).
+- You are comfortable working on the command line.
+- You have an existing WordPress installation.
+
+### Instructions
+- Navigate to the [YT theme repository](https://github.com/jrmykolyn/sfco-wp-yt)
+- Clone or download the repository.
+- Navigate to the root of the repository.
+- Run the `npm run zip` command.
+- Log in to your existing WordPress installation and upload the compiled/zipped `YT` theme folder.
 
 ## Post Types
 
