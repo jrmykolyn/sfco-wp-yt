@@ -6,13 +6,13 @@ $cat = get_first_post_category( get_the_ID() );
 	<div class="post-preview__inner">
 		<div class="post-preview-main-content">
 			<?php
-			if ( $cat ):
+			if ( $cat ) {
 			?>
 			<div class="post-preview-header">
 				<a href="<?= get_category_link( $cat->term_id ); ?>"class="category-node"><?= $cat->name; ?></a>
 			</div>
 			<?php
-			endif;
+			}
 			?>
 			<div class="post-preview-body">
 				<h2 class="post-preview-title">
@@ -20,9 +20,9 @@ $cat = get_first_post_category( get_the_ID() );
 				</h2>
 				<p class="post-preview-dek">
 				<?php
-				if ( get_field( 'dek' ) ):
+				if ( get_field( 'dek' ) ) {
 					echo get_field( 'dek' );
-				endif;
+				}
 				?>
 				</p>
 			</div>

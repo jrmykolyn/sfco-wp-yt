@@ -8,25 +8,25 @@ $cat = get_first_post_category( get_the_ID() );
 		<div class="post-preview-supporting-content--large">
 			<a href="<?= get_permalink(); ?>" tabindex="-1">
 			<?php
-			if ( $thumb ):
+			if ( $thumb ) {
 				echo $thumb;
-			else:
+			} else {
 			?>
 					<img src="<?= get_template_directory_uri() . '/img/placeholder/post-preview-image.png' ?>" alt="Placeholder Image" />
 			<?php
-			endif;
+			}
 			?>
 			</a>
 		</div><!-- /.post-preview-supporting-content--large -->
 		<div class="post-preview-main-content--large">
 			<?php
-			if ( $cat ):
+			if ( $cat ) {
 			?>
 			<div class="post-preview-header--large">
 				<a href="<?= get_category_link( $cat->term_id ); ?>"class="category-node"><?= $cat->name; ?></a>
 			</div>
 			<?php
-			endif;
+			}
 			?>
 			<div class="post-preview-body--large">
 				<h1 class="post-preview-title">
@@ -34,9 +34,9 @@ $cat = get_first_post_category( get_the_ID() );
 				</h1>
 				<p class="post-preview-dek">
 				<?php
-				if ( get_field( 'dek' ) ):
+				if ( get_field( 'dek' ) ) {
 					echo get_field( 'dek' );
-				endif;
+				}
 				?>
 				</p>
 			</div>
