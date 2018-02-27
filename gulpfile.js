@@ -69,7 +69,10 @@ gulp.task( 'build', [ 'meta', 'templates', 'images', 'sass', 'scripts' ], () => 
 gulp.task( 'meta', () => {
 	console.log( 'INSIDE TASK: `meta`' );
 
-	gulp.src( './src/style.css' )
+	gulp.src( [
+		'./src/style.css',
+		'./src/screenshot.png',
+	] )
 		.pipe( gulp.dest( './dist/' ) );
 } );
 
