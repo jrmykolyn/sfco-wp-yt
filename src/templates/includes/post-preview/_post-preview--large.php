@@ -34,8 +34,8 @@ $cat = get_first_post_category( get_the_ID() );
 				</h1>
 				<p class="post-preview-dek">
 				<?php
-				if ( get_field( 'dek' ) ) {
-					echo get_field( 'dek' );
+				if ( has_excerpt() ) {
+					echo get_the_excerpt();
 				}
 				?>
 				</p>

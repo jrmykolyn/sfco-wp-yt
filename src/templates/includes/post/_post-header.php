@@ -1,7 +1,7 @@
 <div class="post-header">
 	<?php get_template_part( 'includes/category-node/_category-node' ); ?>
 	<h1><?= the_title(); ?></h1>
-	<p class="post-copy--leading"><?= get_field( 'dek' ); ?></p>
+	<p class="post-copy--leading"><?= get_the_excerpt(); ?></p>
 	<div class="post-byline-wrap">
 		<p class="post-byline">
 			<span><?= get_the_author(); ?></span>
