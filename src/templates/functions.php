@@ -1,6 +1,7 @@
 <?php
 /* THEME DEFAULTS */
 add_theme_support( 'post-thumbnails' );
+add_post_type_support( 'page', 'excerpt' );
 
 /* CONFIG */
 require_once( dirname( __FILE__ ) . '/config.php' );
