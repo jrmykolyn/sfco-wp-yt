@@ -17,7 +17,7 @@ $logo: '.logo';
 
 	height: rem( 50 );
 	display: block;
-	background-color: #FFF;
+	background-color: get-color( white );
 	box-shadow: 0px 3px 20px -5px rgba(0,0,0,0.15);
 }
 

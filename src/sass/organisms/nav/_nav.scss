@@ -108,7 +108,7 @@ nav {
 
 		display: none;
 		background-color: get-color( white );
-		box-shadow: 0 rem( 3 ) rem( 20 ) rem( -5 ) rgba( 0,0,0,0.2 );
+		box-shadow: 0 rem( 3 ) rem( 20 ) rem( -5 ) rgba( get-color( black ), 0.2 );
 
 		position: absolute;
 		top: 100%;
@@ -125,7 +125,7 @@ nav {
 			a {
 				@include on( hover focus ) {
 					color: get-color( grey--dark );
-					background-color: #F9F9F9;
+					background-color: get-color( off-white );
 				}
 
 				padding: rem( 15 ) rem( 10 ) rem( 12 );

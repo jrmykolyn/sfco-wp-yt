@@ -14,7 +14,7 @@
 table {
 	@include dims( 100% auto );
 
-	background-color: #F9F9F9;
+	background-color: get-color( off-white );
 	border: rem( 1 ) solid get-color( grey--light );
 	border-collapse: collapse;
 	border-spacing: 0;

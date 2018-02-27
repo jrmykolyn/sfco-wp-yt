@@ -15,7 +15,7 @@ $hero-wrap: #{$hero}-wrap;
 #{$hero-wrap} {
 	@include dims( 100% auto );
 
-	background-color: #DADADA;
+	background-color: get-color( grey--xlight );
 	padding-top: 56.25%;
 	position: relative;
 

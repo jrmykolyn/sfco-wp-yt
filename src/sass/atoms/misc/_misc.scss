@@ -52,7 +52,7 @@ tt,
 var {
 	display: inline-block;
 	color: get-color( accent );
-	background-color: #F6F6F6;
+	background-color: get-color( off-white );
 	border: rem( 1 ) solid get-color( grey--xlight );
 	border-radius: rem( 3 );
 
