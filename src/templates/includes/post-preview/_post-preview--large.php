@@ -4,30 +4,34 @@ $cat = get_first_post_category( get_the_ID() );
 ?>
 
 <article class="post-preview--large">
-	<a href="<?= get_permalink(); ?>"class="post-preview--large__inner">
+	<div class="post-preview--large__inner">
 		<div class="post-preview-supporting-content--large">
+			<a href="<?= get_permalink(); ?>" tabindex="-1">
 			<?php
 			if ( $thumb ):
 				echo $thumb;
 			else:
 			?>
-				<img src="<?= get_template_directory_uri() . '/img/placeholder/post-preview-image.png' ?>" alt="Placeholder Image" />
+					<img src="<?= get_template_directory_uri() . '/img/placeholder/post-preview-image.png' ?>" alt="Placeholder Image" />
 			<?php
 			endif;
 			?>
+			</a>
 		</div><!-- /.post-preview-supporting-content--large -->
 		<div class="post-preview-main-content--large">
 			<?php
 			if ( $cat ):
 			?>
 			<div class="post-preview-header--large">
-				<span class="category-node"><?= $cat->name; ?></span>
+				<a href="<?= get_category_link( $cat->term_id ); ?>"class="category-node"><?= $cat->name; ?></a>
 			</div>
 			<?php
 			endif;
 			?>
 			<div class="post-preview-body--large">
-				<h1 class="post-preview-title"><?= the_title(); ?></h1>
+				<h1 class="post-preview-title">
+					<a href="<?= get_permalink(); ?>"><?= the_title(); ?></a>
+				</h1>
 				<p class="post-preview-dek">
 				<?php
 				if ( get_field( 'dek' ) ):
@@ -43,5 +47,5 @@ $cat = get_first_post_category( get_the_ID() );
 				</p>
 			</div>
 		</div><!-- /.post-preview-main-content--large -->
-	</a><!-- /.post-preview__inner -->
+	</div><!-- /.post-preview__inner -->
 </article><!-- /.post-preview -->

@@ -24,6 +24,18 @@
 
 	color: get-color( black );
 	margin-bottom: rem( 10 );
+
+	a {
+		color: inherit;
+
+		@include pseudo( before ) {
+			display: none;
+		}
+
+		@include on( hover focus ) {
+			text-decoration: underline;
+		}
+	}
 }
 
 // --------------------------------------------------

@@ -3,19 +3,21 @@ $cat = get_first_post_category( get_the_ID() );
 ?>
 
 <article class="post-preview">
-	<a href="<?= get_permalink(); ?>"class="post-preview__inner">
+	<div class="post-preview__inner">
 		<div class="post-preview-main-content">
 			<?php
 			if ( $cat ):
 			?>
 			<div class="post-preview-header">
-				<span class="category-node"><?= $cat->name; ?></span>
+				<a href="<?= get_category_link( $cat->term_id ); ?>"class="category-node"><?= $cat->name; ?></a>
 			</div>
 			<?php
 			endif;
 			?>
 			<div class="post-preview-body">
-				<h2 class="post-preview-title"><?= the_title(); ?></h2>
+				<h2 class="post-preview-title">
+					<a href="<?= get_permalink(); ?>"><?= the_title(); ?></a>
+				</h2>
 				<p class="post-preview-dek">
 				<?php
 				if ( get_field( 'dek' ) ):
@@ -31,5 +33,5 @@ $cat = get_first_post_category( get_the_ID() );
 				</p>
 			</div>
 		</div><!-- /.post-preview-main-content -->
-	</a><!-- /.post-preview__inner -->
+	</div><!-- /.post-preview__inner -->
 </article><!-- /.post-preview -->
