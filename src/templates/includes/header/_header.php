@@ -5,7 +5,9 @@ $header_logo_path = get_theme_mods()[ 'yt_header_logo' ] ? get_theme_mods()[ 'yt
 	<div class="header__inner">
 
 		<?php if ( get_theme_mods()[ 'yt_header_hide_logo' ] ) { ?>
-			<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+			<h1 class="site-title">
+				<a href="<?= get_home_url(); ?>"><?php bloginfo( 'name' ); ?></a>
+			</h1>
 		<?php } else { ?>
 		<div class="logo-wrap">
 			<a href="<?= get_site_url(); ?>" class="logo-wrap__link">
