@@ -134,7 +134,13 @@ blockquote {
 	white-space: nowrap;
 	overflow: hidden;
 
+	// Media queries
 	@media ( min-width: 768px ) {
 		font-size: 2rem;
+	}
+
+	// Descendant elems.
+	a {
+		color: inherit;
 	}
 }
