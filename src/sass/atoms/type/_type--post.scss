@@ -21,14 +21,14 @@
 %__post-title {
 	@extend %__post-heading;
 
-	margin-bottom: rem( 10 );
+	margin-bottom: 1rem;
 }
 
 %__post-footer-title {
 	@extend %__post-type--base;
 
 	color: get-color( grey--dark );
-	font-size: rem( 14 );
+	font-size: 1.4rem;
 	text-transform: uppercase;
 }
 

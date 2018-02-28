@@ -15,7 +15,7 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
 // SELECTORS
 // --------------------------------------------------
 #{$drawer-nav} {
-	@include dims( rem( 300 ) 100% );
+	@include dims( 30rem 100% );
 
 	display: block;
 	background: linear-gradient( 45deg, get-color( accent ), darken( get-color( accent ), 20% ) );
@@ -45,11 +45,11 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
 }
 
 #{$drawer-nav-header} {
-	@include dims( 100% rem( 50 ) );
+	@include dims( 100% 5rem );
 
 	display: flex;
 	align-items: center;
-	padding: 0 rem( 20 );
+	padding: 0 2rem;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -57,10 +57,10 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
 
 #{$drawer-nav-body} {
 	width: 100%;
-	height: calc( 100% - #{rem(200)} );
+	height: calc( 100% - 20rem );
 	padding: 0;
 	position: absolute;
-	top: rem( 50 );
+	top: 5rem;
 	left: 0;
 
 	// Descendant elems.
@@ -80,7 +80,7 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
 
 		a {
 			color: get-color( white );
-			padding: rem( 14 ) rem( 20 );
+			padding: 1.4rem 2rem;
 			font-weight: 700;
 			text-transform: uppercase;
 
@@ -110,14 +110,14 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
 			}
 
 			a {
-				padding-left: rem( 25 );
+				padding-left: 2.5rem;
 			}
 
 			ul {
 				position: static;
 
 				a {
-					padding-left: rem( 35 );
+					padding-left: 3.5rem;
 				}
 			}
 		}
@@ -127,9 +127,9 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
 }
 
 #{$drawer-nav-footer} {
-	@include dims( 100% rem( 150 ) );
+	@include dims( 100% 15rem );
 
-	padding: 0 rem( 20 );
+	padding: 0 2rem;
 	position: absolute;
 	bottom: 0;
 	left: 0;

@@ -12,17 +12,17 @@ $wp-class--align-center: '.aligncenter';
 // PLACEHOLDERS
 // --------------------------------------------------
 %__image-embed--base {
-	margin: rem( 30 ) auto;
+	margin: 3rem auto;
 }
 
 %__image-embed--align-left {
 	float: left;
-	margin-right: rem( 30 );
+	margin-right: 3rem;
 }
 
 %__image-embed--align-right {
 	float: right;
-	margin-left: rem( 30 );
+	margin-left: 3rem;
 }
 
 // --------------------------------------------------
@@ -62,10 +62,10 @@ $wp-class--align-center: '.aligncenter';
 #{$image-embed-text} {
 	@extend %__caption;
 
-	border-bottom: rem( 1 ) solid get-color( grey--xlight );
+	border-bottom: 0.1rem solid get-color( grey--xlight );
 	margin-bottom: 0;
-	padding-top: rem( 15 );
-	padding-bottom: rem( 12 );
+	padding-top: 1.5rem;
+	padding-bottom: 1.2rem;
 }
 
 // Styles for <img> elems. with supplementary, WordPress-specific classes.

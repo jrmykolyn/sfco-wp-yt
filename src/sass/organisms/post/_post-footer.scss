@@ -12,9 +12,9 @@ $post-footer: '.post-footer';
 // SELECTORS
 // --------------------------------------------------
 #{$post-footer} {
-	border-top: rem( 1 ) solid get-color( grey--xlight );
-	margin-bottom: rem( 40 );
-	padding-top: rem( 30 );
+	border-top: 0.1rem solid get-color( grey--xlight );
+	margin-bottom: 4rem;
+	padding-top: 3rem;
 
 	// Descendant elems.
 	@include descendant( last ) {
@@ -23,7 +23,7 @@ $post-footer: '.post-footer';
 }
 
 #{$post-footer}__tags {
-	margin-bottom: rem( 10 );
+	margin-bottom: 1rem;
 }
 
 #{$post-footer}__more {

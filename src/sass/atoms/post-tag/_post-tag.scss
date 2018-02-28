@@ -12,11 +12,11 @@ $post-tag: '.post-tag';
 // SELECTORS
 // --------------------------------------------------
 #{$post-tag} {
-	@include set( margin-right margin-bottom, rem( 20 ) );
+	@include set( margin-right margin-bottom, 2rem );
 
 	display: inline-block;
-	padding-bottom: rem( 5 );
-	font-size: rem( 14 );
+	padding-bottom: 0.5rem;
+	font-size: 1.4rem;
 	font-weight: 700;
-	letter-spacing: rem( 0.5 );
+	letter-spacing: 0.05rem;
 }

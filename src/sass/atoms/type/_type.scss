@@ -9,12 +9,12 @@ $post-copy: '.post-copy';
 %__copy {
 	color: get-color( black );
 
-	font-size: rem( 18 );
+	font-size: 1.8rem;
 	line-height: 1.75;
 
 	// Media queries
 	@media ( min-width: 960px ) {
-		font-size: rem( 22 );
+		font-size: 2.2rem;
 	}
 }
 
@@ -23,7 +23,7 @@ $post-copy: '.post-copy';
 	color: get-color( grey );
 
 	font-family: get-font( copy );
-	font-size: rem( 11 );
+	font-size: 1.1rem;
 	text-transform: uppercase;
 	line-height: 1.2;
 	letter-spacing: 0.5px;
@@ -56,7 +56,7 @@ a {
 
 	&:before,
 	&::before {
-		@include dims( 100% rem( 3 ) );
+		@include dims( 100% 0.3rem );
 
 		content: '';
 		display: block;
@@ -71,7 +71,7 @@ a {
 	@include on( hover focus ) {
 		&:before,
 		&::before {
-			height: rem( 6 );
+			height: 0.6rem;
 			background-color: rgba( get-color( accent ), 0.3 );
 		}
 	}
@@ -89,23 +89,23 @@ h6 {
 
 #{$post-copy}--leading {
 	color: get-color( accent );
-	margin-bottom: rem( 10 );
+	margin-bottom: 1rem;
 
-	font-size: rem( 22 );
+	font-size: 2.2rem;
 	line-height: 1.4;
 }
 
 blockquote {
 	@include dims( 100% auto );
 
-	margin: rem( 50 ) 0;
+	margin: 5rem 0;
 
 	p {
 		color: get-color( accent );
 		margin: 0;
 
 		font-family: get-font( heading );
-		font-size: rem( 24 );
+		font-size: 2.4rem;
 		line-height: 1.5;
 	}
 
@@ -114,27 +114,27 @@ blockquote {
 		@extend %__citation;
 
 		display: block;
-		border-top: rem( 1 ) solid get-color( grey--xlight );
-		margin-top: rem( 15 );
-		padding-top: rem( 15 );
+		border-top: 0.1rem solid get-color( grey--xlight );
+		margin-top: 1.5rem;
+		padding-top: 1.5rem;
 	}
 }
 
 .site-title {
 	padding: 0;
-	padding-top: rem( 1 );
-	padding-right: rem( 10 );
+	padding-top: 0.1rem;
+	padding-right: 1rem;
 	margin: 0;
 	margin-right: auto;
 	line-height: 1.2;
 
 	font-family: get-font( copy );
-	font-size: rem( 16 );
+	font-size: 1.6rem;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
 
 	@media ( min-width: 768px ) {
-		font-size: rem( 20 );
+		font-size: 2rem;
 	}
 }

@@ -13,7 +13,7 @@
 // --------------------------------------------------
 // Theme-wide styles for <address> tag.
 address {
-	@include set( margin-top margin-bottom, rem( 20 ) );
+	@include set( margin-top margin-bottom, 2rem );
 
 	color: get-color( grey );
 }
@@ -53,11 +53,11 @@ var {
 	display: inline-block;
 	color: get-color( accent );
 	background-color: get-color( off-white );
-	border: rem( 1 ) solid get-color( grey--xlight );
-	border-radius: rem( 3 );
+	border: 0.1rem solid get-color( grey--xlight );
+	border-radius: 0.3rem;
 
-	padding-left: rem( 5 );
-	padding-right: rem( 5 );
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
 
 	font-size: smaller;
 	font-style: normal;
@@ -70,7 +70,7 @@ var {
 del,
 strike {
 	@include pseudo( after ) {
-		@include dims( 100% rem( 3 ) );
+		@include dims( 100% 0.3rem );
 
 		content: '';
 		display: block;
@@ -108,8 +108,8 @@ ins {
 // Theme-wide styles for 'pre-formatted' (<pre>) text.
 pre {
 	@include scrollbar(
-		$width: rem( 14 ),
-		$height: rem( 14 ),
+		$width: 1.4rem,
+		$height: 1.4rem,
 		$thumb-color: get-color( accent ),
 		$track-color: get-color( grey--light )
 	);
@@ -117,6 +117,6 @@ pre {
 	max-width: 100%;
 	color: get-color( off-white );
 	background: get-color( black );
-	padding: rem( 20 );
+	padding: 2rem;
 	overflow: auto;
 }

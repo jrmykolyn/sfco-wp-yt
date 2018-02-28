@@ -19,13 +19,13 @@ dl {
 
 	dt {
 		display: inline-block;
-		border-bottom: rem( 2 ) solid get-color( grey );
-		padding-bottom: rem( 2 );
+		border-bottom: 0.2rem solid get-color( grey );
+		padding-bottom: 0.2rem;
 
 		font-weight: 700;
 
 		&:not(:last-child) {
-			margin-bottom: rem( 8 );
+			margin-bottom: 0.8rem;
 		}
 	}
 
@@ -33,7 +33,7 @@ dl {
 		margin: 0;
 
 		&:not(:last-child) {
-			margin-bottom: rem( 15 );
+			margin-bottom: 1.5rem;
 		}
 	}
 }
@@ -41,12 +41,12 @@ dl {
 // Theme-wide styles for both 'unordered list' (<ul>) and 'ordered list' (<ol>) elems.
 ul,
 ol {
-	padding-left: rem( 40 );
+	padding-left: 4rem;
 	list-style-position: inside;
 
 	li {
-		margin-left: rem( -40 );
-		padding: rem( 4 ) 0 rem( 2 );
+		margin-left: -4rem;
+		padding: 0.4rem 0 0.2rem;
 		line-height: 1.2;
 
 		ul li,

@@ -35,11 +35,11 @@ $post-byline: #{$post}-byline;
 }
 
 #{$post-header} {
-	@include set( padding-bottom margin-bottom, rem( 40 ) );
+	@include set( padding-bottom margin-bottom, 4rem );
 }
 
 #{$post-body} {
-	margin-bottom: rem( 30 );
+	margin-bottom: 3rem;
 
 	@include descendant( last ) {
 		margin-bottom: 0;
@@ -50,13 +50,13 @@ $post-byline: #{$post}-byline;
 	@include clearfix;
 	@include dims( 100% auto );
 
-	min-height: rem( 40 );
-	padding-top: rem( 12 );
-	padding-bottom: rem( 10 );
+	min-height: 4rem;
+	padding-top: 1.2rem;
+	padding-bottom: 1rem;
 	position: relative;
 
 	img {
-		@include dims( rem( 40 ) );
+		@include dims( 4rem );
 
 		display: block;
 		border-radius: 50%;
@@ -70,14 +70,14 @@ $post-byline: #{$post}-byline;
 #{$post-byline} {
 	display: block;
 	margin: 0;
-	font-size: rem( 15 );
+	font-size: 1.5rem;
 	line-height: 1.2;
 
 	@include descendant( first ) {
 		display: inline-block;
-		margin-right: rem( 8 );
-		padding-right: rem( 10 );
-		border-right: rem( 1 ) solid get-color( grey--xlight );
+		margin-right: 0.8rem;
+		padding-right: 1rem;
+		border-right: 0.1rem solid get-color( grey--xlight );
 	}
 
 	@include descendant( last ) {

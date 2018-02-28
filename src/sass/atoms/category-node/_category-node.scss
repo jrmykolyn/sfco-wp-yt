@@ -11,17 +11,17 @@
 // SELECTORS
 // --------------------------------------------------
 .category-node {
-	@include set( margin-right margin-bottom, rem( 20 ) );
+	@include set( margin-right margin-bottom, 2rem );
 
 	display: inline-block;
 	color: get-color( white );
 	background: linear-gradient( 45deg, get-color( accent ), darken( get-color( accent ), 20% ) );
-	padding: rem( 12 ) rem( 14 ) rem( 8 );
+	padding: 1.2rem 1.4rem 0.8rem;
 
-	font-size: rem( 14 );
+	font-size: 1.4rem;
 	line-height: 1;
 	font-weight: 700;
-	letter-spacing: rem( 0.5 );
+	letter-spacing: 0.05rem;
 	text-transform: uppercase;
 
 	// Pseudo elems.

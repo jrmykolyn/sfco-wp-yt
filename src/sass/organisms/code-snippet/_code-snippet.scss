@@ -12,5 +12,5 @@ $code-snippet: '.crayon-syntax';
 // SELECTORS
 // --------------------------------------------------
 #{$code-snippet} {
-	@include set( margin-top margin-bottom, rem( 50 ) );
+	@include set( margin-top margin-bottom, 5rem );
 }

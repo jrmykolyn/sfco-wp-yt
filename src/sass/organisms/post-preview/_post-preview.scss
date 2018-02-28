@@ -23,18 +23,18 @@ $post-preview: '.post-preview';
 	}
 
 	@include on( hover focus ) {
-		box-shadow: 0 rem( 10 ) rem( 20 ) rem( -5 ) rgba( get-color( black ), 0.1 );
+		box-shadow: 0 1rem 2rem -0.5rem rgba( get-color( black ), 0.1 );
 	}
 
 	display: block;
 	transition: all 0.25s;
 	background-color: get-color( white );
-	box-shadow: 0 rem( 5 ) rem( 20 ) rem( -5 ) rgba( get-color( black ), 0.15 );
-	margin-bottom: rem( 20 );
+	box-shadow: 0 0.5rem 2rem -0.5rem rgba( get-color( black ), 0.15 );
+	margin-bottom: 2rem;
 }
 
 #{$post-preview}-main-content {
-	@include set( padding-top padding-bottom, rem( 20 ) );
+	@include set( padding-top padding-bottom, 2rem );
 
 	@include span( 12 of 12 );
 	@include last;
@@ -43,7 +43,7 @@ $post-preview: '.post-preview';
 #{$post-preview}-header,
 #{$post-preview}-body,
 #{$post-preview}-footer {
-	@include set( padding-right padding-left, rem( 20 ) );
+	@include set( padding-right padding-left, 2rem );
 	@include descendant( last ) {
 		margin-bottom: 0;
 	}
@@ -53,11 +53,11 @@ $post-preview: '.post-preview';
 
 
 #{$post-preview}-body {
-	@include set( padding-top padding-bottom, rem( 20 ) );
+	@include set( padding-top padding-bottom, 2rem );
 }
 
 #{$post-preview}-footer {
-	padding-top: rem( 20 );
+	padding-top: 2rem;
 }
 
 #{$post-preview}-title {

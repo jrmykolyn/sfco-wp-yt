@@ -19,7 +19,7 @@ $next: '.next';
 #{$pagination-wrapper} {
 	display: flex;
 	justify-content: center;
-	padding: rem( 20 ) 0;
+	padding: 2rem 0;
 }
 
 #{$pagination} {
@@ -39,24 +39,24 @@ $next: '.next';
 		}
 
 		display: inline-block;
-		padding: 0 rem( 10 );
-		font-size: rem( 16 );
+		padding: 0 1rem;
+		font-size: 1.6rem;
 		font-weight: 700;
 		text-transform: uppercase;
-		letter-spacing: rem( 1 );
+		letter-spacing: 0.1rem;
 	}
 
 	a {
 		@include on( hover ) {
-			border-bottom: rem( 3 ) solid get-color( grey--xlight );
+			border-bottom: 0.3rem solid get-color( grey--xlight );
 		}
 	}
 
 	span {
 		&:not(#{$dots}) {
 			color: get-color( black );
-			border-top: rem( 3 ) solid transparent; // Add transparent top border for vertical centering.
-			border-bottom: rem( 3 ) solid get-color( black );
+			border-top: 0.3rem solid transparent; // Add transparent top border for vertical centering.
+			border-bottom: 0.3rem solid get-color( black );
 		}
 	}
 
@@ -70,8 +70,8 @@ $next: '.next';
 
 		// @include pseudo( after ) {
 		//     content: '';
-		//     width: rem( 20 );
-		//     height: rem( 2 );
+		//     width: 2rem;
+		//     height: 0.2rem;
 		//     display: block;
 		//     background-color: get-color( grey--xlight );
 		//
@@ -83,38 +83,38 @@ $next: '.next';
 		text-align: center;
 
 		// Media queries
-		@media ( min-width: rem( 600 ) ) {
+		@media ( min-width: 60rem ) {
 			display: inline-block;
 		}
 	}
 
 	#{$prev} {
-		margin-bottom: rem( 20 );
+		margin-bottom: 2rem;
 
 		// Media queries
-		@media ( min-width: rem( 600 ) ) {
-			margin-right: rem( 40 );
+		@media ( min-width: 60rem ) {
+			margin-right: 4rem;
 			margin-bottom: 0;
 
 			@include pseudo( after ) {
 				transform: translate( 80%, -50% );
 
-				right: rem( -20 );
+				right: -2rem;
 			}
 		}
 	}
 
 	#{$next} {
-		margin-top: rem( 20 );
+		margin-top: 2rem;
 
 		// Media queries
-		@media ( min-width: rem( 600 ) ) {
+		@media ( min-width: 60rem ) {
 			margin-top: 0;
-			margin-left: rem( 40 );
+			margin-left: 4rem;
 
 			@include pseudo( after ) {
 				transform: translate( -80%, -50% );
-				left: rem( -20 );
+				left: -2rem;
 			}
 		}
 	}

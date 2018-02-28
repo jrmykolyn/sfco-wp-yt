@@ -23,14 +23,14 @@ $susy: (
 $grid-map: (
 	default: (
 		width: 100%,
-		max-width: rem( 960 )
+		max-width: 96rem
 	),
 	narrow: (
 		width: 100%,
-		max-width: rem( 700 )
+		max-width: 70rem
 	),
 	wide: (
 		width: 100%,
-		max-width: rem( 1024 )
+		max-width: 102.4rem,
 	),
 );

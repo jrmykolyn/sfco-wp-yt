@@ -23,13 +23,13 @@
 #{$post-preview}-main-content--min {
 	@extend #{$post-preview}-main-content;
 
-	padding: rem( 15 );
+	padding: 1.5rem;
 }
 
 #{$post-preview}-body--min {
 	@extend #{$post-preview}-body;
 
-	margin-bottom: rem( 10 );
+	margin-bottom: 1rem;
 	padding: 0;
 }
 
@@ -44,6 +44,6 @@
 
 	display: inline;
 	color: get-color( accent );
-	font-size: rem( 20 );
+	font-size: 2rem;
 	line-height: 1.6;
 }

@@ -2,7 +2,7 @@
 // VARIABLES
 // --------------------------------------------------
 $locals: (
-	border-thickness: rem( 1 )
+	border-thickness: 0.1rem
 );
 
 // --------------------------------------------------
@@ -24,7 +24,7 @@ $locals: (
 		transition: all, 0.25s;
 
 		color: get-color( grey--dark );
-		font-size: rem( 13 );
+		font-size: 1.3rem;
 
 		span {
 			display: block;
@@ -39,7 +39,7 @@ $locals: (
 		display: inline-block;
 		color: get-color( grey--med );
 
-		font-size: rem( 14 );
+		font-size: 1.4rem;
 		line-height: 1.428571; // 14 / 20
 	}
 }
@@ -82,7 +82,7 @@ nav {
 .header-menu .menu-item {
 	// Descendant elems.
 	a {
-		padding: 0 rem( 15 );
+		padding: 0 1.5rem;
 
 		font-weight: 700;
 		text-transform: uppercase;
@@ -108,7 +108,7 @@ nav {
 
 		display: none;
 		background-color: get-color( white );
-		box-shadow: 0 rem( 3 ) rem( 20 ) rem( -5 ) rgba( get-color( black ), 0.2 );
+		box-shadow: 0 0.3rem 2rem -0.5rem rgba( get-color( black ), 0.2 );
 
 		position: absolute;
 		top: 100%;
@@ -128,8 +128,8 @@ nav {
 					background-color: get-color( off-white );
 				}
 
-				padding: rem( 15 ) rem( 10 ) rem( 12 );
-				font-size: rem( 12 );
+				padding: 1.5rem 1rem 1.2rem;
+				font-size: 1.2rem;
 				font-weight: 400;
 			}
 
@@ -153,7 +153,7 @@ nav {
 }
 
 .drawer-nav-toggle {
-	@include dims( rem( 35 ) auto );
+	@include dims( 3.5rem auto );
 
 	display: block;
 	cursor: pointer;
@@ -166,7 +166,7 @@ nav {
 }
 
 .drawer-nav-toggle__elem {
-	@include dims( 100% rem( 3 ) );
+	@include dims( 100% 0.3rem );
 
 	background-color: get-color( accent );
 	position: absolute;

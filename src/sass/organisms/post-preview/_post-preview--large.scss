@@ -26,13 +26,13 @@
 	@include span( 6 of 12 );
 	@include last;
 
-	padding-right: rem( 20 );
+	padding-right: 2rem;
 
 	// Media queries
 	@media ( max-width: 599px ) {
 		@include span( 12 of 12 );
 
-		padding-left: rem( 20 );
+		padding-left: 2rem;
 	}
 }
 

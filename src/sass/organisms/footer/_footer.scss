@@ -13,7 +13,7 @@ $footer-col: '.footer-col';
 
 	// Positional styles
 	&:not( :last-child ) {
-		margin-bottom: rem( 30 );
+		margin-bottom: 3rem;
 	}
 
 	// Descendent elems
@@ -28,11 +28,11 @@ $footer-col: '.footer-col';
 #{$footer} {
 	@extend #{$layout-section};
 
-	@include set( padding-top padding-bottom, rem( 30 ) );
+	@include set( padding-top padding-bottom, 3rem );
 
-	min-height: rem( 200 );
+	min-height: 20rem;
 	background-color: get-color( black );
-	font-size: rem( 14 );
+	font-size: 1.4rem;
 
 	* {
 		color: get-color( grey--med );
