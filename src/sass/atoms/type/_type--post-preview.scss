@@ -24,7 +24,9 @@
 
 	color: get-color( black );
 	margin-bottom: 1rem;
+	font-size: 2.2rem;
 
+	// Descendant elems.
 	a {
 		color: inherit;
 
@@ -35,6 +37,11 @@
 		@include on( hover focus ) {
 			text-decoration: underline;
 		}
+	}
+
+	// Media queries
+	@media ( min-width: 960px ) {
+		font-size: 2.8rem;
 	}
 }
 
