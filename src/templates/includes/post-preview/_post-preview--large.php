@@ -29,9 +29,9 @@ $cat = get_first_post_category( get_the_ID() );
 			}
 			?>
 			<div class="post-preview-body--large">
-				<h1 class="post-preview-title">
+				<h2 class="post-preview-title">
 					<a href="<?= get_permalink(); ?>"><?= the_title(); ?></a>
-				</h1>
+				</h2>
 				<p class="post-preview-dek">
 				<?php
 				if ( has_excerpt() ) {
