@@ -2,7 +2,7 @@
 
 ## Table of Contents
 - [About](#about)
-- [Installation](#installaton)
+- [Installation](#installation)
 	- Overview
 	- Instructions
 - [Post Types](#post-types)
