@@ -7,6 +7,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Changed
 - Update 'site title': wrap text in link.
 
+### Removed
+- Remove use of `rem()` mixin (replace with literal values).
+
 ## [0.1.1] - 2018-02-27
 ### Changed
 - Update `package.json`: ensure that `zip` script installs node modules; add Gulp task aliases to `scripts` field.
