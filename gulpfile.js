@@ -19,9 +19,7 @@ const autoprefixer = require( 'autoprefixer' );
 // --------------------------------------------------
 const PATHS = new PathMap( {
 	src: './src',
-	dest: './dist',
-	// Templates
-	templatesSrc: '{{src}}/templates',
+	dest: './',
 	// Images
 	imagesSrc: '{{src}}/img',
 	imagesDest: '{{dest}}/img',
@@ -44,46 +42,20 @@ const PATHS = new PathMap( {
  * The following tasks are executed *before* the contents of the `default` task.
  * - `connect`
  * - `meta`
- * - `templates`
  * - `images`
  * - `sass`
  * - `scripts`
  * - `watch`
  */
-gulp.task( 'default', [ 'connect', 'meta', 'templates', 'images', 'sass', 'scripts', 'watch' ], () => {
+gulp.task( 'default', [ 'connect', 'images', 'sass', 'scripts', 'watch' ], () => {
 	console.log( 'INSIDE TASK: `default`' );
 } );
 
-
 /**
- * Creates 'fully formed' `dist/` folder.
+ * Compiles and migrates contents of `src/`.
  */
-gulp.task( 'build', [ 'meta', 'templates', 'images', 'sass', 'scripts' ], () => {
+gulp.task( 'build', [ 'images', 'sass', 'scripts' ], () => {
 	console.log( 'INSIDE TASK: `build`' );
-} );
-
-
-/**
- * Migrates 'style.css' (required by WordPress).
- */
-gulp.task( 'meta', () => {
-	console.log( 'INSIDE TASK: `meta`' );
-
-	gulp.src( [
-		'./src/style.css',
-		'./src/screenshot.png',
-	] )
-		.pipe( gulp.dest( './dist/' ) );
-} );
-
-/**
- * Migrates template files.
- */
-gulp.task( 'templates', () => {
-	console.log( 'INSIDE TASK: `templates`' );
-
-	gulp.src( PATHS.templatesSrc + '/**/*.php' )
-		.pipe( gulp.dest( PATHS.dest ) );
 } );
 
 /**
@@ -108,7 +80,6 @@ gulp.task( 'connect', () => {
 		livereload: true
 	} );
 } );
-
 
 /**
  * Task converts contents of `styles.scss` file (plus any `*.scss` linked via `@import)` to vanilla CSS.
@@ -141,7 +112,6 @@ gulp.task( 'sass', () => {
 		.pipe( connect.reload() );
 } );
 
-
 /**
  * Task minifies and renames all theme-specific `*.js` files in `src/`directory; resulting files are saved to specified 'dest'.
  *
@@ -157,7 +127,8 @@ gulp.task( 'scripts', () => {
 	.pipe( vendorScriptFilter )
 		.pipe( uglify() )
 		.pipe( rename( ( path ) => {
-			path.basename += '.min';
+			// Only add '.min' if not already present.
+			path.basename = ( !path.basename.includes( '.min' ) ) ? `${path.basename}.min` : path.basename;
 			path.extname = '.js';
 		} ) )
 		.pipe( gulp.dest( PATHS.scriptsDest ) )
@@ -165,7 +136,6 @@ gulp.task( 'scripts', () => {
 	.pipe( gulp.dest( PATHS.scriptsDest ) )
 		.pipe( connect.reload() );
 } );
-
 
 /**
  * Lint theme scripts via ESLint.
@@ -177,14 +147,12 @@ gulp.task( 'scripts:lint', () => {
 		.pipe( esLint.failAfterError() );
 } );
 
-
 /**
  * Task watches for changes to files in `src/` directory, executes appropriate task.
  */
 gulp.task( 'watch', () => {
 	console.log( 'INSIDE TASK: `watch`' );
 
-	gulp.watch( PATHS.templatesSrc + '/**/*.php', [ 'templates' ] );
 	gulp.watch( PATHS.stylesSrc + '/**/*.scss', [ 'sass' ] );
 	gulp.watch( PATHS.scriptsSrc + '/**/*.js', [ 'scripts' ] );
 } );
