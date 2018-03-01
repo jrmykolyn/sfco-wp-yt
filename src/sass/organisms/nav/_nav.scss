@@ -153,7 +153,7 @@ nav {
 }
 
 .drawer-nav-toggle {
-	@include dims( 3.5rem auto );
+	@include dims( 3.5rem );
 
 	display: block;
 	cursor: pointer;
