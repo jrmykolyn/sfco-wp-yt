@@ -1,2 +1,2 @@
-<h1>Hello, world!</h1>
-<h2>Inside <code>tag.php</code></h2>
+<h1><?= __( "Hello, world!" ); ?></h1>
+<h2><?= __( "Inside tag.php" ); ?></h2>

@@ -1,2 +1,2 @@
-<h1>Hello, world!</h1>
-<h2>Inside <code>author.php</code></h2>
+<h1><?= __( "Hello, world!" ); ?></h1>
+<h2><?= __( "Inside author.php" ); ?></h2>

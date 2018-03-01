@@ -14,7 +14,7 @@ if ( have_posts() ) {
 	}
 } else {
 ?>
-<h2>Whoops! Looks like you don't have any posts.</h2>
+<h2><?= __( "Whoops! Looks like you don't have any posts." ); ?></h2>
 <?php
 }
- ?>
+?>

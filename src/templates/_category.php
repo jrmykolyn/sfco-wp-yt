@@ -1,2 +1,2 @@
-<h1>Hello, world!</h1>
-<h2>Inside <code>category.php</code></h2>
+<h1><?= __( "Hello, world!" ); ?></h1>
+<h2><?= __( "Inside category.php" ); ?></h2>
