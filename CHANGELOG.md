@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Changed
 - Update 'site title': wrap text in link.
 - Update 'post hero': allow image height to increase at 960px and above.
+- Update template files: register theme text for translation.
 
 ### Removed
 - Remove use of `rem()` mixin (replace with literal values).
