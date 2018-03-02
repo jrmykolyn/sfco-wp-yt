@@ -57,11 +57,12 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
 
 #{$drawer-nav-body} {
 	width: 100%;
-	height: calc( 100% - 20rem );
+	height: calc( 100% - 5rem );
 	padding: 0;
 	position: absolute;
 	top: 5rem;
 	left: 0;
+	overflow: auto;
 
 	// Descendant elems.
 	ul {
@@ -93,7 +94,6 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
 				background: rgba( get-color( black ), 0.2 );
 			}
 		}
-
 	}
 
 	.menu-item-has-children {
@@ -127,7 +127,7 @@ $drawer-nav-footer: #{$drawer-nav}-footer;
 }
 
 #{$drawer-nav-footer} {
-	@include dims( 100% 15rem );
+	@include dims( 100% auto );
 
 	padding: 0 2rem;
 	position: absolute;
