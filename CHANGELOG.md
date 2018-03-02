@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Update 'post hero': allow image height to increase at 960px and above.
 - Update 'drawer nav': close if focus leaves child element; close when browser width exceeds 768px.
 - Update template files: register theme text for translation.
+- Update type styles: adjust proportions and spacing.
 
 ### Removed
 - Remove use of `rem()` mixin (replace with literal values).
