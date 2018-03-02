@@ -32,8 +32,11 @@ body {
 	padding: 0;
 	color: get-color( black );
 	background-color: get-color( off-white );
+}
 
+body {
 	font-family: get-font( copy );
+	font-size: 1.6rem; // NOTE: Set value of 1em BACK to 16px
 	font-weight: 400;
 }
 

@@ -28,8 +28,8 @@ $footer-col: '.footer-col';
 #{$footer} {
 	@extend #{$layout-section};
 
-	@include set( padding-top padding-bottom, 3rem );
-
+	padding-top: 3rem;
+	padding-bottom: 6rem;
 	min-height: 20rem;
 	background-color: get-color( black );
 	font-size: 1.4rem;
@@ -47,13 +47,14 @@ $footer-col: '.footer-col';
 		@include set( margin padding, 0 );
 
 		list-style: none;
-	}
 
-	li {
-		@include set( margin padding, 0 );
+		* {
+			margin-bottom: 1.2rem;
+		}
 
-		display: block;
-		margin-bottom: 0.625em;
+		*:last-child {
+			margin-bottom: 0;
+		}
 	}
 }
 

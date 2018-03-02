@@ -36,6 +36,11 @@ $post-byline: #{$post}-byline;
 
 #{$post-header} {
 	@include set( padding-bottom margin-bottom, 4rem );
+
+	// Descendant elems.
+	*:last-child {
+		margin-bottom: 0;
+	}
 }
 
 #{$post-body} {
@@ -50,9 +55,6 @@ $post-byline: #{$post}-byline;
 	@include clearfix;
 	@include dims( 100% auto );
 
-	min-height: 4rem;
-	padding-top: 1.2rem;
-	padding-bottom: 1rem;
 	position: relative;
 
 	img {

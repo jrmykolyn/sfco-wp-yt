@@ -46,7 +46,7 @@ ol {
 
 	li {
 		margin-left: -4rem;
-		padding: 0.4rem 0 0.2rem;
+		padding-top: 1rem;
 		line-height: 1.2;
 
 		ul li,
@@ -54,4 +54,19 @@ ol {
 			margin-left: 0;
 		}
 	}
+}
+
+// Shared styles for all lists.
+ul,
+ol,
+dl {
+	margin-top: 0;
+	margin-bottom: 3rem;
+}
+
+// Styles for 'nested' lists.
+ul ul,
+ol ol,
+dl dl {
+	margin-bottom: 0;
 }
