@@ -12,8 +12,8 @@
 // SELECTORS
 // --------------------------------------------------
 ::selection {
-	color: get-color( accent );
-	background: rgba( get-color( accent ), 0.2 );
+	color: get-color( white );
+	background: rgba( get-color( accent ), 0.8 );
 }
 
 * {
