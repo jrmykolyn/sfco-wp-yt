@@ -60,29 +60,25 @@ $post-byline: #{$post}-byline;
 	img {
 		@include dims( 4rem );
 
-		display: block;
+		display: inline-block;
 		border-radius: 50%;
-		position: absolute;
-		top: 50%;
-		left: 0;
-		transform: translateY( -50% );
+		margin-right: 1rem;
 	}
 }
 
 #{$post-byline} {
-	display: block;
+	display: inline-block;
 	margin: 0;
 	font-size: 1.5rem;
-	line-height: 1.2;
+	line-height: 3.9rem;
+	padding-top: 0.1rem;
+	vertical-align: top;
 
 	@include descendant( first ) {
-		display: inline-block;
 		margin-right: 0.8rem;
-		padding-right: 1rem;
-		border-right: 0.1rem solid get-color( grey--xlight );
 	}
 
 	@include descendant( last ) {
-		display: inline;
+		font-style: italic;
 	}
 }
