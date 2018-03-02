@@ -71,11 +71,12 @@ function handle_admin_init() {
 * Used to quickly create new 'missing plugin notice' elements of a given type (eg. 'error', etc.).
 *
 * @param {String} `$pluginName` - The name of the missing plugin.
+* @param {String} `$pluginUrl` - The URL to the plugin homepage.
 * @param {String} `$pluginType` - The type of notice to create. Default value is 'error'.
 */
-function add_plugin_notice( $pluginName, $pluginType="error") {
+function add_plugin_notice( $pluginName, $pluginUrl="#", $pluginType="error") {
 	echo "<div class=\"notice " . $pluginType . "\">";
-	echo "<p>Whoops! Looks like the following plugin is missing or inactive: <strong>" . $pluginName . "</strong>.</p>";
+	echo "<p>Whoops! Looks like the following plugin is missing or inactive: <strong><a href=\"" . $pluginUrl . "\">" . $pluginName . "</a></strong>.</p>";
 	echo "</div>";
 }
 
@@ -83,14 +84,24 @@ function add_plugin_notice( $pluginName, $pluginType="error") {
 * Function adds a 'missing plugin notice' for: Advanced Custom Fields.
 */
 function add_acf_plugin_notice() {
-	add_plugin_notice( 'Advanced Custom Fields' );
+	global $CONFIG;
+
+	add_plugin_notice(
+		'Advanced Custom Fields',
+		$CONFIG[ 'plugins' ][ 'acf' ][ 'url' ]
+	);
 }
 
 /**
 * Function adds a 'missing plugin notice' for: WP User Avatar.
 */
 function add_user_avatar_plugin_notice() {
-	add_plugin_notice( 'WP User Avatar' );
+	global $CONFIG;
+
+	add_plugin_notice(
+		'WP User Avatar',
+		$CONFIG[ 'plugins' ][ 'wp_user_avatar' ][ 'url' ]
+	);
 }
 
 /* MISC. */
