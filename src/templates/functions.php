@@ -61,6 +61,10 @@ function handle_admin_init() {
 	if ( is_plugin_inactive( 'advanced-custom-fields/acf.php' ) ) {
 		add_action( "admin_notices", "add_acf_plugin_notice" );
 	}
+
+	if ( is_plugin_inactive( 'wp-user-avatar/wp-user-avatar.php' ) ) {
+		add_action( "admin_notices", "add_user_avatar_plugin_notice" );
+	}
 }
 
 /**
@@ -80,6 +84,13 @@ function add_plugin_notice( $pluginName, $pluginType="error") {
 */
 function add_acf_plugin_notice() {
 	add_plugin_notice( 'Advanced Custom Fields' );
+}
+
+/**
+* Function adds a 'missing plugin notice' for: WP User Avatar.
+*/
+function add_user_avatar_plugin_notice() {
+	add_plugin_notice( 'WP User Avatar' );
 }
 
 /* MISC. */
