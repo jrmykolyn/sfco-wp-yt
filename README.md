@@ -107,6 +107,9 @@ Use this field to insert a block of supporting text into the footer element.
 ###### Text
 Use this field to insert copyright (or other legal/attribution information) into the footer element.
 
+### User Avatar
+This can be set using the 'Avatar' options on the user's profile page.
+
 ## Components
 
 ### Overview
@@ -140,6 +143,7 @@ This section includes a list of all WordPress plugins which the project includes
 
 #### List
 - [Advanced Custom Fields](https://www.advancedcustomfields.com/)
+- [WP User Avatar](https://en-ca.wordpress.org/plugins/wp-user-avatar/)
 
 ### Libraries
 
