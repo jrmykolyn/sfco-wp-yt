@@ -34,7 +34,7 @@ $post-preview: '.post-preview';
 }
 
 #{$post-preview}-main-content {
-	@include set( padding-top padding-bottom, 2rem );
+	@include set( padding-top padding-bottom, 2.2rem );
 
 	@include span( 12 of 12 );
 	@include last;
@@ -49,15 +49,19 @@ $post-preview: '.post-preview';
 	}
 }
 
-#{$post-preview}-header {}
+#{$post-preview}-header {
+	margin-bottom: 2rem;
+}
 
 
 #{$post-preview}-body {
-	@include set( padding-top padding-bottom, 2rem );
+	&:not( :last-child ) {
+		margin-bottom: 2rem;
+	}
 }
 
 #{$post-preview}-footer {
-	padding-top: 2rem;
+
 }
 
 #{$post-preview}-title {
