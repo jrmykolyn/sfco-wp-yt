@@ -4,12 +4,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- Add [WP User Avatar](https://en-ca.wordpress.org/plugins/wp-user-avatar/) to list of required plugins.
+
 ### Changed
 - Update 'site title': wrap text in link.
 - Update 'post hero': allow image height to increase at 960px and above.
 - Update 'drawer nav': close if focus leaves child element; close when browser width exceeds 768px.
 - Update template files: register theme text for translation.
 - Update type styles: adjust proportions and spacing.
+- Update 'post': display author's avatar image.
+- Update plugin notice: include URL.
 
 ### Removed
 - Remove use of `rem()` mixin (replace with literal values).
